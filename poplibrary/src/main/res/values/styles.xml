@@ -7,6 +7,14 @@
         <item name="android:windowEnterAnimation">@anim/anim_pop_in_from_lefttop</item>
         <item name="android:windowExitAnimation">@anim/anim_pop_out_from_lefttop</item>
     </style>
+    <style name="style_pop_animation_from_righttop">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_in_from_righttop</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_out_from_righttop</item>
+    </style>
+    <style name="style_pop_animation_from_rightbottom">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_in_from_rightbottom</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_out_from_rightbottom</item>
+    </style>
     <style name="style_pop_animation_from_center">
         <item name="android:windowEnterAnimation">@anim/anim_pop_in_from_center</item>
         <item name="android:windowExitAnimation">@anim/anim_pop_out_from_center</item>

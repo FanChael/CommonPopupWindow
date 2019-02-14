@@ -266,14 +266,18 @@ public class BasePop extends PopupWindow {
             switch (baseAnimation){
                 case SCALE:
                     switch (_gravity){
-                        case CENTER_IN_PARENT:
-                            basePop.setAnimationStyle(R.style.style_pop_animation_from_center);
-                            break;
-                        case RIGHTBOTTOM_TO_LEFTTOP:
-                        case RIGHTBOTTOM_TO_RIGHTTOP:
                         case LEFTBOTTOM_TO_RIGHTTOP:
                         case LEFTBOTTOM_TO_LEFTTOP:
                             basePop.setAnimationStyle(R.style.style_pop_animation_from_leftbottom);
+                            break;
+                        case RIGHTTOP_TO_RIGHTTOP:
+                        case RIGHTTOP_TO_RIGHTBOTTOM:
+                        case RIGHTTOP_TO_LEFTBOTTOM:
+                            basePop.setAnimationStyle(R.style.style_pop_animation_from_righttop);
+                            break;
+                        case RIGHTBOTTOM_TO_LEFTTOP:
+                        case RIGHTBOTTOM_TO_RIGHTTOP:
+                            basePop.setAnimationStyle(R.style.style_pop_animation_from_rightbottom);
                             break;
                         default:
                             basePop.setAnimationStyle(R.style.style_pop_animation_from_lefttop);

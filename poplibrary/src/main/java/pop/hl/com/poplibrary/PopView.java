@@ -18,8 +18,7 @@ public class PopView {
         RIGHTTOP_TO_LEFTBOTTOM, RIGHTTOP_TO_RIGHTBOTTOM,
         RIGHTTOP_TO_RIGHTTOP, RIGHTBOTTOM_TO_LEFTTOP,
         RIGHTBOTTOM_TO_RIGHTTOP, LEFTBOTTOM_TO_RIGHTTOP,
-        LEFTBOTTOM_TO_LEFTTOP, CENTER_IN_PARENT,
-        FROM_BOTTOM
+        LEFTBOTTOM_TO_LEFTTOP
     }
 
     /**
@@ -54,17 +53,51 @@ public class PopView {
      * @param _popH 不需要给 < 0 - 那样需要自己做好布局自适应处理
      * @param bOutsideTouchable 【必填】
      * @param _backColor - 不需要给-1
-     * @param animation - 不需要给null
+     * @param _animation - 不需要给null
      * @param _onClickListenner - 不需要给null
-     * @param _gravity 【必填】
+     * @param _gravity 【必填】 PopView.SIMPLE_GRAVITY
      * @return BasePop.Builder
      */
     public static BasePop.Builder show(Context _context, View _anchor,
                                        int _layoutResId, int _popW, int _popH,
                                        boolean bOutsideTouchable, int _backColor,
-                                       PopView.ANIMATION animation,
+                                       PopView.ANIMATION _animation,
                                        PopView.OnClickListenner _onClickListenner,
                                        PopView.SIMPLE_GRAVITY _gravity){
+        return show(_context, _anchor, _layoutResId, _popW, _popH,
+                bOutsideTouchable, _backColor, _animation,
+                _onClickListenner, null, _gravity);
+    }
+    /**
+     * 传递对应参数进行窗体创建和显示
+     * @param _context 【必填】
+     * @param _anchor 【必填】
+     * @param _layoutResId 【必填】
+     * @param _popW 不需要给 < 0 - 那样需要自己做好布局自适应处理
+     * @param _popH 不需要给 < 0 - 那样需要自己做好布局自适应处理
+     * @param bOutsideTouchable 【必填】
+     * @param _backColor - 不需要给-1
+     * @param _animation - 不需要给null
+     * @param _onClickListenner - 不需要给null
+     * @param _gravity 【必填】 PopView.GRAVITY
+     * @return BasePop.Builder
+     */
+    public static BasePop.Builder show(Context _context, View _anchor,
+                                       int _layoutResId, int _popW, int _popH,
+                                       boolean bOutsideTouchable, int _backColor,
+                                       PopView.ANIMATION _animation,
+                                       PopView.OnClickListenner _onClickListenner,
+                                       PopView.GRAVITY _gravity){
+        return show(_context, _anchor, _layoutResId, _popW, _popH,
+                bOutsideTouchable, _backColor, _animation,
+                _onClickListenner, _gravity, null);
+    }
+    private static BasePop.Builder show(Context _context, View _anchor,
+                                       int _layoutResId, int _popW, int _popH,
+                                       boolean bOutsideTouchable, int _backColor,
+                                       PopView.ANIMATION animation,
+                                       PopView.OnClickListenner _onClickListenner,
+                                       PopView.GRAVITY _gravity, PopView.SIMPLE_GRAVITY _sgravity){
         BasePop.Builder builder = null;
         if (-1 != _layoutResId){
             builder = new BasePop.Builder(_context)
@@ -84,8 +117,23 @@ public class PopView {
         if (null != _onClickListenner){
             builder.setOnClickEvent(_onClickListenner);
         }
-        return builder.show(_gravity);
+        if (null != _gravity){
+            return builder.show(_gravity);
+        }
+        return builder.show(_sgravity);
     }
+
+    /**
+     * 以下是不考虑bOutsideTouchable和_backColor的方法，或者加上不考虑ANIMATION的情况
+     * @param _context
+     * @param _anchor
+     * @param _layoutResId
+     * @param _popW
+     * @param _popH
+     * @param _onClickListenner
+     * @param _gravity
+     * @return
+     */
     public static BasePop.Builder show(Context _context, View _anchor,
                                        int _layoutResId, int _popW, int _popH,
                                        PopView.OnClickListenner _onClickListenner,
@@ -100,6 +148,25 @@ public class PopView {
                                        PopView.ANIMATION animation,
                                        PopView.OnClickListenner _onClickListenner,
                                        PopView.SIMPLE_GRAVITY _gravity){
+        return show(_context, _anchor,
+                _layoutResId, _popW, _popH,
+                false, BasePop.bgColor,
+                animation, _onClickListenner, _gravity);
+    }
+    public static BasePop.Builder show(Context _context, View _anchor,
+                                       int _layoutResId, int _popW, int _popH,
+                                       PopView.OnClickListenner _onClickListenner,
+                                       PopView.GRAVITY _gravity){
+        return show(_context, _anchor,
+                _layoutResId, _popW, _popH,
+                false, BasePop.bgColor,
+                null, null, _gravity);
+    }
+    public static BasePop.Builder show(Context _context, View _anchor,
+                                       int _layoutResId, int _popW, int _popH,
+                                       PopView.ANIMATION animation,
+                                       PopView.OnClickListenner _onClickListenner,
+                                       PopView.GRAVITY _gravity){
         return show(_context, _anchor,
                 _layoutResId, _popW, _popH,
                 false, BasePop.bgColor,
