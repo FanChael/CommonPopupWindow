@@ -22,7 +22,7 @@ Popular popupwindow in the market and customized.
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif) 
 
 >Demo.apk下载  
-![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk) 
+![点击下载apk](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk) 
 
 # API  
 >调用类介绍  
@@ -129,7 +129,8 @@ b. 另外一种是简单的上下左右居中的位置显示
                                        }
 ```
 
-#Use
+# USE  
+
 a. 基于控件(achor_view)右下角显示
 ```Java
  // PopView.ANIMATION animation可以传null或者PopView.NONE
@@ -212,7 +213,7 @@ i. 从右往左平移显示
               PopView.GRAVITY.FROM_RIGHT);
 ```
 
-#其他逻辑  
+# 其他逻辑    
 >调用PopView.show后可以保存BasePop.Builder，方便处理消失等逻辑;
 比如，demo工程里面的案例
 ```Java
