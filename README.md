@@ -21,7 +21,7 @@ Popular popupwindow in the market and customized.
 - 2019.02.14 -  - 自定义布局  
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif) 
 
->![![image]Demo.apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)<br/> 
+##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
 
 # API  
 >调用类介绍  
