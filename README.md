@@ -13,7 +13,9 @@ Popular popupwindow in the market and customized.
 
 >支持自定义布局(所有点击事件统一回调)  
 
->仿今日头条更新弹窗
+>底部分享弹窗-结合市面流行样式 TODO
+
+>仿xxxx更新弹窗 TODO
 
 # Effect  
 >总的效果  
