@@ -10,7 +10,7 @@ import android.view.View;
 */
 public class PopView {
     /**
-     * 显示方位
+     * 显示方位【基于控件】
      */
     public enum GRAVITY {
         LEFTTOP_TO_LEFTBOTTOM, LEFTTOP_TO_RIGHTBOTTOM,
@@ -92,10 +92,25 @@ public class PopView {
                 bOutsideTouchable, _backColor, _animation,
                 _onClickListenner, _gravity, null);
     }
+    /**
+     * 传递对应参数进行窗体创建和显示
+     * @param _context 【必填】
+     * @param _anchor 【必填】
+     * @param _layoutResId 【必填】
+     * @param _popW 不需要给 < 0 - 那样需要自己做好布局自适应处理
+     * @param _popH 不需要给 < 0 - 那样需要自己做好布局自适应处理
+     * @param bOutsideTouchable 【必填】
+     * @param _backColor - 不需要给-1
+     * @param _animation - 不需要给null
+     * @param _onClickListenner - 不需要给null
+     * @param _gravity 【与_sgravity选一个】 PopView.GRAVITY
+     * @param _sgravity 【与_gravity选一个】 PopView.SIMPLE_GRAVITY
+     * @return BasePop.Builder
+     */
     private static BasePop.Builder show(Context _context, View _anchor,
                                        int _layoutResId, int _popW, int _popH,
                                        boolean bOutsideTouchable, int _backColor,
-                                       PopView.ANIMATION animation,
+                                       PopView.ANIMATION _animation,
                                        PopView.OnClickListenner _onClickListenner,
                                        PopView.GRAVITY _gravity, PopView.SIMPLE_GRAVITY _sgravity){
         BasePop.Builder builder = null;
@@ -111,8 +126,8 @@ public class PopView {
         if (-1 != _backColor){
             builder.setBackgroundDrawable(_backColor);
         }
-        if (null != animation){
-            builder.setAnimation(animation);
+        if (null != _animation && ANIMATION.NONE != _animation){
+            builder.setAnimation(_animation);
         }
         if (null != _onClickListenner){
             builder.setOnClickEvent(_onClickListenner);
