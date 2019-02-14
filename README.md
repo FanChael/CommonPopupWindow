@@ -25,6 +25,21 @@ Popular popupwindow in the market and customized.
 
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
 
+# Import Library  
+>For gradle:  
+```Java
+implementation 'com.hl:poplibrary:1.0.1'
+```
+>Or in maven:
+```Java
+<dependency>
+    <groupId>com.hl</groupId>
+    <artifactId>poplibrary</artifactId>
+    <version>1.0.1</version>
+    <type>pom</type>
+</dependency>
+```
+
 # API  
 >调用类介绍  
 +PopView是主要调用类，对创建显示进行了一定封装

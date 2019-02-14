@@ -24,6 +24,11 @@ allprojects {
         //在审核通过前可以配置私有仓库来使用
         //maven {url 'https://dl.bintray.com/resetmyself/holdon'}
     }
+    ///< Error: Javadoc generation failed. Generated Javadoc options file (useful for troubleshooting)
+    tasks.withType(Javadoc) {
+        options.addStringOption('Xdoclint:none', '-quiet')
+        options.addStringOption('encoding', 'UTF-8')
+    }
 }
 
 task clean(type: Delete) {

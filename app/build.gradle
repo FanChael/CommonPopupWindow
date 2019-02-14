@@ -36,6 +36,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     ///< 远程导入
-    //implementation 'com.hl:poplibrary:1.0.0'
+    //implementation 'com.hl:poplibrary:1.0.1'
     implementation project(':poplibrary')
 }
