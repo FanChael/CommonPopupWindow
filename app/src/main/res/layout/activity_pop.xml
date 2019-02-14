@@ -25,6 +25,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ap_title" />
 
+    <!--app:layout_constraintHorizontal_bias="1.0" 保证在ap_leftBtn右边，同时靠最右边-->
     <Button
         android:id="@+id/ap_rightBtn"
         android:layout_width="wrap_content"
@@ -32,6 +33,8 @@
         android:text="确定"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@id/ap_leftBtn"
         app:layout_constraintTop_toBottomOf="@id/ap_title" />
 
 </android.support.constraint.ConstraintLayout>

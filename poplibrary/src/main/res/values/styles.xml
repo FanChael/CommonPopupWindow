@@ -1,0 +1,30 @@
+<resources>
+    <style name="style_pop_animation_from_leftbottom">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_in_from_leftbottom</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_out_from_leftbottom</item>
+    </style>
+    <style name="style_pop_animation_from_lefttop">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_in_from_lefttop</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_out_from_lefttop</item>
+    </style>
+    <style name="style_pop_animation_from_center">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_in_from_center</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_out_from_center</item>
+    </style>
+    <style name="style_translate_pop_animation_from_bottom">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_translate_in_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_translate_out_from_top</item>
+    </style>
+    <style name="style_translate_pop_animation_from_top">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_translate_in_from_top</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_translate_out_from_bottom</item>
+    </style>
+    <style name="style_translate_pop_animation_from_left">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_translate_in_from_left</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_translate_out_from_right</item>
+    </style>
+    <style name="style_translate_pop_animation_from_right">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_translate_in_from_right</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_translate_out_from_left</item>
+    </style>
+</resources>

@@ -11,19 +11,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupWindow;
 
+import java.lang.ref.WeakReference;
+
+import static pop.hl.com.poplibrary.PopView.ANIMATION.NONE;
+
 /*
  *@Description: 通用PopupWindow - 自定义布局
  *@Author: hl
  *@Time: 2019/2/12 9:58
  */
 public class BasePop extends PopupWindow {
+    public static final int bgColor = 0x80000000;
+
     public BasePop(Context context) {
         super(context);
         /******设置默认属性******/
         ///< 设置是否允许PopupWindow的范围超过屏幕范围
         setClippingEnabled(true);
         ///< 设置背景颜色 半透明纯黑 【不设置，默认全屏有白边】
-        setBackgroundDrawable(new ColorDrawable(0x80000000));
+        setBackgroundDrawable(new ColorDrawable(bgColor));
     }
 
     public BasePop(Context context, AttributeSet attrs) {
@@ -40,23 +46,26 @@ public class BasePop extends PopupWindow {
         ///< 设置是否允许PopupWindow的范围超过屏幕范围
         setClippingEnabled(true);
         ///< 设置背景颜色 半透明纯黑 【不设置，默认全屏有白边】
-        setBackgroundDrawable(new ColorDrawable(0x80000000));
+        setBackgroundDrawable(new ColorDrawable(bgColor));
     }
 
     /**
      * 通用PopupWindow-建造者
      */
     public static class Builder {
-        private Context context = null;
         private View popView = null;
         private BasePop basePop = null;
+        private WeakReference<Context> contextWeakReference;
+        private WeakReference<View> viewWeakReference;
+        private PopView.ANIMATION baseAnimation = NONE;
 
         public Builder(Context _context) {
-            this.context = _context;
+            this.contextWeakReference = new WeakReference<>(_context);
         }
 
-        public Builder create() {
-            basePop = new BasePop(context);
+        public Builder create(View _anchor) {
+            this.viewWeakReference = new WeakReference<>(_anchor);
+            basePop = new BasePop(contextWeakReference.get());
             return this;
         }
 
@@ -68,7 +77,7 @@ public class BasePop extends PopupWindow {
          */
         public Builder setView(int _layoutResId) {
             if (_layoutResId != 0) {
-                popView = LayoutInflater.from(context).inflate(_layoutResId, null);
+                popView = LayoutInflater.from(contextWeakReference.get()).inflate(_layoutResId, null);
             }
             setContentView();
             return this;
@@ -149,6 +158,16 @@ public class BasePop extends PopupWindow {
         }
 
         /**
+         * 设置显示动画
+         * @param animation
+         * @return
+         */
+        public Builder setAnimation(PopView.ANIMATION animation){
+            baseAnimation = animation;
+            return this;
+        }
+
+        /**
          * 设置点击事件
          * @param _onClickListenner - 事件回调
          */
@@ -168,12 +187,23 @@ public class BasePop extends PopupWindow {
         }
 
         /**
+         * 是否显示
+         * @return
+         */
+        public boolean bIsShowing(){
+            if (null == basePop){
+                return false;
+            }
+            return basePop.isShowing();
+        }
+
+        /**
          * 简单位置显示-居中显示
          *
-         * @param anchor
+         * @param _anchor
          */
-        public Builder show(View anchor) {
-            show(anchor, Gravity.CENTER);
+        public Builder show(View _anchor) {
+            show(_anchor, Gravity.CENTER);
             return this;
         }
 
@@ -215,6 +245,216 @@ public class BasePop extends PopupWindow {
          */
         public Builder showLocation(View parent, int gravity, int x, int y) {
             basePop.showAtLocation(parent, gravity, x, y);
+            return this;
+        }
+
+        /**
+         * 显示方位
+         * @param _gravity
+         * @return
+         */
+        public Builder show(PopView.GRAVITY _gravity){
+            if (null == viewWeakReference){
+                try {
+                    throw new Exception("No achor view for create(achor)");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            ///< 显示动画
+            switch (baseAnimation){
+                case SCALE:
+                    switch (_gravity){
+                        case CENTER_IN_PARENT:
+                            basePop.setAnimationStyle(R.style.style_pop_animation_from_center);
+                            break;
+                        case RIGHTBOTTOM_TO_LEFTTOP:
+                        case RIGHTBOTTOM_TO_RIGHTTOP:
+                        case LEFTBOTTOM_TO_RIGHTTOP:
+                        case LEFTBOTTOM_TO_LEFTTOP:
+                            basePop.setAnimationStyle(R.style.style_pop_animation_from_leftbottom);
+                            break;
+                        default:
+                            basePop.setAnimationStyle(R.style.style_pop_animation_from_lefttop);
+                    }
+                    break;
+            }
+
+            ///< 获取相关控件信息
+            ///< 得到显示弹窗宽度popW
+            ///< 得到点击控件左边位置achorX
+            int popW = basePop.getWidth();
+            int popH = basePop.getHeight();
+            int achorW = viewWeakReference.get().getMeasuredWidth();
+            int achorH = viewWeakReference.get().getMeasuredHeight();
+            int screenW = ScreenUtil.getScreenW(contextWeakReference.get());
+            int screenH = ScreenUtil.getScreenH(contextWeakReference.get());
+            int[] achorLocation = new  int[2] ;
+            viewWeakReference.get().getLocationInWindow(achorLocation); //获取在当前窗口内的绝对坐标，含toolBar
+            Log.e("test", "popW=" + popW);
+            Log.e("test", "popH=" + popH);
+            Log.e("test", "screenW=" + screenW);
+            Log.e("test", "screenH=" + screenH);
+            Log.e("test", "location[0]=" + achorLocation[0]);
+            Log.e("test", "location[1]=" + achorLocation[1]);
+
+            /**
+             * 分两部分处理
+             * 1. 再底部显示的稍微控制下显示的位置，如果右侧空间不够就显示左边，依次类推
+             * 2. 如果是achor控件上部分显示，则不用做特别多处理...
+             * 3.
+             *  3.1 showAsDropDown本身无论偏移多大,不会跑出屏幕，因此chor控件上部分可以不用特别处理
+             *  3.2 showAsDropDown本身无论偏移多大,不会跑出屏幕，但是我们为了处理显示效果，所以针对achor下部分显示做了简单处理
+             *  3.3 /** 这种方式可以控制超过屏幕范围显示
+                public  void showAsDropDown(final PopupWindow pw, final View anchor, final int xoff, final int yoff) {
+                    if (Build.VERSION.SDK_INT >= 24) {
+                        Rect visibleFrame = new Rect();
+                        anchor.getGlobalVisibleRect(visibleFrame);
+                        int height = anchor.getResources().getDisplayMetrics().heightPixels - visibleFrame.bottom;
+                        pw.setHeight(height);
+                        pw.showAsDropDown(anchor, xoff, yoff);
+                    } else {
+                        pw.showAsDropDown(anchor, xoff, yoff);
+                    }
+                }
+             */
+            switch (_gravity){
+                case LEFTTOP_TO_LEFTBOTTOM:
+                    ///< 如果screen_w - achorX < popW， 表示无法显示完全，则显示弹窗显示模式为RIGHTTOP_TO_LEFTBOTTOM
+                    if (screenW - achorLocation[0] < popW){
+                        ///< 右上角靠achor左下角显示
+                        basePop.showAsDropDown(viewWeakReference.get(), -popW, 0);
+                    }else{
+                        basePop.showAsDropDown(viewWeakReference.get(), 0, 0);
+                    }
+                    break;
+                case LEFTTOP_TO_RIGHTBOTTOM:
+                    ///< 如果(screenW - achorLocation[0] - achorW)< popW， 表示无法显示完全，则显示弹窗显示模式为RIGHTTOP_TO_RIGHTBOTTOM
+                    if ((screenW - achorLocation[0] - achorW) < popW){
+                        ///< 右上角靠achor右下角显示
+                        basePop.showAsDropDown(viewWeakReference.get(), achorW - popW, 0);
+                    }else{
+                        basePop.showAsDropDown(viewWeakReference.get(), achorW, 0);
+                    }
+                    break;
+                case LEFTTOP_TO_LEFTTOP:
+                    ///< 如果screen_w - achorX < popW， 表示无法显示完全，则显示弹窗显示模式为RIGHTTOP_TO_LEFTBOTTOM
+                    if (screenW - achorLocation[0] < popW){
+                        ///< 右上角靠achor左下角显示
+                        basePop.showAsDropDown(viewWeakReference.get(), -popW, -achorH);
+                    }else{
+                        basePop.showAsDropDown(viewWeakReference.get(), 0, -achorH);
+                    }
+                    break;
+                case LEFTTOP_TO_RIGHTTOP:
+                    ///< 如果(screenW - achorLocation[0] - achorW)< popW， 表示无法显示完全，则显示弹窗显示模式为RIGHTTOP_TO_RIGHTTOP
+                    if ((screenW - achorLocation[0] - achorW) < popW){
+                        ///< 右上角靠achor右上角显示
+                        basePop.showAsDropDown(viewWeakReference.get(), achorW - popW, -achorH);
+                    }else{
+                        basePop.showAsDropDown(viewWeakReference.get(), achorW, -achorH);
+                    }
+                    break;
+                case RIGHTTOP_TO_LEFTBOTTOM:
+                    ///< 如果achorLocation[0] < popW， 表示无法显示完全，则显示弹窗显示模式为LEFTTOP_TO_RIGHTBOTTOM
+                    if (achorLocation[0] < popW){
+                        ///< 左上角靠achor右下角显示
+                        basePop.showAsDropDown(viewWeakReference.get(), achorW, 0);
+                    }else{
+                        basePop.showAsDropDown(viewWeakReference.get(), -popW, 0);
+                    }
+                    break;
+                case RIGHTTOP_TO_RIGHTBOTTOM:
+                    ///< 如果achorLocation[0] + achorW < popW， 表示无法显示完全，则显示弹窗显示模式为LEFTTOP_TO_LEFTBOTTOM
+                    if (achorLocation[0] + achorW < popW){
+                        ///< 左上角靠achor左下角显示
+                        basePop.showAsDropDown(viewWeakReference.get(), 0, 0);
+                    }else{
+                        basePop.showAsDropDown(viewWeakReference.get(), achorW - popW, 0);
+                    }
+                    break;
+                case RIGHTTOP_TO_RIGHTTOP:
+                    ///< 如果achorLocation[0] + achorW < popW， 表示无法显示完全，则显示弹窗显示模式为LEFTTOP_TO_LEFTTOP
+                    if (achorLocation[0] + achorW < popW){
+                        ///< 左上角靠achor左上角显示
+                        basePop.showAsDropDown(viewWeakReference.get(), 0, -achorH);
+                    }else{
+                        basePop.showAsDropDown(viewWeakReference.get(), achorW - popW, -achorH);
+                    }
+                    break;
+                case RIGHTBOTTOM_TO_LEFTTOP:
+                    basePop.showAsDropDown(viewWeakReference.get(), -popW, -(popH + achorH));
+                    break;
+                case RIGHTBOTTOM_TO_RIGHTTOP:
+                    basePop.showAsDropDown(viewWeakReference.get(), achorW - popW, -(popH + achorH));
+                    break;
+                case LEFTBOTTOM_TO_RIGHTTOP:
+                    basePop.showAsDropDown(viewWeakReference.get(), achorW, -(popH + achorH));
+                    break;
+                case LEFTBOTTOM_TO_LEFTTOP:
+                    basePop.showAsDropDown(viewWeakReference.get(), 0, -(popH + achorH));
+                    break;
+            }
+            return this;
+        }
+
+        /**
+         * 显示+简单方位
+         * @param _gravity
+         * @return
+         */
+        public Builder show(PopView.SIMPLE_GRAVITY _gravity){
+            if (null == viewWeakReference){
+                try {
+                    throw new Exception("No achor view for create(achor)");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+            ///< 显示动画
+            switch (baseAnimation){
+                case SCALE:
+                    switch (_gravity){
+                        case CENTER_IN_PARENT:
+                            basePop.setAnimationStyle(R.style.style_pop_animation_from_center);
+                            break;
+                    }
+                    break;
+                case TRANSLATE:
+                    switch (_gravity){
+                        case FROM_BOTTOM:
+                            basePop.setAnimationStyle(R.style.style_translate_pop_animation_from_bottom);
+                            break;
+                        case FROM_TOP:
+                            basePop.setAnimationStyle(R.style.style_translate_pop_animation_from_top);
+                            break;
+                        case FROM_LEFT:
+                            basePop.setAnimationStyle(R.style.style_translate_pop_animation_from_left);
+                            break;
+                        case FROM_RIGHT:
+                            basePop.setAnimationStyle(R.style.style_translate_pop_animation_from_right);
+                            break;
+                    }
+                    break;
+            }
+            switch (_gravity){
+                case CENTER_IN_PARENT:
+                    basePop.showAtLocation(viewWeakReference.get(), Gravity.CENTER, 0, 0);
+                    break;
+                case FROM_BOTTOM:
+                    basePop.showAtLocation(viewWeakReference.get(), Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    break;
+                case FROM_TOP:
+                    basePop.showAtLocation(viewWeakReference.get(), Gravity.TOP | Gravity.CENTER_HORIZONTAL, 0, 0);
+                    break;
+                case FROM_LEFT:
+                    basePop.showAtLocation(viewWeakReference.get(), Gravity.LEFT | Gravity.CENTER_VERTICAL, 0, 0);
+                    break;
+                case FROM_RIGHT:
+                    basePop.showAtLocation(viewWeakReference.get(), Gravity.RIGHT | Gravity.CENTER_VERTICAL, 0, 0);
+                    break;
+            }
             return this;
         }
 

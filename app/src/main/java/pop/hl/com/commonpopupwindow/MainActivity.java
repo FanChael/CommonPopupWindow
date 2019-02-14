@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import pop.hl.com.poplibrary.BasePop;
 import pop.hl.com.poplibrary.PopView;
+import pop.hl.com.poplibrary.ScreenUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -34,25 +35,47 @@ public class MainActivity extends AppCompatActivity {
     public native String stringFromJNI();
 
     private BasePop.Builder builder;
+
     public void testPop(View view) {
-        builder =  new BasePop.Builder(this)
-                .create()
-                .setView(R.layout.activity_pop)
-                .setWidthAndHeight(500, 500)
-                .setOutsideTouchable(false)
-                .setBackgroundDrawable(0xff00aa00)
-                .setOnClickEvent(new PopView.OnClickListenner() {
+        ///< 已经显示则不再重复创建显示
+        if (null != builder && builder.bIsShowing()) {
+            return;
+        }
+        ///< 显示测试
+        //        builder =  new BasePop.Builder(this)
+        //                .create(view)
+        //                .setView(R.layout.activity_pop)
+        //                .setWidthAndHeight(ScreenUtil.getScreenW(this), 500)
+        //                .setOutsideTouchable(false)
+        //                .setBackgroundDrawable(0xff00aa00)
+        //                .setOnClickEvent(new PopView.OnClickListenner() {
+        //                    @Override
+        //                    public void onClick(View view) {
+        //                        if (view.getId() == R.id.ap_leftBtn){
+        //                            builder.dissmiss();
+        //                        }
+        //                    }
+        //                })
+        //                .setAnimation(PopView.ANIMATION.TRANSLATE)
+        //                //.show(view, Gravity.LEFT);
+        //                //.showAsDropDown(view, 10, 0, Gravity.LEFT);
+        //                //.showLocation(view, Gravity.LEFT | Gravity.TOP, 100, 600);
+        //                //.show(view.getRootView(), Gravity.RIGHT); ///< view.getRootView() - 页面根布局
+        //
+        //                //.show(PopView.GRAVITY.CENTER_IN_PARENT);
+        //                //.show(PopView.GRAVITY.CENTER_IN_PARENT);
+        //                .show(PopView.SIMPLE_GRAVITY.FROM_BOTTOM);
+        ///< 封装创建显示
+        builder = PopView.show(this,
+                view, R.layout.activity_pop,
+                ScreenUtil.getScreenW(this), 500,
+                PopView.ANIMATION.SCALE, new PopView.OnClickListenner() {
                     @Override
                     public void onClick(View view) {
-                        if (view.getId() == R.id.ap_leftBtn){
+                        if (view.getId() == R.id.ap_leftBtn) {
                             builder.dissmiss();
                         }
                     }
-                })
-                //.show(view, Gravity.LEFT);
-                //.showAsDropDown(view, 10, 0, Gravity.LEFT);
-                //.showLocation(view, Gravity.LEFT | Gravity.TOP, 100, 600);
-                //.show(view.getRootView(), Gravity.RIGHT); ///< view.getRootView() - 页面根布局
-                .show(view.getRootView(), Gravity.CENTER);
+                }, PopView.SIMPLE_GRAVITY.FROM_BOTTOM);
     }
 }
