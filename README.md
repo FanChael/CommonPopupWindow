@@ -5,8 +5,6 @@ Popular popupwindow in the market and customized.
 # Description
 >poplibrary引入即可调用弹窗
 
->全局配置是否允许重复弹出
-
 >(其他配置待续)
 
 # Feature  
@@ -19,7 +17,7 @@ Popular popupwindow in the market and customized.
 
 # Effect  
 >总的效果  
-~V1.0.0 
+~V1.0.1 
 - 2019.02.14 -  - 自定义布局  
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif) 
 
@@ -228,6 +226,12 @@ i. 从右往左平移显示
               PopView.ANIMATION.TRANSLATE, null,
               PopView.GRAVITY.FROM_RIGHT);
 ```
+# ATTENTION 
+>Animation：
+1.基于控件方位(GRAVITY)显示的方式-平移动画无效  
+2.基于简单上下左右平移(SIMPLE_GRAVITY)显示的方式-缩放无效  
+3.居中显示方式-只有居中缩放动画  
+4.不需要动画传null即可
 
 # 其他逻辑    
 >调用PopView.show后可以保存BasePop.Builder，方便处理消失等逻辑;
