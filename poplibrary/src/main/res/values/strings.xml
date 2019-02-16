@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">poplibrary</string>
+
+    <!--状态-->
+    <string name="cancel">取消</string>
+    <string name="share_to">分享至</string>
 </resources>

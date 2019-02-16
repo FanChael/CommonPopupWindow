@@ -93,4 +93,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/am_share_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testPop"
+        android:text="分享弹窗"
+        app:layout_constraintBottom_toTopOf="@id/am_left_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/am_lefttop_btn" />
+
+    <Button
+        android:id="@+id/am_share_ftecent_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testPop"
+        android:text="分享弹窗_仿腾讯"
+        app:layout_constraintBottom_toTopOf="@id/am_right_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/am_righttop_btn" />
 </android.support.constraint.ConstraintLayout>

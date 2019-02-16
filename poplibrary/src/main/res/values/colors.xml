@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="translucent">#80000000</color>
+    <color name="translucent_a">#60000000</color>
+    <color name="gray">#9e9e9e</color>
+    <color name="deep_gray">#777777</color>
+    <color name="white">#ffffff</color>
+    <color name="line_gray_a">#e4e4e4</color>
+    <color name="black">#000000</color>
+    <color name="black_a">#515055</color>
+    <color name="line_gray_b">#f6f6f6</color>
+</resources>
