@@ -19,9 +19,9 @@ Popular popupwindow in the market and customized.
 >总的效果  
 ~V1.0.1 
 - 2019.02.14 -  - 自定义布局  
-![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif) 
-~V1.0.2 
-- 2019.02.16 -  - 添加分享弹窗
+![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif)   
+~V1.0.2   
+- 2019.02.16 -  - 添加分享弹窗  
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.16_add_shareboard.gif) 
 
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
