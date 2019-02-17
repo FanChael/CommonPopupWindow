@@ -45,7 +45,7 @@ implementation 'com.hl:poplibrary:1.0.2'
 
 # API  
 >调用类介绍  
-+PopView是主要调用类，对创建显示进行了一定封装
++BasePopView、SharePopView是主要调用类，对创建显示进行了一定封装
 +同时也是提供方位，动画、监听属性的关键类  
 
 >显示方位介绍  
@@ -101,15 +101,15 @@ b. 另外一种是简单的上下左右居中的位置显示
      * @param _backColor - 不需要给-1
      * @param _animation - 不需要给null
      * @param _onClickListenner - 不需要给null
-     * @param _gravity 【必填】 PopView.SIMPLE_GRAVITY
+     * @param _gravity 【必填】 BasePopView.SIMPLE_GRAVITY
      * @return BasePop.Builder
      */
     public static BasePop.Builder show(Context _context, View _anchor,
                                        int _layoutResId, int _popW, int _popH,
                                        boolean bOutsideTouchable, int _backColor,
-                                       PopView.ANIMATION _animation,
-                                       PopView.OnClickListenner _onClickListenner,
-                                       PopView.SIMPLE_GRAVITY _gravity){
+                                       BasePopView.ANIMATION _animation,
+                                       BasePopView.OnClickListenner _onClickListenner,
+                                       BasePopView.SIMPLE_GRAVITY _gravity){
         return show(_context, _anchor, _layoutResId, _popW, _popH,
                 bOutsideTouchable, _backColor, _animation,
                 _onClickListenner, null, _gravity);
@@ -125,15 +125,15 @@ b. 另外一种是简单的上下左右居中的位置显示
      * @param _backColor - 不需要给-1
      * @param _animation - 不需要给null
      * @param _onClickListenner - 不需要给null
-     * @param _gravity 【必填】 PopView.GRAVITY
+     * @param _gravity 【必填】 BasePopView.GRAVITY
      * @return BasePop.Builder
      */
     public static BasePop.Builder show(Context _context, View _anchor,
                                        int _layoutResId, int _popW, int _popH,
                                        boolean bOutsideTouchable, int _backColor,
-                                       PopView.ANIMATION _animation,
-                                       PopView.OnClickListenner _onClickListenner,
-                                       PopView.GRAVITY _gravity){
+                                       BasePopView.ANIMATION _animation,
+                                       BasePopView.OnClickListenner _onClickListenner,
+                                       BasePopView.GRAVITY _gravity){
         return show(_context, _anchor, _layoutResId, _popW, _popH,
                 bOutsideTouchable, _backColor, _animation,
                 _onClickListenner, _gravity, null);
@@ -149,16 +149,16 @@ b. 另外一种是简单的上下左右居中的位置显示
      * @param _backColor - 不需要给-1
      * @param _animation - 不需要给null
      * @param _onClickListenner - 不需要给null
-     * @param _gravity 【与_sgravity选一个】 PopView.GRAVITY
-     * @param _sgravity 【与_gravity选一个】 PopView.SIMPLE_GRAVITY
+     * @param _gravity 【与_sgravity选一个】 BasePopView.GRAVITY
+     * @param _sgravity 【与_gravity选一个】 BasePopView.SIMPLE_GRAVITY
      * @return BasePop.Builder
      */
     private static BasePop.Builder show(Context _context, View _anchor,
                                        int _layoutResId, int _popW, int _popH,
                                        boolean bOutsideTouchable, int _backColor,
-                                       PopView.ANIMATION _animation,
-                                       PopView.OnClickListenner _onClickListenner,
-                                       PopView.GRAVITY _gravity, PopView.SIMPLE_GRAVITY _sgravity){
+                                       BasePopView.ANIMATION _animation,
+                                       BasePopView.OnClickListenner _onClickListenner,
+                                       BasePopView.GRAVITY _gravity, BasePopView.SIMPLE_GRAVITY _sgravity){
                                        }
 ```
 2.分享弹窗 - 提供调用类 SharePopView.java
