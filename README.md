@@ -7,6 +7,8 @@ Popular popupwindow in the market and customized.
 
 >(其他配置待续)
 
+>目前集成库后apk大小约增加了196KB(默认分享图片资源总大小约100KB)
+
 # Feature  
 
 >支持自定义布局(所有点击事件统一回调)  
@@ -31,7 +33,10 @@ Popular popupwindow in the market and customized.
 # Import Library  
 >For gradle:  
 ```Java
+//1.0.2 自定义+分享弹窗
 implementation 'com.hl:poplibrary:1.0.2'
+//依赖过可以忽略（使用分享弹窗需要依赖）
+implementation 'com.android.support:recyclerview-v7:28.0.0'//版本随意
 ```
 >Or in maven:
 ```Java
