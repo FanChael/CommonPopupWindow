@@ -47,6 +47,12 @@ implementation 'com.android.support:recyclerview-v7:28.0.0'//版本随意
     <type>pom</type>
 </dependency>
 ```
+# 传送门  
+> 使用
+* [分享弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/share_guid.md)
+> Hold on！
+* [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)
+* [学习博客](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/study_guid.md)
 
 # API  
 >调用类介绍  
@@ -310,99 +316,7 @@ i. 从右往左平移显示
               BasePopView.ANIMATION.TRANSLATE, null,
               BasePopView.GRAVITY.FROM_RIGHT);
 ```
-#### --> 分享弹窗 
-a. 自家样式(列表随机为水平或者网格 标题和图标不传默认给五个基本分享平台)
-```Java
-    List<String> _share2Name = new ArrayList<>();
-                _share2Name.add("华为");
-                _share2Name.add("阿里");
-                _share2Name.add("小米");
-                _share2Name.add("毛豆");
-                _share2Name.add("无聊");
-                _share2Name.add("华为");
-                _share2Name.add("阿里");
-                _share2Name.add("小米");
-                _share2Name.add("毛豆");
-                _share2Name.add("无聊");
-    List<Integer> _share2Icon = new ArrayList<>();
-                _share2Icon.add(R.drawable.huawei);
-                _share2Icon.add(R.drawable.ali);
-                _share2Icon.add(R.drawable.xiaomi);
-                _share2Icon.add(R.drawable.moredo);
-                _share2Icon.add(R.drawable.share_link);
-                _share2Icon.add(R.drawable.huawei);
-                _share2Icon.add(R.drawable.ali);
-                _share2Icon.add(R.drawable.xiaomi);
-                _share2Icon.add(R.drawable.moredo);
-                _share2Icon.add(R.drawable.share_link);
-
-    ///< 点击事件回调
-    OnEventListenner.OnShareClickListenner onShareClickListenner = new OnEventListenner.OnShareClickListenner() {
-        @Override
-        public void onClick(View view, int pos) {
-            Toast.makeText(MainActivity.this, "pos=" + pos, Toast.LENGTH_SHORT).show();
-        }
-    };
-    ///< 显示链表添加的分享图标
-    int randomValue = new Random().nextInt(2);
-    BasePop.Builder builder = SharePopView.showShare(this, view,
-                randomValue == 1 ? _share2Name : null,
-                randomValue == 1 ? _share2Icon : null,
-                (new Random().nextInt(2)) == 1 ?
-                        BasePopView.SIMPLE_GRAVITY.FROM_TOP :
-                        BasePopView.SIMPLE_GRAVITY.FROM_BOTTOM,
-                (new Random().nextInt(2)) == 1 ?
-                        SharePopView.SHOW_TYPE.HORIZON :
-                        SharePopView.SHOW_TYPE.GRID,
-                onShareClickListenner);
-                
-    
-```
-b. 仿腾讯样式(列表随机为水平或者网格 标题和图标不传默认给五个基本分享平台)
-```Java
-    List<String> _share2Name = new ArrayList<>();
-                _share2Name.add("华为");
-                _share2Name.add("阿里");
-                _share2Name.add("小米");
-                _share2Name.add("毛豆");
-                _share2Name.add("无聊");
-                _share2Name.add("华为");
-                _share2Name.add("阿里");
-                _share2Name.add("小米");
-                _share2Name.add("毛豆");
-                _share2Name.add("无聊");
-    List<Integer> _share2Icon = new ArrayList<>();
-                _share2Icon.add(R.drawable.huawei);
-                _share2Icon.add(R.drawable.ali);
-                _share2Icon.add(R.drawable.xiaomi);
-                _share2Icon.add(R.drawable.moredo);
-                _share2Icon.add(R.drawable.share_link);
-                _share2Icon.add(R.drawable.huawei);
-                _share2Icon.add(R.drawable.ali);
-                _share2Icon.add(R.drawable.xiaomi);
-                _share2Icon.add(R.drawable.moredo);
-                _share2Icon.add(R.drawable.share_link);
-
-    ///< 点击事件回调
-    OnEventListenner.OnShareClickListenner onShareClickListenner = new OnEventListenner.OnShareClickListenner() {
-        @Override
-        public void onClick(View view, int pos) {
-            Toast.makeText(MainActivity.this, "pos=" + pos, Toast.LENGTH_SHORT).show();
-        }
-    };
-    ///< 显示链表添加的分享图标
-    int randomValue = new Random().nextInt(2);
-    BasePop.Builder builder = SharePopView.showShareFTencent(this, view,
-                randomValue == 1 ? _share2Name : null,
-                randomValue == 1 ? _share2Icon : null,
-                BasePopView.SIMPLE_GRAVITY.FROM_BOTTOM,
-                (new Random().nextInt(2)) == 1 ?
-                        SharePopView.SHOW_TYPE.HORIZON :
-                        SharePopView.SHOW_TYPE.GRID,
-                onShareClickListenner);
-```
-
-#### --> 有空写篇使用文章(不管好不好， 小萌新以后就会用起这个弹窗了，然后不断学习加强，嘻嘻) 
+#### --> [分享弹窗](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/share_guid.md)
 
 # ATTENTION 
 >Animation：
