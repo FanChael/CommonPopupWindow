@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import pop.hl.com.poplibrary.LgRgPopView;
 import pop.hl.com.poplibrary.SharePopView;
 import pop.hl.com.poplibrary.OnEventListenner;
 import pop.hl.com.poplibrary.base.BasePop;
@@ -184,6 +185,44 @@ public class MainActivity extends AppCompatActivity {
                                 onShareClickListenner);
                         break;
                 }
+                break;
+            case R.id.am_register_btn:   ///< Achor左上角缩放显示
+                builder = LgRgPopView.showRegister(this,
+                        view, "#f0008DCF",
+                        new OnEventListenner.OnLRClickListenner() {
+                            @Override
+                            public void onClick(View view, String[] parmas, LgRgPopView.CALLBACK_TYPE callback_type) {
+                                switch (callback_type){
+                                    case CLICK_REGISTER:
+                                        Toast.makeText(MainActivity.this, "callback_type=" + callback_type + " parmas" + parmas[0], Toast.LENGTH_SHORT).show();
+                                        break;
+                                    case CLICK_GET_VERYCODE:
+                                        break;
+                                }
+                            }
+                        });
+                break;
+            case R.id.am_login_btn:        ///< 居中缩放显示
+                builder = LgRgPopView.showLogin(this,
+                        view,LgRgPopView.LOGIN_TYPE.THIRD_ACCOUNT
+                                | LgRgPopView.LOGIN_TYPE.PHONE_VERICODE,
+                        "#f0008DCF",
+                        new OnEventListenner.OnLRClickListenner() {
+                            @Override
+                            public void onClick(View view, String[] parmas, LgRgPopView.CALLBACK_TYPE callback_type) {
+                                switch (callback_type){
+                                    case QQ_LOGIN:
+                                        Toast.makeText(MainActivity.this, "点击了QQ登录", Toast.LENGTH_SHORT).show();
+                                        break;
+                                    case WEIXIN_LOGIN:
+                                        break;
+                                    case CLICK_LOGIN:
+                                        break;
+                                    default:
+                                        break;
+                                }
+                            }
+                        });
                 break;
         }
         ///< 显示测试

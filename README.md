@@ -15,7 +15,9 @@ Popular popupwindow in the market and customized.
 
 >底部分享弹窗-结合市面流行样式(目前两种主流样式，如需增加请issue)
 
->仿xxxx更新弹窗 TODO
+>注册登录弹窗基本样式(登录可以设置显示多种组合样式)
+
+>更新弹窗 TODO
 
 # Effect  
 >总的效果 
@@ -27,6 +29,10 @@ Popular popupwindow in the market and customized.
 ~V1.0.2   
 - 2019.02.16 -  - 添加分享弹窗  
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.16_add_shareboard.gif) 
+
+~V1.0.3   
+- 2019.02.19 -  - 添加注册登录弹窗  
+![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.19_add_loginregister.gif) 
 
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
 
@@ -50,6 +56,7 @@ implementation 'com.android.support:recyclerview-v7:28.0.0'//版本随意
 # 传送门  
 > 使用
 * [分享弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/share_guid.md)
+* [注册登录弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
 > Hold on！
 * [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)
 * [学习博客](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/study_guid.md)
@@ -317,6 +324,8 @@ i. 从右往左平移显示
               BasePopView.GRAVITY.FROM_RIGHT);
 ```
 #### --> [分享弹窗](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/share_guid.md)
+
+#### --> [注册登录弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
 
 # ATTENTION 
 >Animation：

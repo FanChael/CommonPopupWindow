@@ -112,4 +112,24 @@
         app:layout_constraintBottom_toTopOf="@id/am_right_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/am_righttop_btn" />
+
+    <Button
+        android:id="@+id/am_register_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testPop"
+        android:text="注册弹窗"
+        app:layout_constraintBottom_toTopOf="@id/am_right_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/am_leftbottom_btn" />
+
+    <Button
+        android:id="@+id/am_login_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testPop"
+        android:text="登录弹窗"
+        app:layout_constraintBottom_toTopOf="@id/am_right_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/am_rightbottom_btn" />
 </android.support.constraint.ConstraintLayout>

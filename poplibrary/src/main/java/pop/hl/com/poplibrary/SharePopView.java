@@ -17,7 +17,7 @@ import pop.hl.com.poplibrary.adapter.SpacesItemDecoration;
 import pop.hl.com.poplibrary.base.BasePop;
 
 /*
- *@Description: 弹窗View总类 + 包含点击事件回调
+ *@Description: 分享弹窗View总类 + 包含点击事件回调
  *@Author: hl
  *@Time: 2019/2/15 11:37
  */

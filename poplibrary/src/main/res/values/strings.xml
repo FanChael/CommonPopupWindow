@@ -4,4 +4,13 @@
     <!--状态-->
     <string name="cancel">取消</string>
     <string name="share_to">分享至</string>
+
+    <!--登录注册-->
+    <string name="get_verify">获取验证码</string>
+    <string name="login">登录</string>
+    <string name="register">立即注册</string>
+    <string name="phone_tip">请输入手机号</string>
+    <string name="phone_username_tip">请输入手机号/用户名</string>
+    <string name="verify_tip">请输入验证码</string>
+    <string name="pass_tip">请输入密码</string>
 </resources>
