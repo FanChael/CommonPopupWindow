@@ -44,9 +44,9 @@ implementation 'com.hl:poplibrary:1.0.2'
 //1.0.3 自定义+分享弹窗+注册登录弹窗
 implementation 'com.hl:poplibrary:1.0.3'
                                             
-//依赖过可以忽略（使用分享弹窗需要依赖）
+//依赖过可以忽略（使用分享弹窗需要依赖）/1.0.2
 implementation 'com.android.support:recyclerview-v7:28.0.0'//看你版本
-//依赖过可以忽略（使用注册登录弹窗需要依赖）
+//依赖过可以忽略（使用注册登录弹窗需要依赖）/1.0.3
 implementation 'com.android.support:design:28.+'//看你版本
 ```
 >Or in maven:
