@@ -54,7 +54,7 @@ implementation 'com.android.support:design:28.+'//看你版本
 <dependency>
     <groupId>com.hl</groupId>
     <artifactId>poplibrary</artifactId>
-    <version>1.0.2</version>
+    <version>1.0.x</version>
     <type>pom</type>
 </dependency>
 ```
