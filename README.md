@@ -66,8 +66,8 @@ implementation 'com.android.support:design:28.+'//看你版本
 * [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)
 * [学习博客](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/study_guid.md)
 
-# API  
->调用类介绍  
+# API
+>调用类介绍(重点关注自定义布局视图类BasePopView)    
 +BasePopView、SharePopView是主要调用类，对创建显示进行了一定封装
 +同时也是提供方位，动画、监听属性的关键类  
 
@@ -253,6 +253,8 @@ b. 另外一种是简单的上下左右居中的位置显示
                 .showShareBorder(_simple_gravity, _show_type, _onShareClickListenner);
     }
 ```
+##### 3.后续新的功能的用法，请移步传送门
+
 # USE  
 #### --> 自定义方式 
 a. 基于控件(achor_view)右下角显示
