@@ -35,7 +35,7 @@ Popular popupwindow in the market and customized.
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.19_add_loginregister.gif) 
 
 ~V1.0.4   
-- 2019.02.20 -  - 添加经典更新弹窗
+- 2019.02.20 -  - 添加经典更新弹窗  
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.20_add_normalupdate.gif) 
 
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
@@ -47,6 +47,8 @@ Popular popupwindow in the market and customized.
 implementation 'com.hl:poplibrary:1.0.2'
 //1.0.3 自定义+分享弹窗+注册登录弹窗
 implementation 'com.hl:poplibrary:1.0.3'
+//1.0.4 自定义+分享弹窗+注册登录弹窗+更新弹窗
+implementation 'com.hl:poplibrary:1.0.4'
                                             
 //依赖过可以忽略（使用分享弹窗需要依赖）/1.0.2
 implementation 'com.android.support:recyclerview-v7:28.0.0'//看你版本
@@ -66,7 +68,7 @@ implementation 'com.android.support:design:28.+'//看你版本
 > 使用
 * [分享弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/share_guid.md)
 * [注册登录弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
-* [更新弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
+* [更新弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/updagrade_guid.md)
 
 > Hold on！
 * [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)
