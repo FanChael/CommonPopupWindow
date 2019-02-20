@@ -111,7 +111,9 @@ public class UpdatePopView {
             }
             int windowW = ScreenUtil.getScreenW(contextWeakReference.get())* 7/10;
             ScreenUtil.setConstraintLayoutWH(updateContentRoot, windowW, -1);
-            ScreenUtil.setConstraintLayoutWH(topBgIv, windowW, windowW * h_dived_w);
+            if (h_dived_w > 0){
+                ScreenUtil.setConstraintLayoutWH(topBgIv, windowW, windowW * h_dived_w);
+            }
             message.setText(updateMessage);
 
             ///< 设置主题
