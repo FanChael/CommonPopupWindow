@@ -12,11 +12,11 @@ public class ShapeUtil {
     /**
      * 创建一个Shape - GradientDrawable
      *
-     * @param _strokeWidth - 无需传入-1
-     * @param _roundRadius - 无需传入-1
-     * @param _shape       - 无需传入-1，将采用默认的GradientDrawable.RECTANGLE
-     * @param _strokeColor - 无需传入null/""
-     * @param _fillColor   - 填充颜色
+     * @param _strokeWidth - 沿边线厚度；无需传入-1
+     * @param _roundRadius - 圆角半径；无需传入-1
+     * @param _shape       - shape绘制类型(rectangle、oval等)；无需传入-1，将采用默认的GradientDrawable.RECTANGLE
+     * @param _strokeColor - 沿边线颜色；无需传入null/""
+     * @param _fillColor   - 内部填充颜色
      * @return
      */
     public static GradientDrawable createShape(int _strokeWidth,

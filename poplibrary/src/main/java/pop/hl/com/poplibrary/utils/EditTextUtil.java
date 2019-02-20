@@ -7,6 +7,11 @@ import android.widget.TextView;
 
 import java.lang.reflect.Field;
 
+/*
+*@Description: 编辑框工具类
+*@Author: hl
+*@Time: 2019/2/20 9:29
+*/
 public class EditTextUtil {
     /**
      * 代码设置光标颜色
