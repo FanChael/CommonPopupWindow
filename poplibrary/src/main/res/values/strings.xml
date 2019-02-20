@@ -13,4 +13,8 @@
     <string name="phone_username_tip">请输入手机号/用户名</string>
     <string name="verify_tip">请输入验证码</string>
     <string name="pass_tip">请输入密码</string>
+
+    <!--更新-->
+    <string name="update_ok">更新</string>
+    <string name="update_cancel">暂不更新</string>
 </resources>
