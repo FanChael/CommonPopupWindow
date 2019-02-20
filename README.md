@@ -34,6 +34,10 @@ Popular popupwindow in the market and customized.
 - 2019.02.19 -  - 添加注册登录弹窗  
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.19_add_loginregister.gif) 
 
+~V1.0.4   
+- 2019.02.20 -  - 添加经典更新弹窗
+![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.20_add_normalupdate.gif) 
+
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
 
 # Import Library  
@@ -62,6 +66,8 @@ implementation 'com.android.support:design:28.+'//看你版本
 > 使用
 * [分享弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/share_guid.md)
 * [注册登录弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
+* [更新弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
+
 > Hold on！
 * [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)
 * [学习博客](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/study_guid.md)
@@ -333,6 +339,8 @@ i. 从右往左平移显示
 #### --> [分享弹窗](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/share_guid.md)
 
 #### --> [注册登录弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
+
+#### --> [更新弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
 
 # ATTENTION 
 >Animation：

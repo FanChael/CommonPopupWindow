@@ -35,4 +35,13 @@ public class OnEventListenner {
     public interface OnLRClickListenner{
         void onClick(View view, String[] parmas, LgRgPopView.CALLBACK_TYPE callback_type);
     }
+
+    /**
+     * 更新弹窗点击事件回调
+     * 1. 如果是强制更新的情况，则会返回进度条控件progressBar给调用者，方便外部设置进度
+     * 2. 如果是非强制更新，则不显示进度条控件; 此时显示暂不更新文本按钮
+     */
+    public interface OnUpdateClickListenner{
+        void onClick(View view, View progressBar);
+    }
 }

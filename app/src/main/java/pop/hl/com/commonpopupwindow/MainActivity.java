@@ -3,6 +3,7 @@ package pop.hl.com.commonpopupwindow;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.Random;
 import pop.hl.com.poplibrary.LgRgPopView;
 import pop.hl.com.poplibrary.SharePopView;
 import pop.hl.com.poplibrary.OnEventListenner;
+import pop.hl.com.poplibrary.UpdatePopView;
 import pop.hl.com.poplibrary.base.BasePop;
 import pop.hl.com.poplibrary.BasePopView;
 import pop.hl.com.poplibrary.utils.ScreenUtil;
@@ -221,6 +223,19 @@ public class MainActivity extends AppCompatActivity {
                                     default:
                                         break;
                                 }
+                            }
+                        });
+                break;
+            case R.id.am_normal_update_btn:        ///< 经典更新弹窗
+                builder = UpdatePopView.showNormalUpdate(this, view,
+                        R.drawable.update_bg_app_top, 204/450,
+                        "#FF5C5C",  (new Random().nextInt(2)) == 1 ? true : false,
+                        "1、新增皮皮虾板块\n" + "2、新增皮皮狗板块\n"+ "3、新增皮皮你板块",
+                        new OnEventListenner.OnUpdateClickListenner() {
+                            @Override
+                            public void onClick(View view, View progress) {
+                                ProgressBar progressBar = (ProgressBar) progress;
+                                progressBar.setProgress(80);
                             }
                         });
                 break;
