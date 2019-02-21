@@ -4,9 +4,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-import pop.hl.com.poplibrary.BasePop;
-import pop.hl.com.poplibrary.PopView;
-import pop.hl.com.poplibrary.ScreenUtil;
+import pop.hl.com.poplibrary.BasePopView;
+import pop.hl.com.poplibrary.OnEventListenner;
+import pop.hl.com.poplibrary.base.BasePop;
+import pop.hl.com.poplibrary.utils.ScreenUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -45,78 +46,79 @@ public class MainActivity extends AppCompatActivity {
         }
 
         ///< 点击事件走起
-        PopView.OnClickListenner onClickListenner = new PopView.OnClickListenner() {
+        OnEventListenner.OnBaseClickListenner onClickListenner = new OnEventListenner.OnBaseClickListenner() {
             @Override
             public void onClick(View view) {
                 if (view.getId() == R.id.ap_leftBtn ||
-                    view.getId() == R.id.ap_rightBtn) {
+                        view.getId() == R.id.ap_rightBtn) {
                     builder.dissmiss();
                 }
             }
         };
+
         switch (view.getId()) {
             case R.id.am_lefttop_btn:           ///< Achor右下角缩放显示
-                builder = PopView.show(this,
+                builder = BasePopView.show(this,
                         view, R.layout.activity_pop,
                         ScreenUtil.getScreenW(this) / 2, 500,
-                        PopView.ANIMATION.SCALE, onClickListenner,
-                        PopView.GRAVITY.LEFTTOP_TO_RIGHTBOTTOM);
+                        BasePopView.ANIMATION.SCALE, onClickListenner,
+                        BasePopView.GRAVITY.LEFTTOP_TO_RIGHTBOTTOM);
                 break;
             case R.id.am_righttop_btn:      ///< Achor左下角缩放显示
-                builder = PopView.show(this,
+                builder = BasePopView.show(this,
                         view, R.layout.activity_pop,
                         ScreenUtil.getScreenW(this) / 2, 500,
-                        PopView.ANIMATION.SCALE, onClickListenner,
-                        PopView.GRAVITY.RIGHTTOP_TO_LEFTBOTTOM);
+                        BasePopView.ANIMATION.SCALE, onClickListenner,
+                        BasePopView.GRAVITY.RIGHTTOP_TO_LEFTBOTTOM);
                 break;
             case R.id.am_leftbottom_btn:    ///< Achor右上角缩放显示
-                builder = PopView.show(this,
+                builder = BasePopView.show(this,
                         view, R.layout.activity_pop,
                         ScreenUtil.getScreenW(this) / 2, 500,
-                        PopView.ANIMATION.SCALE, onClickListenner,
-                        PopView.GRAVITY.LEFTBOTTOM_TO_RIGHTTOP);
+                        BasePopView.ANIMATION.SCALE, onClickListenner,
+                        BasePopView.GRAVITY.LEFTBOTTOM_TO_RIGHTTOP);
                 break;
             case R.id.am_rightbottom_btn:   ///< Achor左上角缩放显示
-                builder = PopView.show(this,
+                builder = BasePopView.show(this,
                         view, R.layout.activity_pop,
                         ScreenUtil.getScreenW(this) / 2, 500,
-                        PopView.ANIMATION.SCALE, onClickListenner,
-                        PopView.GRAVITY.RIGHTBOTTOM_TO_LEFTTOP);
+                        BasePopView.ANIMATION.SCALE, onClickListenner,
+                        BasePopView.GRAVITY.RIGHTBOTTOM_TO_LEFTTOP);
                 break;
             case R.id.am_center_btn:        ///< 居中缩放显示
-                builder = PopView.show(this,
+                builder = BasePopView.show(this,
                         view, R.layout.activity_pop,
                         ScreenUtil.getScreenW(this) / 2, 500,
-                        PopView.ANIMATION.SCALE, onClickListenner,
-                        PopView.SIMPLE_GRAVITY.CENTER_IN_PARENT);
+                        BasePopView.ANIMATION.SCALE, onClickListenner,
+                        BasePopView.SIMPLE_GRAVITY.CENTER_IN_PARENT);
                 break;
             case R.id.am_top_btn:       ///< 从上往下平移显示
-                builder = PopView.show(this,
+                builder = BasePopView.show(this,
                         view, R.layout.activity_pop,
                         ScreenUtil.getScreenW(this), 500,
-                        PopView.ANIMATION.TRANSLATE, onClickListenner,
-                        PopView.SIMPLE_GRAVITY.FROM_TOP);
+                        BasePopView.ANIMATION.TRANSLATE, onClickListenner,
+                        BasePopView.SIMPLE_GRAVITY.FROM_TOP);
                 break;
             case R.id.am_bottom_btn:    ///< 从下往上平移显示
-                builder = PopView.show(this,
+                builder = BasePopView.show(this,
                         view, R.layout.activity_pop,
                         ScreenUtil.getScreenW(this), 500,
-                        PopView.ANIMATION.TRANSLATE, onClickListenner,
-                        PopView.SIMPLE_GRAVITY.FROM_BOTTOM);
+                        BasePopView.ANIMATION.TRANSLATE, onClickListenner,
+                        BasePopView.SIMPLE_GRAVITY.FROM_BOTTOM);
                 break;
             case R.id.am_left_btn:  ///< 从左往右平移显示
-                builder = PopView.show(this,
+                builder = BasePopView.show(this,
                         view, R.layout.activity_pop,
                         ScreenUtil.getScreenW(this) / 4, ScreenUtil.getScreenH(this),
-                        PopView.ANIMATION.TRANSLATE, onClickListenner,
-                        PopView.SIMPLE_GRAVITY.FROM_LEFT);
+                        BasePopView.ANIMATION.TRANSLATE, onClickListenner,
+                        BasePopView.SIMPLE_GRAVITY.FROM_LEFT);
                 break;
             case R.id.am_right_btn: ///< 从右往左平移显示
-                builder = PopView.show(this,
+                builder = BasePopView.show(this,
                         view, R.layout.activity_pop,
                         ScreenUtil.getScreenW(this) / 4, ScreenUtil.getScreenH(this),
-                        PopView.ANIMATION.TRANSLATE, onClickListenner,
-                        PopView.SIMPLE_GRAVITY.FROM_RIGHT);
+                        BasePopView.ANIMATION.TRANSLATE, onClickListenner,
+                        BasePopView.SIMPLE_GRAVITY.FROM_RIGHT);
                 break;
         }
         ///< 显示测试
@@ -126,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         //                .setWidthAndHeight(ScreenUtil.getScreenW(this), 500)
         //                .setOutsideTouchable(false)
         //                .setBackgroundDrawable(0xff00aa00)
-        //                .setOnClickEvent(new PopView.OnClickListenner() {
+        //                .setOnClickEvent(new BasePopView.OnClickListenner() {
         //                    @Override
         //                    public void onClick(View view) {
         //                        if (view.getId() == R.id.ap_leftBtn){
@@ -134,26 +136,26 @@ public class MainActivity extends AppCompatActivity {
         //                        }
         //                    }
         //                })
-        //                .setAnimation(PopView.ANIMATION.TRANSLATE)
+        //                .setAnimation(BasePopView.ANIMATION.TRANSLATE)
         //                //.show(view, Gravity.LEFT);
         //                //.showAsDropDown(view, 10, 0, Gravity.LEFT);
         //                //.showLocation(view, Gravity.LEFT | Gravity.TOP, 100, 600);
         //                //.show(view.getRootView(), Gravity.RIGHT); ///< view.getRootView() - 页面根布局
         //
-        //                //.show(PopView.GRAVITY.CENTER_IN_PARENT);
-        //                //.show(PopView.GRAVITY.CENTER_IN_PARENT);
-        //                .show(PopView.SIMPLE_GRAVITY.FROM_BOTTOM);
+        //                //.show(BasePopView.GRAVITY.CENTER_IN_PARENT);
+        //                //.show(BasePopView.GRAVITY.CENTER_IN_PARENT);
+        //                .show(BasePopView.SIMPLE_GRAVITY.FROM_BOTTOM);
         ///< 封装创建显示
-        //        builder = PopView.show(this,
+        //        builder = BasePopView.show(this,
         //                view, R.layout.activity_pop,
         //                ScreenUtil.getScreenW(this), 500,
-        //                PopView.ANIMATION.SCALE, new PopView.OnClickListenner() {
+        //                BasePopView.ANIMATION.SCALE, new BasePopView.OnClickListenner() {
         //                    @Override
         //                    public void onClick(View view) {
         //                        if (view.getId() == R.id.ap_leftBtn) {
         //                            builder.dissmiss();
         //                        }
         //                    }
-        //                }, PopView.SIMPLE_GRAVITY.FROM_BOTTOM);
+        //                }, BasePopView.SIMPLE_GRAVITY.FROM_BOTTOM);
     }
 }

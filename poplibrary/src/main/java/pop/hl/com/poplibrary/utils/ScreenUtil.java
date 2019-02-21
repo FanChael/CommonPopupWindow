@@ -1,4 +1,4 @@
-package pop.hl.com.poplibrary;
+package pop.hl.com.poplibrary.utils;
 
 import android.content.Context;
 import android.util.DisplayMetrics;
