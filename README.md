@@ -1,5 +1,6 @@
 # CommonPopupWindow
-Popular popupwindow in the market and customized.
+Popular popupwindow in the market and customized.  
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.0.4) ](https://bintray.com/resetmyself/holdon/commonpop/1.0.4/link)  
 
 （结合市面流行的弹窗样式+支持自定义布局）. 
 # Description
@@ -345,7 +346,7 @@ i. 从右往左平移显示
 #### --> [更新弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
 
 # ATTENTION 
->Animation：
+>Animation:  
 1.基于控件方位(GRAVITY)显示的方式-平移动画无效  
 2.基于简单上下左右平移(SIMPLE_GRAVITY)显示的方式-缩放无效  
 3.居中显示方式-只有居中缩放动画  
