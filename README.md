@@ -44,6 +44,8 @@ Popular popupwindow in the market and customized.
 # Import Library  
 >For gradle:  
 ```Java
+//1.0.1 自定义
+implementation 'com.hl:poplibrary:1.0.1'
 //1.0.2 自定义+分享弹窗
 implementation 'com.hl:poplibrary:1.0.2'
 //1.0.3 自定义+分享弹窗+注册登录弹窗
