@@ -37,7 +37,7 @@ public class UpdatePopView {
      * @return
      */
     public static BasePop.Builder showNormalUpdate(Context _context, View _achor,
-                                                   int _titleBgId, int _h_dived_w,
+                                                   int _titleBgId, float _h_dived_w,
                                                    String _allColor, boolean _bforce,
                                                    String _updateMessage,
                                                    OnEventListenner.OnUpdateClickListenner _onUpdateClickListenner) {
@@ -56,7 +56,7 @@ public class UpdatePopView {
         private BasePop.Builder builder = null;
         private int titleBgId;
         private String allColor;
-        private int h_dived_w;
+        private float h_dived_w;
         private boolean bforce;
         private String updateMessage;
         private GradientDrawable gradientDrawable;
@@ -66,7 +66,7 @@ public class UpdatePopView {
         }
 
         public Builder create(int _titleBgId, String _allColor,
-                              int _h_dived_w, boolean _bforce,
+                              float _h_dived_w, boolean _bforce,
                               String _updateMessage, View _achor) {
             this.allColor = _allColor;
             this.titleBgId = _titleBgId;
@@ -110,21 +110,30 @@ public class UpdatePopView {
                 negativeTv.setVisibility(View.GONE);
             }
             int windowW = ScreenUtil.getScreenW(contextWeakReference.get())* 7/10;
+            ///< 弹窗宽度为屏幕的7/10
             ScreenUtil.setConstraintLayoutWH(updateContentRoot, windowW, -1);
-            if (h_dived_w > 0){
-                ScreenUtil.setConstraintLayoutWH(topBgIv, windowW, windowW * h_dived_w);
-            }
+
+            ///< 升级提示
             message.setText(updateMessage);
 
             ///< 设置主题
+            ///< 设置主题 - 设置按钮和进度条颜色
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                 updateBtn.setBackground(gradientDrawable);
             }else{
                 updateBtn.setBackgroundDrawable(gradientDrawable);
             }
             ProgressUtil.setColors(progress, BasePop.bgColor, Color.parseColor(allColor));
+            ///< 设置主题 - 设置抬头主题图片
             if (-1 != titleBgId){
+                ///< 大于0才进行宽高设置
+                if (Math.abs(h_dived_w) > 1e-6){
+                    ScreenUtil.setConstraintLayoutWH(topBgIv, windowW, (int) (windowW * h_dived_w));
+                }
                 topBgIv.setImageDrawable(contextWeakReference.get().getResources().getDrawable(titleBgId));
+            }else{
+                ScreenUtil.setConstraintLayoutWH(topBgIv, windowW, (int) (windowW * (204.0f/450.0f)));
+                topBgIv.setImageDrawable(contextWeakReference.get().getResources().getDrawable(R.drawable.update_bg_app_top));
             }
             ///< 取消更新
             negativeTv.setOnClickListener(new View.OnClickListener() {

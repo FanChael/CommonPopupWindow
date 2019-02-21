@@ -228,7 +228,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.am_normal_update_btn:        ///< 经典更新弹窗
                 builder = UpdatePopView.showNormalUpdate(this, view,
-                        R.drawable.update_bg_app_top, 204/450,
+                        R.drawable.update_bg_app_top, 204.0f/450.0f,
                         "#FF5C5C",  (new Random().nextInt(2)) == 1 ? true : false,
                         "1、新增皮皮虾板块\n" + "2、新增皮皮狗板块\n"+ "3、新增皮皮你板块",
                         new OnEventListenner.OnUpdateClickListenner() {
