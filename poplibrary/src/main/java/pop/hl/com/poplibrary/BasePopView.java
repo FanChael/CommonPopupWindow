@@ -114,9 +114,7 @@ public class BasePopView {
                     .setView(_layoutResId)
                     .setOutsideTouchable(bOutsideTouchable);
         }
-        if (_popW > 0 && _popH > 0){
-            builder.setWidthAndHeight(_popW, _popH);
-        }
+        builder.setWidthAndHeight(_popW, _popH);
         if (-1 != _backColor){
             builder.setBackgroundDrawable(_backColor);
         }
