@@ -143,14 +143,23 @@ public class BasePop extends PopupWindow {
          * @return
          */
         public Builder setWidthAndHeight(int width, int height) {
-            if (width == 0 || height == 0) {
+            if (width == 0 && height == 0) {
                 ///< 如果没设置宽高，默认是WRAP_CONTENT
                 basePop.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
                 basePop.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
             } else if (width == -1 && height == -1) {
                 basePop.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
                 basePop.setHeight(ViewGroup.LayoutParams.MATCH_PARENT);
-            } else {
+            }else if (width > 0 && height == 0) {
+                basePop.setWidth(width);
+                basePop.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+            }else if (width == -1 && height == 0) {
+                basePop.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+                basePop.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+            }else if (width > 0 && height == -1) {
+                basePop.setWidth(width);
+                basePop.setHeight(ViewGroup.LayoutParams.MATCH_PARENT);
+            }else {
                 basePop.setWidth(width);
                 basePop.setHeight(height);
             }
