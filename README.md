@@ -28,7 +28,7 @@ Popular popupwindow in the market and customized.
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.20_add_normalupdate.gif) 
 
 ~V1.0.1.4  
-- 2019.02.22 -  - 添加App更新模块
+- 2019.02.22 -  - 添加App更新模块  
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/2019.02.22_updateapp.gif) 
 
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app_update.apk)
