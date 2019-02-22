@@ -8,19 +8,13 @@ Popular popupwindow in the market and customized.
 
 >(其他配置待续)
 
->目前集成库后apk大小约增加了196KB(默认分享图片资源总大小约100KB)
-
 # Feature  
 
 >支持自定义布局(所有点击事件统一回调)  
 
->底部分享弹窗-结合市面流行样式(目前两种主流样式，如需增加请issue)
-
->注册登录弹窗基本样式(登录可以设置显示多种组合样式)
-
 >更新弹窗(目前经典样式)
 
->基于更新弹窗+Rx家族的App更新模块1.0.1.4(只包含自定义1.0.1+更新弹窗1.0.4) (计划中)
+>基于更新弹窗+Rx家族的App更新模块1.0.1.4(只包含自定义1.0.1+更新弹窗1.0.4)
 
 # Effect  
 >总的效果 
@@ -28,37 +22,24 @@ Popular popupwindow in the market and customized.
 ~V1.0.1 
 - 2019.02.14 -  - 自定义布局  
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif)  
-  
-~V1.0.2   
-- 2019.02.16 -  - 添加分享弹窗  
-![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.16_add_shareboard.gif) 
-
-~V1.0.3   
-- 2019.02.19 -  - 添加注册登录弹窗  
-![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.19_add_loginregister.gif) 
 
 ~V1.0.4   
 - 2019.02.20 -  - 添加经典更新弹窗  
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.20_add_normalupdate.gif) 
 
-##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
+~V1.0.1.4  
+- 2019.02.22 -  - 添加App更新模块
+![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.22_updateapp.gif) 
+
+##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app_update.apk)
 
 # Import Library  
 >For gradle:  
 ```Java
 //1.0.1 自定义
 implementation 'com.hl:poplibrary:1.0.1'
-//1.0.2 自定义+分享弹窗
-implementation 'com.hl:poplibrary:1.0.2'
-//1.0.3 自定义+分享弹窗+注册登录弹窗
-implementation 'com.hl:poplibrary:1.0.3'
-//1.0.4 自定义+分享弹窗+注册登录弹窗+更新弹窗
-implementation 'com.hl:poplibrary:1.0.4'
-                                            
-//依赖过可以忽略（使用分享弹窗需要依赖）/1.0.2
-implementation 'com.android.support:recyclerview-v7:28.0.0'//看你版本
-//依赖过可以忽略（使用注册登录弹窗需要依赖）/1.0.3
-implementation 'com.android.support:design:28.+'//看你版本
+//1.0.4 更新弹窗模块
+implementation 'com.hl:poplibrary:1.0.1.4'
 ```
 >Or in maven:
 ```Java
@@ -71,9 +52,8 @@ implementation 'com.android.support:design:28.+'//看你版本
 ```
 # 传送门  
 > 使用
-* [分享弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/share_guid.md)
-* [注册登录弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
 * [更新弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/updagrade_guid.md)
+* [APP更新使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/appupdate_guid.md)
 
 > Hold on！
 * [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)

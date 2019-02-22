@@ -20,21 +20,6 @@ public class OnEventListenner {
     public interface OnBaseListenner{
         void onDissmiss();
     }
-    /**
-     * 底部分享弹窗点击事件回调
-     */
-    public interface OnShareClickListenner{
-        void onClick(View view, int pos);
-    }
-    /**
-     * 登录注册弹窗点击事件回调
-     * parmas - 表示当前弹窗对应的编辑框的内容（从上之下)的数组值
-     *        - 如果没有编辑框，则返回的是null(无编辑框内容返回)
-     * callback_type - 是各个按钮点击类型LgRgPopView.CALLBACK_TYPE
-     */
-    public interface OnLRClickListenner{
-        void onClick(View view, String[] parmas, LgRgPopView.CALLBACK_TYPE callback_type);
-    }
 
     /**
      * 更新弹窗点击事件回调
