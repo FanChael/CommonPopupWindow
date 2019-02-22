@@ -29,7 +29,7 @@ Popular popupwindow in the market and customized.
 
 ~V1.0.1.4  
 - 2019.02.22 -  - 添加App更新模块
-![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.22_updateapp.gif) 
+![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/2019.02.22_updateapp.gif) 
 
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app_update.apk)
 
@@ -63,7 +63,7 @@ implementation 'org.greenrobot:eventbus:3.0.0'
 * [APP更新使用](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/library/appupdate_guid.md)
 
 > Hold on！
-* [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)
+* [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/library/update_guid.md)
 * [学习博客](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/study_guid.md)
 
 # API
