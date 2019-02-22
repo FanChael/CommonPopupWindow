@@ -18,7 +18,9 @@ Popular popupwindow in the market and customized.
 
 >注册登录弹窗基本样式(登录可以设置显示多种组合样式)
 
->更新弹窗 TODO
+>更新弹窗(目前经典样式)
+
+>基于更新弹窗+Rx家族的App更新模块1.0.1.4(只包含自定义1.0.1+更新弹窗1.0.4) (计划中)
 
 # Effect  
 >总的效果 

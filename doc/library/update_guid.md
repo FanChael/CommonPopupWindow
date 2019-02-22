@@ -7,6 +7,9 @@
 >1.添加分享弹窗，提供SharePopView调用类
 >2.PopView类修改为BasePopView类
 >3.事件处理单独提出为OnEventListenner类(提供自定义布局控件点击回调接口、弹窗消失回调接口、分享弹窗点击回调接口)
-# V 1.0.0/1.0.1(废弃)
+# V 1.0.1
+>1.修改自定义布局提供类为BasePopView
+>2.独立出事件回调提供类为OnEventListenner
+# V 1.0.0(废弃)
 >1.添加自定义弹窗布局加载类BasePop，提供PopView调用类
 >2.添加自定义布局控件点击事件回调接口BasePop.OnBaseClickListenner
