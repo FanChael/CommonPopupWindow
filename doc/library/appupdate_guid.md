@@ -39,7 +39,7 @@
                 "#FF5C5C", (new Random().nextInt(2)) == 1 ? true : false,
                 "1、新增皮皮虾板块\n" + "2、新增皮皮狗板块\n"+ "3、新增皮皮你板块");
         ///< 开启更新，设置apk下载地址+通知栏图标+fileProvider直接启动安装+(apk的md5、apk的versionCode、apk大小)进行已经下载安装包的校验，防止重复下载
-        appUpdate.startAppUpdate("https://raw.githubusercontent.com/FanChael/CommonPopupWindow/master/doc/app-debug.apk",
+        appUpdate.startAppUpdate("https://raw.githubusercontent.com/FanChael/CommonPopupWindow/appupdate/doc/app_update.apk",
                         R.drawable.share_circle,
                         "pop.hl.com.commonpopupwindow.fileProvider",
                         "6FA8D1B09B54580CA69FA7BF62D0C4A7", 1,2978651);
@@ -77,7 +77,7 @@
 
 # 特别说明
 > R.drawable.update_bg_app_top的样式(顶部部分透明)建议如下比较好看 
-![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/update_bg_app_top.png)  
+![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/update_bg_app_top.png)  
  
 > 图片的显示高度是根据传入的图片的比例(204/450 = 图片的高度/宽度)进行设置的，所以才不会变形  
 

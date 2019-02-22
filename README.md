@@ -1,6 +1,6 @@
 # CommonPopupWindow
 Popular popupwindow in the market and customized.  
-[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.0.4) ](https://bintray.com/resetmyself/holdon/commonpop/1.0.4/link)  
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.0.1.4) ](https://bintray.com/resetmyself/holdon/commonpop/1.0.1.4/link)
 
 （结合市面流行的弹窗样式+支持自定义布局）. 
 # Description
@@ -40,6 +40,13 @@ Popular popupwindow in the market and customized.
 implementation 'com.hl:poplibrary:1.0.1'
 //1.0.4 更新弹窗模块
 implementation 'com.hl:poplibrary:1.0.1.4'
+   
+///< retrofit+rxjava - 下载处理
+implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+implementation 'io.reactivex.rxjava2:rxjava:2.1.10'
+implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+///< eventbus3.0 - 进度通知
+implementation 'org.greenrobot:eventbus:3.0.0'
 ```
 >Or in maven:
 ```Java
@@ -53,7 +60,7 @@ implementation 'com.hl:poplibrary:1.0.1.4'
 # 传送门  
 > 使用
 * [更新弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/updagrade_guid.md)
-* [APP更新使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/appupdate_guid.md)
+* [APP更新使用](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/library/appupdate_guid.md)
 
 > Hold on！
 * [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)
@@ -325,9 +332,9 @@ i. 从右往左平移显示
 ```
 #### --> [分享弹窗](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/share_guid.md)
 
-#### --> [注册登录弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
-
 #### --> [更新弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
+
+#### --> [APP更新使用](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/library/appupdate_guid.md)
 
 # ATTENTION 
 >Animation:  
