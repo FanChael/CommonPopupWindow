@@ -38,11 +38,41 @@
         AppUpdate appUpdate = new AppUpdate(this, view, R.drawable.update_bg_app_top, 204.0f/450.0f,
                 "#FF5C5C", (new Random().nextInt(2)) == 1 ? true : false,
                 "1、新增皮皮虾板块\n" + "2、新增皮皮狗板块\n"+ "3、新增皮皮你板块");
-        ///< 开启更新，设置apk下载地址+通知栏图标+fileProvider直接启动安装+(md5、versionCode、apk大小)进行已经下载安装包的校验，防止重复下载
+        ///< 开启更新，设置apk下载地址+通知栏图标+fileProvider直接启动安装+(apk的md5、apk的versionCode、apk大小)进行已经下载安装包的校验，防止重复下载
         appUpdate.startAppUpdate("https://raw.githubusercontent.com/FanChael/CommonPopupWindow/master/doc/app-debug.apk",
                         R.drawable.share_circle,
                         "pop.hl.com.commonpopupwindow.fileProvider",
                         "6FA8D1B09B54580CA69FA7BF62D0C4A7", 1,2978651);
+```
+
+# xml关键配置参考
+```Java
+        <uses-permission android:name="android.permission.INTERNET" />
+
+
+        <!-- 下载服务 -->
+        <service
+            android:name="pop.hl.com.poplibrary.update.DownLoadIntentService"
+            android:enabled="true"
+            android:exported="true" />
+        <!-- FileProvider -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="pop.hl.com.commonpopupwindow.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+```
+##### file_paths.xml
+```Java
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <external-path path="Android/data/pop.hl.com.commonpopupwindow/" name="files_root" />
+    <external-path path="." name="external_storage_root" />
+</paths>
 ```
 
 # 特别说明
@@ -53,4 +83,4 @@
 
 > 主体的颜色值建议与置顶的主题图片配色一致比较协调  
 
-> AppUpdate的startAppUpdate方法的后三个参数(用作校验apk包)，可以传null,-1,-1等，每次点击更新都重新下载;
+> AppUpdate的startAppUpdate方法的后三个参数(从后台获取，用作校验apk包)可以传null,-1,-1等，每次点击更新都重新下载;
