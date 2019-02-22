@@ -3,15 +3,8 @@ Popular popupwindow in the market and customized.
 [ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.0.1.4) ](https://bintray.com/resetmyself/holdon/commonpop/1.0.1.4/link)
 
 （结合市面流行的弹窗样式+支持自定义布局）. 
-# Description
->poplibrary引入即可调用弹窗
-
->(其他配置待续)
 
 # Feature  
-
->支持自定义布局(所有点击事件统一回调)  
-
 >更新弹窗(目前经典样式)
 
 >基于更新弹窗+Rx家族的App更新模块1.0.1.4(只包含自定义1.0.1+更新弹窗1.0.4)
