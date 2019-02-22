@@ -20,7 +20,7 @@ Popular popupwindow in the market and customized.
 
 >更新弹窗(目前经典样式)
 
->基于更新弹窗+Rx家族的App更新模块1.0.1.4(只包含自定义1.0.1+更新弹窗1.0.4) (计划中)
+>基于更新弹窗+Rx家族的App更新模块1.0.1.4(只包含自定义1.0.1+更新弹窗1.0.4) (第一版完成)
 
 # Effect  
 >总的效果 
@@ -41,6 +41,10 @@ Popular popupwindow in the market and customized.
 - 2019.02.20 -  - 添加经典更新弹窗  
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.20_add_normalupdate.gif) 
 
+~V1.0.1.4   
+- 2019.02.22 -  - APP更新模块  
+![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/2019.02.22_updateapp.gif) 
+
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
 
 # Import Library  
@@ -54,6 +58,7 @@ implementation 'com.hl:poplibrary:1.0.2'
 implementation 'com.hl:poplibrary:1.0.3'
 //1.0.4 自定义+分享弹窗+注册登录弹窗+更新弹窗
 implementation 'com.hl:poplibrary:1.0.4'
+//1.0.1.4 App更新请移步传送门
                                             
 //依赖过可以忽略（使用分享弹窗需要依赖）/1.0.2
 implementation 'com.android.support:recyclerview-v7:28.0.0'//看你版本
@@ -74,6 +79,7 @@ implementation 'com.android.support:design:28.+'//看你版本
 * [分享弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/share_guid.md)
 * [注册登录弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
 * [更新弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/updagrade_guid.md)
+* [APP更新使用](https://github.com/FanChael/CommonPopupWindow/tree/appupdate)
 
 > Hold on！
 * [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)
@@ -343,11 +349,7 @@ i. 从右往左平移显示
               BasePopView.ANIMATION.TRANSLATE, null,
               BasePopView.GRAVITY.FROM_RIGHT);
 ```
-#### --> [分享弹窗](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/share_guid.md)
-
-#### --> [注册登录弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
-
-#### --> [更新弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
+#### --> 其他使用请移步传送门
 
 # ATTENTION 
 >Animation:  
