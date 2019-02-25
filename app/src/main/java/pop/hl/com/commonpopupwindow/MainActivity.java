@@ -2,6 +2,7 @@ package pop.hl.com.commonpopupwindow;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -236,45 +237,18 @@ public class MainActivity extends AppCompatActivity {
                             public void onClick(View view, View progress) {
                                 ProgressBar progressBar = (ProgressBar) progress;
                                 progressBar.setProgress(80);
+                                builder.dissmiss();
                             }
                         });
                 break;
         }
-        ///< 显示测试
-        //        builder =  new BasePop.Builder(this)
-        //                .create(view)
-        //                .setView(R.layout.activity_pop)
-        //                .setWidthAndHeight(ScreenUtil.getScreenW(this), 500)
-        //                .setOutsideTouchable(false)
-        //                .setBackgroundDrawable(0xff00aa00)
-        //                .setOnClickEvent(new BasePopView.OnEventListenner() {
-        //                    @Override
-        //                    public void onClick(View view) {
-        //                        if (view.getId() == R.id.ap_leftBtn){
-        //                            builder.dissmiss();
-        //                        }
-        //                    }
-        //                })
-        //                .setAnimation(BasePopView.ANIMATION.TRANSLATE)
-        //                //.show(view, Gravity.LEFT);
-        //                //.showAsDropDown(view, 10, 0, Gravity.LEFT);
-        //                //.showLocation(view, Gravity.LEFT | Gravity.TOP, 100, 600);
-        //                //.show(view.getRootView(), Gravity.RIGHT); ///< view.getRootView() - 页面根布局
-        //
-        //                //.show(BasePopView.GRAVITY.CENTER_IN_PARENT);
-        //                //.show(BasePopView.GRAVITY.CENTER_IN_PARENT);
-        //                .show(BasePopView.SIMPLE_GRAVITY.FROM_BOTTOM);
-        ///< 封装创建显示
-        //        builder = BasePopView.show(this,
-        //                view, R.layout.activity_pop,
-        //                ScreenUtil.getScreenW(this), 500,
-        //                BasePopView.ANIMATION.SCALE, new BasePopView.OnEventListenner() {
-        //                    @Override
-        //                    public void onClick(View view) {
-        //                        if (view.getId() == R.id.ap_leftBtn) {
-        //                            builder.dissmiss();
-        //                        }
-        //                    }
-        //                }, BasePopView.SIMPLE_GRAVITY.FROM_BOTTOM);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+            return true;
+        }
+        return false;
     }
 }
