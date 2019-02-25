@@ -78,7 +78,7 @@ public class UpdatePopView {
                     -1, null, allColor);
             this.builder = new BasePop.Builder(contextWeakReference.get())
                     .create(_achor)
-                    .setOutsideTouchable(true)
+                    .setOutsideTouchable(false)
                     .setWidthAndHeight(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
             return this;
         }
