@@ -3,6 +3,7 @@ package pop.hl.com.commonpopupwindow;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ProgressBar;
 import java.util.Random;
@@ -53,5 +54,13 @@ public class MainActivity extends AppCompatActivity {
                         R.drawable.share_circle,
                         "pop.hl.com.commonpopupwindow.fileProvider",
                         "6FA8D1B09B54580CA69FA7BF62D0C4A7", 1,2978651);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
