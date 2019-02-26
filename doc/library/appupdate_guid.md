@@ -47,7 +47,9 @@
 
 # xml关键配置参考
 ```Java
-        <uses-permission android:name="android.permission.INTERNET" />
+        <!-- 网络+安装 -->
+        <uses-permission android:name="android.permission.INTERNET" /> 
+        <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
 
 
         <!-- 下载服务 -->
