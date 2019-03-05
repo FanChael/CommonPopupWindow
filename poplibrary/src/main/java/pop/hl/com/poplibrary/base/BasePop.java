@@ -138,6 +138,8 @@ public class BasePop extends PopupWindow {
 
         /**
          * 设置宽高 0 - 表示内容包裹 -1 - 表示全屏  其他表示具体宽高
+         *         (width == -1)height -10000 - 表示高度为控件之下到屏幕底部的高度
+         *         (width == -1)height -20000 - 表示高度为控件之上到屏幕顶部的高度
          * @param width
          * @param height
          * @return
