@@ -35,4 +35,12 @@
         <item name="android:windowEnterAnimation">@anim/anim_pop_translate_in_from_right</item>
         <item name="android:windowExitAnimation">@anim/anim_pop_translate_out_from_left</item>
     </style>
+    <style name="style_fold_pop_animation_from_top">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_fold_in_from_top</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_fold_out_from_bottom</item>
+    </style>
+    <style name="style_fold_pop_animation_from_bottom">
+        <item name="android:windowEnterAnimation">@anim/anim_pop_fold_in_from_bottom</item>
+        <item name="android:windowExitAnimation">@anim/anim_pop_fold_out_from_top</item>
+    </style>
 </resources>

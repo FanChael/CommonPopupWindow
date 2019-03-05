@@ -33,9 +33,12 @@ public class BasePopView {
 
     /**
      * 显示动画
+     * SCALE - 缩放
+     * TRANSLATE - 平移
+     * FOLD - 折叠
      */
     public enum ANIMATION {
-        NONE, SCALE, TRANSLATE
+        NONE, SCALE, TRANSLATE, FOLD
     }
 
     /**

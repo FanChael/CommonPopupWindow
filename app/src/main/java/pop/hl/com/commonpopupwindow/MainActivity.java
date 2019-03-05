@@ -15,6 +15,7 @@ import pop.hl.com.poplibrary.LgRgPopView;
 import pop.hl.com.poplibrary.SharePopView;
 import pop.hl.com.poplibrary.OnEventListenner;
 import pop.hl.com.poplibrary.UpdatePopView;
+import pop.hl.com.poplibrary.VListPopView;
 import pop.hl.com.poplibrary.base.BasePop;
 import pop.hl.com.poplibrary.BasePopView;
 import pop.hl.com.poplibrary.utils.ScreenUtil;
@@ -238,6 +239,27 @@ public class MainActivity extends AppCompatActivity {
                                 ProgressBar progressBar = (ProgressBar) progress;
                                 progressBar.setProgress(80);
                                 builder.dissmiss();
+                            }
+                        });
+                break;
+            case R.id.am_vlist_btn:
+                List<String> vDataList = new ArrayList<>();
+                vDataList.add("别急呀！");
+                vDataList.add("别急呀！");
+                vDataList.add("别急呀！");
+                vDataList.add("别急呀！");
+                vDataList.add("别急呀！");
+                vDataList.add("别急呀！");
+                vDataList.add("别急呀！");
+                vDataList.add("别急呀！");
+                vDataList.add("别急呀！");
+                vDataList.add("END！");
+                builder = new VListPopView.Builder(this)
+                        .create(view, ScreenUtil.getScreenH(this)/8)
+                        .show(vDataList, new OnEventListenner.OnVListClickListenner() {
+                            @Override
+                            public void onClick(View view, int pos) {
+
                             }
                         });
                 break;

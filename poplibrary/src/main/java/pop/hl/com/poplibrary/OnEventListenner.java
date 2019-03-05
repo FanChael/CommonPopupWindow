@@ -44,4 +44,11 @@ public class OnEventListenner {
     public interface OnUpdateClickListenner{
         void onClick(View view, View progressBar);
     }
+
+    /**
+     * 垂直列表弹窗条目点击事件
+     */
+    public interface OnVListClickListenner{
+        void onClick(View view, int pos);
+    }
 }
