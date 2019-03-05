@@ -8,7 +8,7 @@ Popular popupwindow in the market and customized.
 
 >(其他配置待续)
 
->目前集成库后apk大小约增加了196KB(默认分享图片资源总大小约100KB)
+>目前集成库后apk大小约增加了200KB(默认分享图片资源总大小约100KB)
 
 # Feature  
 
@@ -21,6 +21,8 @@ Popular popupwindow in the market and customized.
 >更新弹窗(目前经典样式)
 
 >基于更新弹窗+Rx家族的App更新模块1.0.1.4(只包含自定义1.0.1+更新弹窗1.0.4) (第一版完成)
+
+>增加垂直列表弹窗(上下伸缩显示动画)
 
 # Effect  
 >总的效果 
@@ -45,6 +47,10 @@ Popular popupwindow in the market and customized.
 - 2019.02.22 -  - APP更新模块  
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/2019.02.22_updateapp.gif) 
 
+~V1.0.6.1  
+- 2019.03.05 -  - 垂直列表弹窗 
+![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.05_vlistpop.gif) 
+
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
 
 # Import Library  
@@ -59,6 +65,8 @@ implementation 'com.hl:poplibrary:1.0.3'
 //1.0.4 自定义+分享弹窗+注册登录弹窗+更新弹窗
 implementation 'com.hl:poplibrary:1.0.4'
 //1.0.1.4 App更新请移步传送门
+//1.0.6.1 自定义+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗 + 增加了伸缩显示动画 - 下一版决定整合完善为一个版本！
+implementation 'com.hl:poplibrary:1.0.6.1'
                                             
 //依赖过可以忽略（使用分享弹窗需要依赖）/1.0.2
 implementation 'com.android.support:recyclerview-v7:28.0.0'//看你版本
@@ -80,6 +88,7 @@ implementation 'com.android.support:design:28.+'//看你版本
 * [注册登录弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
 * [更新弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/updagrade_guid.md)
 * [APP更新使用](https://github.com/FanChael/CommonPopupWindow/tree/appupdate)
+* [垂直列表弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/vlist_guid.md)
 
 > Hold on！
 * [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)
