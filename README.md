@@ -48,7 +48,7 @@ Popular popupwindow in the market and customized.
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/2019.02.22_updateapp.gif) 
 
 ~V1.0.6.1  
-- 2019.03.05 -  - 垂直列表弹窗 
+- 2019.03.05 -  - 垂直列表弹窗    
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.05_vlistpop.gif) 
 
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
