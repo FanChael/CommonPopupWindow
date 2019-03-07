@@ -24,6 +24,8 @@ Popular popupwindow in the market and customized.
 
 >增加垂直列表弹窗(上下伸缩显示动画)
 
+>增加警告类弹窗(目前增加经典样式A)
+
 # Effect  
 >总的效果 
  
@@ -51,6 +53,10 @@ Popular popupwindow in the market and customized.
 - 2019.03.05 -  - 垂直列表弹窗    
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.05_vlistpop.gif) 
 
+~V1.0.6.2  
+- 2019.03.05 -  - 警告类弹窗    
+![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.07_alertpop.gif) 
+
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
 
 # Import Library  
@@ -67,6 +73,8 @@ implementation 'com.hl:poplibrary:1.0.4'
 //1.0.1.4 App更新请移步传送门
 //1.0.6.1 自定义+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗 + 增加了伸缩显示动画 - 下一版决定整合完善为一个版本！
 implementation 'com.hl:poplibrary:1.0.6.1'
+//1.0.6.2 自定义+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A
+implementation 'com.hl:poplibrary:1.0.6.2'
                                             
 //依赖过可以忽略（使用分享弹窗需要依赖）/1.0.2
 implementation 'com.android.support:recyclerview-v7:28.0.0'//看你版本
@@ -89,6 +97,7 @@ implementation 'com.android.support:design:28.+'//看你版本
 * [更新弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/updagrade_guid.md)
 * [APP更新使用](https://github.com/FanChael/CommonPopupWindow/tree/appupdate)
 * [垂直列表弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/vlist_guid.md)
+* [警告类弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/alert_guid.md)
 
 > Hold on！
 * [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)

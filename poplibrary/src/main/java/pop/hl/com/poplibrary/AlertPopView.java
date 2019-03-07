@@ -33,7 +33,7 @@ public class AlertPopView {
      * @param _message - 提示消息
      * @param _nagative - 左侧文本框按钮内容
      * @param _positive - 右侧文本框按钮内容
-     * @param _allColor - 主题颜色
+     * @param _allColor - 主题颜色 - 目前针对左右按钮
      * @param _bCancelDismiss - 点击取消是否弹窗直接消失
      * @param _onAlertClickListenner
      * @return
@@ -54,7 +54,7 @@ public class AlertPopView {
      * @param _achor
      * @param _title - 标题
      * @param _message - 提示消息
-     * @param _allColor - 主题颜色
+     * @param _allColor - 主题颜色 - 目前针对左右按钮
      * @param _onAlertClickListenner
      * @return
      */
