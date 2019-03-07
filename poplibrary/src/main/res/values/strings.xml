@@ -3,6 +3,7 @@
 
     <!--状态-->
     <string name="cancel">取消</string>
+    <string name="ok">确定</string>
     <string name="share_to">分享至</string>
 
     <!--登录注册-->

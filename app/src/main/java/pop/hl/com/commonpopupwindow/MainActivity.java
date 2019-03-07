@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+import pop.hl.com.poplibrary.AlertPopView;
 import pop.hl.com.poplibrary.LgRgPopView;
 import pop.hl.com.poplibrary.SharePopView;
 import pop.hl.com.poplibrary.OnEventListenner;
@@ -60,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (view.getId() == R.id.ap_leftBtn ||
-                    view.getId() == R.id.ap_rightBtn) {
+                        view.getId() == R.id.ap_rightBtn) {
                     builder.dissmiss();
                 }
             }
@@ -196,7 +197,7 @@ public class MainActivity extends AppCompatActivity {
                         new OnEventListenner.OnLRClickListenner() {
                             @Override
                             public void onClick(View view, String[] parmas, LgRgPopView.CALLBACK_TYPE callback_type) {
-                                switch (callback_type){
+                                switch (callback_type) {
                                     case CLICK_REGISTER:
                                         Toast.makeText(MainActivity.this, "callback_type=" + callback_type + " parmas" + parmas[0], Toast.LENGTH_SHORT).show();
                                         break;
@@ -208,13 +209,13 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.am_login_btn:        ///< 居中缩放显示
                 builder = LgRgPopView.showLogin(this,
-                        view,LgRgPopView.LOGIN_TYPE.THIRD_ACCOUNT
+                        view, LgRgPopView.LOGIN_TYPE.THIRD_ACCOUNT
                                 | LgRgPopView.LOGIN_TYPE.PHONE_VERICODE,
                         "#f0008DCF",
                         new OnEventListenner.OnLRClickListenner() {
                             @Override
                             public void onClick(View view, String[] parmas, LgRgPopView.CALLBACK_TYPE callback_type) {
-                                switch (callback_type){
+                                switch (callback_type) {
                                     case QQ_LOGIN:
                                         Toast.makeText(MainActivity.this, "点击了QQ登录", Toast.LENGTH_SHORT).show();
                                         break;
@@ -230,9 +231,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.am_normal_update_btn:        ///< 经典更新弹窗
                 builder = UpdatePopView.showNormalUpdate(this, view,
-                        R.drawable.update_bg_app_top, 204.0f/450.0f,
-                        "#FF5C5C",  (new Random().nextInt(2)) == 1 ? true : false,
-                        "1、新增皮皮虾板块\n" + "2、新增皮皮狗板块\n"+ "3、新增皮皮你板块",
+                        R.drawable.update_bg_app_top, 204.0f / 450.0f,
+                        "#FF5C5C", (new Random().nextInt(2)) == 1 ? true : false,
+                        "1、新增皮皮虾板块\n" + "2、新增皮皮狗板块\n" + "3、新增皮皮你板块",
                         new OnEventListenner.OnUpdateClickListenner() {
                             @Override
                             public void onClick(View view, View progress) {
@@ -255,10 +256,19 @@ public class MainActivity extends AppCompatActivity {
                 vDataList.add("别急呀！");
                 vDataList.add("END！");
                 builder = new VListPopView.Builder(this)
-                        .create(view, ScreenUtil.getScreenH(this)/8)
+                        .create(view, ScreenUtil.getScreenH(this) / 8)
                         .show(vDataList, new OnEventListenner.OnVListClickListenner() {
                             @Override
                             public void onClick(View view, int pos) {
+
+                            }
+                        });
+                break;
+            case R.id.am_alertA_btn:
+                builder = AlertPopView.showALertTypeA(this, view,
+                        "提示", "是否确认删除!", "#f0008DCF", new OnEventListenner.OnAlertClickListenner() {
+                            @Override
+                            public void onClick(View view, AlertPopView.CALLBACK_TYPE callback_type) {
 
                             }
                         });
@@ -268,7 +278,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK){
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
             return true;
         }
         return false;

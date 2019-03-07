@@ -99,9 +99,9 @@
         android:layout_height="wrap_content"
         android:onClick="testPop"
         android:text="分享弹窗"
-        app:layout_constraintBottom_toTopOf="@id/am_left_btn"
+        app:layout_constraintBottom_toTopOf="@+id/am_left_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/am_lefttop_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/am_lefttop_btn" />
 
     <Button
         android:id="@+id/am_share_ftecent_btn"
@@ -109,9 +109,9 @@
         android:layout_height="wrap_content"
         android:onClick="testPop"
         android:text="分享弹窗_仿腾讯"
-        app:layout_constraintBottom_toTopOf="@id/am_right_btn"
+        app:layout_constraintBottom_toTopOf="@+id/am_right_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/am_righttop_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/am_righttop_btn" />
 
     <Button
         android:id="@+id/am_register_btn"
@@ -119,9 +119,9 @@
         android:layout_height="wrap_content"
         android:onClick="testPop"
         android:text="注册弹窗"
-        app:layout_constraintBottom_toTopOf="@id/am_right_btn"
+        app:layout_constraintBottom_toTopOf="@+id/am_right_btn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/am_leftbottom_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/am_leftbottom_btn" />
 
     <Button
         android:id="@+id/am_login_btn"
@@ -129,9 +129,9 @@
         android:layout_height="wrap_content"
         android:onClick="testPop"
         android:text="登录弹窗"
-        app:layout_constraintBottom_toTopOf="@id/am_right_btn"
+        app:layout_constraintBottom_toTopOf="@+id/am_right_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/am_rightbottom_btn" />
+        app:layout_constraintTop_toBottomOf="@+id/am_rightbottom_btn" />
 
     <Button
         android:id="@+id/am_normal_update_btn"
@@ -139,10 +139,10 @@
         android:layout_height="wrap_content"
         android:onClick="testPop"
         android:text="经典更新弹窗"
-        app:layout_constraintBottom_toTopOf="@id/am_center_btn"
-        app:layout_constraintStart_toEndOf="@id/am_share_btn"
-        app:layout_constraintEnd_toStartOf="@id/am_share_ftecent_btn"
-        app:layout_constraintTop_toBottomOf="@id/am_top_btn" />
+        app:layout_constraintBottom_toTopOf="@+id/am_center_btn"
+        app:layout_constraintEnd_toStartOf="@+id/am_share_ftecent_btn"
+        app:layout_constraintStart_toEndOf="@+id/am_share_btn"
+        app:layout_constraintTop_toBottomOf="@+id/am_top_btn" />
 
     <Button
         android:id="@+id/am_vlist_btn"
@@ -150,8 +150,18 @@
         android:layout_height="wrap_content"
         android:onClick="testPop"
         android:text="垂直列表自定义样式弹窗"
-        app:layout_constraintBottom_toTopOf="@id/am_bottom_btn"
-        app:layout_constraintStart_toEndOf="@id/am_register_btn"
-        app:layout_constraintEnd_toStartOf="@id/am_login_btn"
-        app:layout_constraintTop_toBottomOf="@id/am_center_btn" />
+        app:layout_constraintBottom_toTopOf="@+id/am_bottom_btn"
+        app:layout_constraintEnd_toStartOf="@+id/am_login_btn"
+        app:layout_constraintStart_toEndOf="@+id/am_register_btn"
+        app:layout_constraintTop_toBottomOf="@+id/am_center_btn" />
+
+    <Button
+        android:id="@+id/am_alertA_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testPop"
+        android:text="警告弹窗A"
+        app:layout_constraintBottom_toTopOf="@+id/am_share_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/am_righttop_btn" />
 </android.support.constraint.ConstraintLayout>
