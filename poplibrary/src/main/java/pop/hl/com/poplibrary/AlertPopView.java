@@ -44,7 +44,9 @@ public class AlertPopView {
                                                  String _allColor, boolean _bCancelDismiss,
                                                  OnEventListenner.OnAlertClickListenner _onAlertClickListenner) {
         return new Builder(_context)
-                .create(_title, _message, _nagative, _positive, _allColor, _bCancelDismiss, _achor)
+                .create(_title, _message, _nagative,
+                        _positive, _allColor, _bCancelDismiss,
+                        false, _achor)
                 .showAlertA(_onAlertClickListenner);
     }
 
@@ -66,7 +68,32 @@ public class AlertPopView {
                 .create(_title, _message,
                         _context.getResources().getString(R.string.cancel),
                         _context.getResources().getString(R.string.ok),
-                        _allColor, true, _achor)
+                        _allColor, true,
+                        false, _achor)
+                .showAlertA(_onAlertClickListenner);
+    }
+
+    /**
+     * 显示警告弹窗(A类型警告弹窗) - 只有确定按钮
+     * @param _context
+     * @param _achor
+     * @param _title - 标题
+     * @param _message - 提示消息
+     * @param _allColor - 主题颜色 - 目前针对左右按钮
+     * @param _bOkDismiss - 点击确定是否消失弹窗
+     * @param _onAlertClickListenner
+     * @return
+     */
+    public static BasePop.Builder showALertTypeA(Context _context, View _achor,
+                                                 String _title, String _message,
+                                                 String _allColor, boolean _bOkDismiss,
+                                                 OnEventListenner.OnAlertClickListenner _onAlertClickListenner) {
+        return new Builder(_context)
+                .create(_title, _message,
+                         "",
+                        _context.getResources().getString(R.string.ok),
+                        _allColor, true,
+                        _bOkDismiss, _achor)
                 .showAlertA(_onAlertClickListenner);
     }
 
@@ -79,9 +106,10 @@ public class AlertPopView {
         private WeakReference<Context> contextWeakReference;
         private BasePop.Builder builder = null;
         private String titleS, messageS;
-        private String nagativeS, positiveS;
+        private String nagativeS = "", positiveS;
         private String allColor;
         private boolean bCancelDismiss;
+        private boolean bOkDismiss;
 
         public Builder(Context _context) {
             this.contextWeakReference = new WeakReference<>(_context);
@@ -90,6 +118,7 @@ public class AlertPopView {
         public Builder create(String _title, String _message,
                               String _nagative, String _positive,
                               String _allColor, boolean _bCancelDismis,
+                              boolean _bOkDismiss,
                               View _achor) {
             this.allColor = _allColor;
             this.titleS = _title;
@@ -97,6 +126,7 @@ public class AlertPopView {
             this.positiveS = _positive;
             this.nagativeS = _nagative;
             this.bCancelDismiss = _bCancelDismis;
+            this.bOkDismiss = _bOkDismiss;
             this.builder = new BasePop.Builder(contextWeakReference.get())
                     .create(_achor)
                     .setOutsideTouchable(false)
@@ -120,9 +150,15 @@ public class AlertPopView {
             TextView title = popView.findViewById(R.id.pa_title);
             TextView message = popView.findViewById(R.id.pa_message);
             TextView negativeTv = popView.findViewById(R.id.pa_negativeTv);
+            ConstraintLayout negative = popView.findViewById(R.id.pa_negative);
             TextView positiveTv = popView.findViewById(R.id.pa_positiveTv);
 
-            int windowW = ScreenUtil.getScreenW(contextWeakReference.get()) * 3 / 4;
+            int windowW;
+            if (null == nagativeS || nagativeS.equals("")){
+                windowW = ScreenUtil.getScreenW(contextWeakReference.get()) * 1 / 2;
+            }else{
+                windowW = ScreenUtil.getScreenW(contextWeakReference.get()) * 3 / 4;
+            }
             ///< 内容宽度为屏幕的3/4
             ScreenUtil.setConstraintLayoutWH(alertContentRoot, windowW, -1);
 
@@ -131,6 +167,10 @@ public class AlertPopView {
             message.setText(messageS);
             negativeTv.setText(nagativeS);
             positiveTv.setText(positiveS);
+
+            if (null == nagativeS || nagativeS.equals("")){
+                negative.setVisibility(View.GONE);
+            }
 
             ///< 设置主题
             negativeTv.setTextColor(Color.parseColor(allColor));
@@ -157,6 +197,10 @@ public class AlertPopView {
                 public void onClick(View v) {
                     if (null != _onAlertClickListenner){
                         _onAlertClickListenner.onClick(v, CALLBACK_TYPE.OK);
+                    }
+
+                    if (bOkDismiss && (null == nagativeS || nagativeS.equals(""))){
+                        builder.dissmiss();
                     }
                 }
             });

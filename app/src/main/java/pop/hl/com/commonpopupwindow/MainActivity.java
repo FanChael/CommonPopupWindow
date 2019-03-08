@@ -266,7 +266,8 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.am_alertA_btn:
                 builder = AlertPopView.showALertTypeA(this, view,
-                        "提示", "是否确认删除!", "#f0008DCF", new OnEventListenner.OnAlertClickListenner() {
+                        "提示", "是否确认删除!", "#f0008DCF",
+                        true, new OnEventListenner.OnAlertClickListenner() {
                             @Override
                             public void onClick(View view, AlertPopView.CALLBACK_TYPE callback_type) {
 

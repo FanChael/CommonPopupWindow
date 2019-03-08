@@ -70,11 +70,12 @@ implementation 'com.hl:poplibrary:1.0.2'
 implementation 'com.hl:poplibrary:1.0.3'
 //1.0.4 自定义+分享弹窗+注册登录弹窗+更新弹窗
 implementation 'com.hl:poplibrary:1.0.4'
-//1.0.1.4 App更新请移步传送门
+//1.0.1.4 App更新模块(请移步传送门)
+implementation 'com.hl:poplibrary:1.0.1.4'
 //1.0.6.1 自定义+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗 + 增加了伸缩显示动画 - 下一版决定整合完善为一个版本！
 implementation 'com.hl:poplibrary:1.0.6.1'
 //1.0.6.2 自定义+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A
-implementation 'com.hl:poplibrary:1.0.6.2'
+implementation 'com.hl:poplibrary:1.0.6.3'
                                             
 //依赖过可以忽略（使用分享弹窗需要依赖）/1.0.2
 implementation 'com.android.support:recyclerview-v7:28.0.0'//看你版本
