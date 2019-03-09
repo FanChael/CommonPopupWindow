@@ -1,6 +1,6 @@
 # CommonPopupWindow
 Popular popupwindow in the market and customized.  
-[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.1.0) ](https://bintray.com/resetmyself/holdon/commonpop/1.1.0/link)
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.1.1) ](https://bintray.com/resetmyself/holdon/commonpop/1.1.1/link)
 [ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.14.0) ](https://bintray.com/resetmyself/holdon/commonpop/1.14.0/link) 
 [ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.0) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.0/link)   
 
@@ -22,7 +22,7 @@ Popular popupwindow in the market and customized.
 
 >更新弹窗(目前经典样式)
 
->基于更新弹窗+Rx家族的App更新模块1.0.1.4(只包含自定义1.0.1+更新弹窗1.0.4) (第一版完成)
+>基于更新弹窗+Rx家族的App更新模块1.14.0(只包含自定义1.0.1+更新弹窗1.0.4) (第一版完成)
 
 >增加垂直列表弹窗(上下伸缩显示动画)
 
@@ -62,8 +62,8 @@ Popular popupwindow in the market and customized.
 # Import Library  
 >For gradle:  
 ```Java
-//1.1.0 自定义布局
-implementation 'com.hl:poplibrary:1.1.0'
+//1.1.1 自定义布局
+implementation 'com.hl:poplibrary:1.1.1'
 //1.14.0 App更新模块(请移步传送门)
 implementation 'com.hl:poplibrary:1.14.0'
 //2.0.0 自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A
