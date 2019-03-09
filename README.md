@@ -1,6 +1,6 @@
 # CommonPopupWindow - APP更新模块
 Popular popupwindow in the market and customized.  
-[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.0.1.4) ](https://bintray.com/resetmyself/holdon/commonpop/1.0.1.4/link)
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.14.0) ](https://bintray.com/resetmyself/holdon/commonpop/1.14.0/link)
 
 （结合市面流行的弹窗样式+支持自定义布局）. 
 
