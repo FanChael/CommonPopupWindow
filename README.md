@@ -1,6 +1,6 @@
 # CommonPopupWindow
 Popular popupwindow in the market and customized.  
-[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.1.0) ](https://bintray.com/resetmyself/holdon/commonpop/1.1.0/link)
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.1.1) ](https://bintray.com/resetmyself/holdon/commonpop/1.1.1/link)
 
 （结合市面流行的弹窗样式+支持自定义布局+需求/问题请Issue）. 
 # Description
@@ -14,8 +14,8 @@ Popular popupwindow in the market and customized.
 
 # Effect  
 >总的效果  
-~V1.1.0 
-- 2019.02.14 -  - 自定义布局  
+~V1.1.1 
+- 2019.02.14 - 2019.03.09  - 自定义布局  
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif) 
 
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
@@ -23,14 +23,14 @@ Popular popupwindow in the market and customized.
 # Import Library  
 >For gradle:  
 ```Java
-implementation 'com.hl:poplibrary:1.1.0'
+implementation 'com.hl:poplibrary:1.1.1'
 ```
 >Or in maven:
 ```Java
 <dependency>
     <groupId>com.hl</groupId>
     <artifactId>poplibrary</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1</version>
     <type>pom</type>
 </dependency>
 ```
