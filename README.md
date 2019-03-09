@@ -60,11 +60,11 @@ Popular popupwindow in the market and customized.
 # Import Library  
 >For gradle:  
 ```Java
-//1.0.1 自定义
-implementation 'com.hl:poplibrary:1.0.1'
+//1.1.0 自定义布局
+implementation 'com.hl:poplibrary:1.1.0'
 //1.14.0 App更新模块(请移步传送门)
 implementation 'com.hl:poplibrary:1.14.0'
-//2.0.0 自定义+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A
+//2.0.0 自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A
 implementation 'com.hl:poplibrary:2.0.0'
                                             
 //依赖过可以忽略（分享弹窗用到了相关组件）/2.x.x都需要依赖
