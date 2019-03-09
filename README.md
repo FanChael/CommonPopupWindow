@@ -1,7 +1,8 @@
 # CommonPopupWindow
 Popular popupwindow in the market and customized.
-
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.1.0) ](https://bintray.com/resetmyself/holdon/commonpop/1.1.0/link)
 （结合市面流行的弹窗样式+支持自定义布局+需求/问题请Issue）. 
+
 # Description
 >poplibrary引入即可调用弹窗
 
