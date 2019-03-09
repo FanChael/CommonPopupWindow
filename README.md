@@ -56,7 +56,7 @@ Popular popupwindow in the market and customized.
     <th>原生警告弹窗</th>
   </tr>
   <tr>
-    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.22_updateapp.gif" width="228" height="374" alt="App更新模块"/></td>
+    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/2019.02.22_updateapp.gif" width="228" height="374" alt="App更新模块"/></td>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.05_vlistpop.gif" width="228" height="374" alt="垂直列表弹窗"/></td>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.07_alertpop.gif" width="228" height="374" alt="警告弹窗"/></td>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.09_alertpop.gif" width="228" height="374" alt="原生警告弹窗"/></td>
