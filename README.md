@@ -50,10 +50,12 @@ Popular popupwindow in the market and customized.
   <tr>
     <th>垂直列表弹窗</th>
     <th>警告弹窗</th>
+    <th>原生警告弹窗</th>
   </tr>
   <tr>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.05_vlistpop.gif" width="228" height="374" alt="垂直列表弹窗"/></td>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.07_alertpop.gif" width="228" height="374" alt="警告弹窗"/></td>
+    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.09_alertpop.gif" width="228" height="374" alt="警告弹窗"/></td>
   </tr>
 </table>  
 
@@ -66,13 +68,19 @@ Popular popupwindow in the market and customized.
 implementation 'com.hl:poplibrary:1.1.1'
 //1.14.0 App更新模块
 implementation 'com.hl:poplibrary:1.14.0'
-//2.0.0 自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A(
-implementation 'com.hl:poplibrary:2.0.0'
+//2.0.1 自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗
+implementation 'com.hl:poplibrary:2.0.1'
                                             
 //依赖过可以忽略（分享弹窗用到了相关组件）/2.x.x都需要依赖
 implementation 'com.android.support:recyclerview-v7:28.0.0'//看你版本
 //依赖过可以忽略（注册登录弹窗用到了相关组件）/2.x.x都需要依赖
 implementation 'com.android.support:design:28.+'//看你版本
+```
+
+>Hisotry:
+```Java 
+//2.0.0 自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A
+implementation 'com.hl:poplibrary:2.0.0'
 ```
 ```Java 
 //不再分多版本迭代更新
@@ -87,7 +95,7 @@ implementation 'com.android.support:design:28.+'//看你版本
 //1.0.6.2 自定义+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A
 //implementation 'com.hl:poplibrary:1.0.6.3'
 ```
->Or in maven:
+>Or in maven:  
 ```Java
 <dependency>
     <groupId>com.hl</groupId>

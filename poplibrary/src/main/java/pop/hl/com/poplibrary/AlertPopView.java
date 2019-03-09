@@ -1,8 +1,10 @@
 package pop.hl.com.poplibrary;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Color;
 import android.support.constraint.ConstraintLayout;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -27,14 +29,15 @@ public class AlertPopView {
 
     /**
      * 显示警告弹窗(A类型警告弹窗)
+     *
      * @param _context
      * @param _achor
-     * @param _title - 标题
-     * @param _message - 提示消息
-     * @param _nagative - 左侧文本框按钮内容
-     * @param _positive - 右侧文本框按钮内容
-     * @param _allColor - 主题颜色 - 目前针对左右按钮
-     * @param _bCancelDismiss - 点击取消是否弹窗直接消失
+     * @param _title                 - 标题
+     * @param _message               - 提示消息
+     * @param _nagative              - 左侧文本框按钮内容
+     * @param _positive              - 右侧文本框按钮内容
+     * @param _allColor              - 主题颜色 - 目前针对左右按钮
+     * @param _bCancelDismiss        - 点击取消是否弹窗直接消失
      * @param _onAlertClickListenner
      * @return
      */
@@ -52,11 +55,12 @@ public class AlertPopView {
 
     /**
      * 显示警告弹窗(A类型警告弹窗)
+     *
      * @param _context
      * @param _achor
-     * @param _title - 标题
-     * @param _message - 提示消息
-     * @param _allColor - 主题颜色 - 目前针对左右按钮
+     * @param _title                 - 标题
+     * @param _message               - 提示消息
+     * @param _allColor              - 主题颜色 - 目前针对左右按钮
      * @param _onAlertClickListenner
      * @return
      */
@@ -75,12 +79,13 @@ public class AlertPopView {
 
     /**
      * 显示警告弹窗(A类型警告弹窗) - 只有确定按钮
+     *
      * @param _context
      * @param _achor
-     * @param _title - 标题
-     * @param _message - 提示消息
-     * @param _allColor - 主题颜色 - 目前针对左右按钮
-     * @param _bOkDismiss - 点击确定是否消失弹窗
+     * @param _title                 - 标题
+     * @param _message               - 提示消息
+     * @param _allColor              - 主题颜色 - 目前针对左右按钮
+     * @param _bOkDismiss            - 点击确定是否消失弹窗
      * @param _onAlertClickListenner
      * @return
      */
@@ -90,11 +95,34 @@ public class AlertPopView {
                                                  OnEventListenner.OnAlertClickListenner _onAlertClickListenner) {
         return new Builder(_context)
                 .create(_title, _message,
-                         "",
+                        "",
                         _context.getResources().getString(R.string.ok),
                         _allColor, true,
                         _bOkDismiss, _achor)
                 .showAlertA(_onAlertClickListenner);
+    }
+
+    /**
+     * 显示原生简洁弹窗
+     *
+     * @param _context
+     * @param _title                 - 标题
+     * @param _message               - 提示消息
+     * @param _nagative              - 左侧文本框按钮内容 - 可以传null，默认不显示左侧按钮
+     * @param _positive              - 右侧文本框按钮内容- 可以传null，默认不显示右侧按钮
+     * @param _allColor              - 统一主题颜色 - 可以传null，默认系统颜色
+     * @param bCanceledOnTouchOutside - 点击外部是否消失
+     * @param _onAlertClickListenner
+     * @return
+     */
+    public static AlertDialog showOriginAlert(Context _context,
+                                              String _title, String _message,
+                                              String _nagative, String _positive,
+                                              String _allColor, boolean bCanceledOnTouchOutside,
+                                              OnEventListenner.OnAlertClickListenner _onAlertClickListenner) {
+        return new Builder(_context)
+                .create(_title, _message, _nagative, _positive, _allColor, bCanceledOnTouchOutside)
+                .showOrigin(_onAlertClickListenner);
     }
 
     /*
@@ -105,10 +133,12 @@ public class AlertPopView {
     public static class Builder {
         private WeakReference<Context> contextWeakReference;
         private BasePop.Builder builder = null;
+        private AlertDialog.Builder adBuilder;
         private String titleS, messageS;
         private String nagativeS = "", positiveS;
         private String allColor;
         private boolean bCancelDismiss;
+        private boolean bCanceledOnTouchOutside = false;
         private boolean bOkDismiss;
 
         public Builder(Context _context) {
@@ -134,6 +164,19 @@ public class AlertPopView {
             return this;
         }
 
+        public Builder create(String _title, String _message,
+                              String _nagative, String _positive,
+                              String _allColor, boolean _bCanceledOnTouchOutside) {
+            this.allColor = _allColor;
+            this.titleS = _title;
+            this.messageS = _message;
+            this.positiveS = _positive;
+            this.nagativeS = _nagative;
+            this.bCanceledOnTouchOutside = _bCanceledOnTouchOutside;
+            this.adBuilder = new AlertDialog.Builder(contextWeakReference.get());
+            return this;
+        }
+
         /*
          *@Description: 显示样式A的警告弹窗
          *@Author: hl
@@ -154,9 +197,9 @@ public class AlertPopView {
             TextView positiveTv = popView.findViewById(R.id.pa_positiveTv);
 
             int windowW;
-            if (null == nagativeS || nagativeS.equals("")){
+            if (null == nagativeS || nagativeS.equals("")) {
                 windowW = ScreenUtil.getScreenW(contextWeakReference.get()) * 1 / 2;
-            }else{
+            } else {
                 windowW = ScreenUtil.getScreenW(contextWeakReference.get()) * 3 / 4;
             }
             ///< 内容宽度为屏幕的3/4
@@ -168,7 +211,7 @@ public class AlertPopView {
             negativeTv.setText(nagativeS);
             positiveTv.setText(positiveS);
 
-            if (null == nagativeS || nagativeS.equals("")){
+            if (null == nagativeS || nagativeS.equals("")) {
                 negative.setVisibility(View.GONE);
             }
 
@@ -183,8 +226,8 @@ public class AlertPopView {
                 public void onClick(View v) {
                     if (bCancelDismiss) {
                         builder.dissmiss();
-                    }else{
-                        if (null != _onAlertClickListenner){
+                    } else {
+                        if (null != _onAlertClickListenner) {
                             _onAlertClickListenner.onClick(v, CALLBACK_TYPE.CNACEL);
                         }
                     }
@@ -195,11 +238,11 @@ public class AlertPopView {
             positiveTv.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (null != _onAlertClickListenner){
+                    if (null != _onAlertClickListenner) {
                         _onAlertClickListenner.onClick(v, CALLBACK_TYPE.OK);
                     }
 
-                    if (bOkDismiss && (null == nagativeS || nagativeS.equals(""))){
+                    if (bOkDismiss && (null == nagativeS || nagativeS.equals(""))) {
                         builder.dissmiss();
                     }
                 }
@@ -207,6 +250,46 @@ public class AlertPopView {
             builder.show(BasePopView.SIMPLE_GRAVITY.CENTER_IN_PARENT);
 
             return builder;
+        }
+
+        /**
+         * 显示原始简洁弹窗
+         *
+         * @param _onAlertClickListenner
+         * @return
+         */
+        public AlertDialog showOrigin(final OnEventListenner.OnAlertClickListenner _onAlertClickListenner) {
+            adBuilder.setTitle(titleS == null ? "标题" : titleS)
+                    .setMessage(messageS == null ? "消息内容" : messageS);
+            if (null != nagativeS && !nagativeS.equals("")) {
+                adBuilder.setNegativeButton(nagativeS, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (null != _onAlertClickListenner) {
+                            _onAlertClickListenner.onClick(null, CALLBACK_TYPE.CNACEL);
+                        }
+                    }
+                });
+            }
+            if (null != nagativeS && !nagativeS.equals("")) {
+                adBuilder.setPositiveButton(positiveS, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        if (null != _onAlertClickListenner) {
+                            _onAlertClickListenner.onClick(null, CALLBACK_TYPE.OK);
+                        }
+                    }
+                });
+            }
+            AlertDialog dialog = adBuilder.create();
+            dialog.setCanceledOnTouchOutside(bCanceledOnTouchOutside);
+            dialog.show();
+            ///< show之后设置主题颜色
+            if (null != allColor && !allColor.equals("")) {
+                dialog.getButton(dialog.BUTTON_NEGATIVE).setTextColor(Color.parseColor(allColor));
+                dialog.getButton(dialog.BUTTON_POSITIVE).setTextColor(Color.parseColor(allColor));
+            }
+            return dialog;
         }
     }
 }

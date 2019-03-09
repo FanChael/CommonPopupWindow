@@ -1,5 +1,6 @@
 package pop.hl.com.commonpopupwindow;
 
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -44,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     public native String stringFromJNI();
 
     private BasePop.Builder builder;
+    private AlertDialog alertDialog;
+
 
     /**
      * 弹窗显示测试
@@ -268,6 +271,30 @@ public class MainActivity extends AppCompatActivity {
                 builder = AlertPopView.showALertTypeA(this, view,
                         "提示", "是否确认删除!", "#f0008DCF",
                         true, new OnEventListenner.OnAlertClickListenner() {
+                            @Override
+                            public void onClick(View view, AlertPopView.CALLBACK_TYPE callback_type) {
+
+                            }
+                        });
+                break;
+            case R.id.am_alert_btn:
+                ///< 颜色可以不设置，默认系统颜色
+                alertDialog = AlertPopView.showOriginAlert(this,
+                        "升级啦！", "1.我是皮皮虾\n2.我是大皮皮虾\n2.xx银行就是这样的弹窗，蛮清爽的.",
+                        "取消", "确定",
+                        "#f0008DCF",false,
+                        new OnEventListenner.OnAlertClickListenner() {
+                            @Override
+                            public void onClick(View view, AlertPopView.CALLBACK_TYPE callback_type) {
+
+                            }
+                        });
+                ///< 可以nagative、postive，那样则不显示确定取消按钮
+                alertDialog = AlertPopView.showOriginAlert(this,
+                        null, null,
+                        null, null,
+                        null, true,
+                        new OnEventListenner.OnAlertClickListenner() {
                             @Override
                             public void onClick(View view, AlertPopView.CALLBACK_TYPE callback_type) {
 
