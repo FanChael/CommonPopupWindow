@@ -28,6 +28,8 @@ Popular popupwindow in the market and customized.
 
 >增加警告类弹窗(目前增加经典样式A)
 
+>增加原生警告弹窗
+
 # Effect  
 >总的效果 
   
@@ -48,14 +50,16 @@ Popular popupwindow in the market and customized.
 
 <table border="1">
   <tr>
+    <th>App更新模块</th>
     <th>垂直列表弹窗</th>
     <th>警告弹窗</th>
     <th>原生警告弹窗</th>
   </tr>
   <tr>
+    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.22_updateapp.gif" width="228" height="374" alt="App更新模块"/></td>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.05_vlistpop.gif" width="228" height="374" alt="垂直列表弹窗"/></td>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.07_alertpop.gif" width="228" height="374" alt="警告弹窗"/></td>
-    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.09_alertpop.gif" width="228" height="374" alt="警告弹窗"/></td>
+    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.09_alertpop.gif" width="228" height="374" alt="原生警告弹窗"/></td>
   </tr>
 </table>  
 
