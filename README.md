@@ -34,22 +34,22 @@ Popular popupwindow in the market and customized.
     <th>自定义布局</th>
     <th>分享弹窗</th>
     <th>注册登录弹窗</th>
+    <th>普通更新弹窗</th>
   </tr>
   <tr>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif" width="228" height="374" alt="自定义布局"/></td>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.16_add_shareboard.gif" width="228" height="374" alt="分享弹窗"/></td>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.19_add_loginregister.gif" width="228" height="374" alt="注册登录弹窗"/></td>
+    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.20_add_normalupdate.gif" width="228" height="374" alt="普通更新弹窗"/></td>
   </tr>
 </table> 
 
 <table border="1">
   <tr>
-    <th>普通更新弹窗</th>
     <th>垂直列表弹窗</th>
     <th>警告弹窗</th>
   </tr>
   <tr>
-    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.20_add_normalupdate.gif" width="228" height="374" alt="普通更新弹窗"/></td>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.05_vlistpop.gif" width="228" height="374" alt="垂直列表弹窗"/></td>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.07_alertpop.gif" width="228" height="374" alt="警告弹窗"/></td>
   </tr>
