@@ -7,7 +7,7 @@ Popular popupwindow in the market and customized.
 # Feature  
 >更新弹窗(目前经典样式)
 
->基于更新弹窗+Rx家族的App更新模块1.0.1.4(只包含自定义1.0.1+更新弹窗1.0.4)
+>基于更新弹窗+Rx家族的App更新模块1.14.0(只包含自定义1.0.1+更新弹窗1.0.4)
 
 # Effect  
 ~V1.0.1.4  
@@ -19,10 +19,7 @@ Popular popupwindow in the market and customized.
 # Import Library  
 >For gradle:  
 ```Java
-//1.0.1 自定义
-implementation 'com.hl:poplibrary:1.0.1'
-//1.0.4 更新弹窗模块
-implementation 'com.hl:poplibrary:1.0.1.4'
+implementation 'com.hl:poplibrary:1.14.0'
    
 ///< retrofit+rxjava - 下载处理
 implementation 'com.squareup.retrofit2:retrofit:2.3.0'
@@ -36,7 +33,7 @@ implementation 'org.greenrobot:eventbus:3.0.0'
 <dependency>
     <groupId>com.hl</groupId>
     <artifactId>poplibrary</artifactId>
-    <version>1.0.x</version>
+    <version>1.14.0</version>
     <type>pom</type>
 </dependency>
 ```

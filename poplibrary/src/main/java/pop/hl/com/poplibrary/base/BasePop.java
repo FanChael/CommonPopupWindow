@@ -138,6 +138,8 @@ public class BasePop extends PopupWindow {
 
         /**
          * 设置宽高 0 - 表示内容包裹 -1 - 表示全屏  其他表示具体宽高
+         *         (width == -1)height -10000 - 表示高度为控件之下到屏幕底部的高度
+         *         (width == -1)height -20000 - 表示高度为控件之上到屏幕顶部的高度
          * @param width
          * @param height
          * @return
@@ -159,7 +161,20 @@ public class BasePop extends PopupWindow {
             }else if (width > 0 && height == -1) {
                 basePop.setWidth(width);
                 basePop.setHeight(ViewGroup.LayoutParams.MATCH_PARENT);
-            }else {
+            }else if (width == -1 && height == -10000) {    ///< 高度为控件之下到屏幕底部的高度
+                int achorH = viewWeakReference.get().getMeasuredHeight();
+                int screenH = ScreenUtil.getScreenH(contextWeakReference.get());
+                int[] achorLocation = new  int[2] ;
+                viewWeakReference.get().getLocationInWindow(achorLocation);
+                basePop.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+                basePop.setHeight(screenH - achorLocation[1] - achorH - 1);
+            }else if (width == -1 && height == -20000) {    ///< 高度为控件之上到屏幕顶部的高度
+                int[] achorLocation = new  int[2] ;
+                viewWeakReference.get().getLocationInWindow(achorLocation);
+                basePop.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+                basePop.setHeight(achorLocation[1]);
+            }
+            else {
                 basePop.setWidth(width);
                 basePop.setHeight(height);
             }
@@ -331,6 +346,25 @@ public class BasePop extends PopupWindow {
                             break;
                         default:
                             basePop.setAnimationStyle(R.style.style_pop_animation_from_lefttop);
+                    }
+                    break;
+                case FOLD:
+                    switch (_gravity){
+                        case LEFTBOTTOM_TO_RIGHTTOP:
+                        case LEFTBOTTOM_TO_LEFTTOP:
+                            basePop.setAnimationStyle(R.style.style_fold_pop_animation_from_bottom);
+                            break;
+                        case RIGHTTOP_TO_RIGHTTOP:
+                        case RIGHTTOP_TO_RIGHTBOTTOM:
+                        case RIGHTTOP_TO_LEFTBOTTOM:
+                            basePop.setAnimationStyle(R.style.style_fold_pop_animation_from_top);
+                            break;
+                        case RIGHTBOTTOM_TO_LEFTTOP:
+                        case RIGHTBOTTOM_TO_RIGHTTOP:
+                            basePop.setAnimationStyle(R.style.style_fold_pop_animation_from_bottom);
+                            break;
+                        default:
+                            basePop.setAnimationStyle(R.style.style_fold_pop_animation_from_top);
                     }
                     break;
             }

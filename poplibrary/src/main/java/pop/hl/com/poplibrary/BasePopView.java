@@ -33,9 +33,12 @@ public class BasePopView {
 
     /**
      * 显示动画
+     * SCALE - 缩放
+     * TRANSLATE - 平移
+     * FOLD - 折叠
      */
     public enum ANIMATION {
-        NONE, SCALE, TRANSLATE
+        NONE, SCALE, TRANSLATE, FOLD
     }
 
     /**
@@ -55,9 +58,9 @@ public class BasePopView {
     public static BasePop.Builder show(Context _context, View _anchor,
                                        int _layoutResId, int _popW, int _popH,
                                        boolean bOutsideTouchable, int _backColor,
-                                       BasePopView.ANIMATION _animation,
+                                       ANIMATION _animation,
                                        OnEventListenner.OnBaseClickListenner _onClickListenner,
-                                       BasePopView.SIMPLE_GRAVITY _gravity){
+                                       SIMPLE_GRAVITY _gravity){
         return show(_context, _anchor, _layoutResId, _popW, _popH,
                 bOutsideTouchable, _backColor, _animation,
                 _onClickListenner, null, _gravity);
@@ -79,9 +82,9 @@ public class BasePopView {
     public static BasePop.Builder show(Context _context, View _anchor,
                                        int _layoutResId, int _popW, int _popH,
                                        boolean bOutsideTouchable, int _backColor,
-                                       BasePopView.ANIMATION _animation,
+                                       ANIMATION _animation,
                                        OnEventListenner.OnBaseClickListenner _onClickListenner,
-                                       BasePopView.GRAVITY _gravity){
+                                       GRAVITY _gravity){
         return show(_context, _anchor, _layoutResId, _popW, _popH,
                 bOutsideTouchable, _backColor, _animation,
                 _onClickListenner, _gravity, null);
@@ -104,9 +107,9 @@ public class BasePopView {
     private static BasePop.Builder show(Context _context, View _anchor,
                                         int _layoutResId, int _popW, int _popH,
                                         boolean bOutsideTouchable, int _backColor,
-                                        BasePopView.ANIMATION _animation,
+                                        ANIMATION _animation,
                                         OnEventListenner.OnBaseClickListenner _onClickListenner,
-                                        BasePopView.GRAVITY _gravity, BasePopView.SIMPLE_GRAVITY _sgravity){
+                                        GRAVITY _gravity, SIMPLE_GRAVITY _sgravity){
         BasePop.Builder builder = null;
         if (-1 != _layoutResId){
             builder = new BasePop.Builder(_context)
@@ -144,7 +147,7 @@ public class BasePopView {
     public static BasePop.Builder show(Context _context, View _anchor,
                                        int _layoutResId, int _popW, int _popH,
                                        OnEventListenner.OnBaseClickListenner _onClickListenner,
-                                       BasePopView.SIMPLE_GRAVITY _gravity){
+                                       SIMPLE_GRAVITY _gravity){
         return show(_context, _anchor,
                 _layoutResId, _popW, _popH,
                 false, BasePop.bgColor,
@@ -152,9 +155,9 @@ public class BasePopView {
     }
     public static BasePop.Builder show(Context _context, View _anchor,
                                        int _layoutResId, int _popW, int _popH,
-                                       BasePopView.ANIMATION animation,
+                                       ANIMATION animation,
                                        OnEventListenner.OnBaseClickListenner _onClickListenner,
-                                       BasePopView.SIMPLE_GRAVITY _gravity){
+                                       SIMPLE_GRAVITY _gravity){
         return show(_context, _anchor,
                 _layoutResId, _popW, _popH,
                 false, BasePop.bgColor,
@@ -163,7 +166,7 @@ public class BasePopView {
     public static BasePop.Builder show(Context _context, View _anchor,
                                        int _layoutResId, int _popW, int _popH,
                                        OnEventListenner.OnBaseClickListenner _onClickListenner,
-                                       BasePopView.GRAVITY _gravity){
+                                       GRAVITY _gravity){
         return show(_context, _anchor,
                 _layoutResId, _popW, _popH,
                 false, BasePop.bgColor,
@@ -171,9 +174,9 @@ public class BasePopView {
     }
     public static BasePop.Builder show(Context _context, View _anchor,
                                        int _layoutResId, int _popW, int _popH,
-                                       BasePopView.ANIMATION animation,
+                                       ANIMATION animation,
                                        OnEventListenner.OnBaseClickListenner _onClickListenner,
-                                       BasePopView.GRAVITY _gravity){
+                                       GRAVITY _gravity){
         return show(_context, _anchor,
                 _layoutResId, _popW, _popH,
                 false, BasePop.bgColor,
