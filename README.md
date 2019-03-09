@@ -14,7 +14,7 @@ Popular popupwindow in the market and customized.
 - 2019.02.22 -  - 添加App更新模块  
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/2019.02.22_updateapp.gif) 
 
-##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app_update.apk)
+##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/app_update.apk)
 
 # Import Library  
 >For gradle:  

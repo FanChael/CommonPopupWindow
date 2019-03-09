@@ -47,15 +47,17 @@
 
 # xml关键配置参考
 ```Java
-        <uses-permission android:name="android.permission.INTERNET" />
+        <!-- 网络+安装 -->
+        <uses-permission android:name="android.permission.INTERNET" /> 
+        <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES"/>
 
 
-        <!-- 下载服务 -->
+        <!-- 加入poplibrary库的下载服务 -->
         <service
             android:name="pop.hl.com.poplibrary.update.DownLoadIntentService"
             android:enabled="true"
             android:exported="true" />
-        <!-- FileProvider -->
+        <!-- FileProvider - pop.hl.com.commonpopupwindow替换为自己的包名-->
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="pop.hl.com.commonpopupwindow.fileProvider"
@@ -66,7 +68,7 @@
                 android:resource="@xml/file_paths" />
         </provider>
 ```
-##### file_paths.xml
+##### file_paths.xml - pop.hl.com.commonpopupwindow替换为自己的包名
 ```Java
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
