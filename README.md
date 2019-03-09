@@ -28,34 +28,14 @@ Popular popupwindow in the market and customized.
 
 # Effect  
 >总的效果 
- 
-~V1.0.1 
-- 2019.02.14 -  - 自定义布局  
-<img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif" width="228" height="374" alt="自定义布局"/>  
   
-~V1.0.2   
-- 2019.02.16 -  - 添加分享弹窗    
-![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.16_add_shareboard.gif) 
+<img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif" width="228" height="374" alt="自定义布局"/>
+<img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.16_add_shareboard.gif" width="228" height="374" alt="自定义布局"/>
+<img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.19_add_loginregister.gif" width="228" height="374" alt="自定义布局"/>
+<img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.20_add_normalupdate.gif" width="228" height="374" alt="自定义布局"/>  
 
-~V1.0.3   
-- 2019.02.19 -  - 添加注册登录弹窗  
-![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.19_add_loginregister.gif) 
-
-~V1.0.4   
-- 2019.02.20 -  - 添加经典更新弹窗  
-![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.20_add_normalupdate.gif) 
-
-~V1.0.1.4   
-- 2019.02.22 -  - APP更新模块  
-![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/2019.02.22_updateapp.gif) 
-
-~V1.0.6.1  
-- 2019.03.05 -  - 垂直列表弹窗    
-![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.05_vlistpop.gif) 
-
-~V1.0.6.2  
-- 2019.03.05 -  - 警告类弹窗    
-![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.07_alertpop.gif) 
+<img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.05_vlistpop.gif" width="228" height="374" alt="自定义布局"/>
+<img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.07_alertpop.gif" width="228" height="374" alt="自定义布局"/>  
 
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
 
