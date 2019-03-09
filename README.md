@@ -31,7 +31,7 @@ Popular popupwindow in the market and customized.
  
 ~V1.0.1 
 - 2019.02.14 -  - 自定义布局  
-<img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif" width="50%" height="50%" alt="自定义布局"/>  
+<img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif" width="228" height="374" alt="自定义布局"/>  
   
 ~V1.0.2   
 - 2019.02.16 -  - 添加分享弹窗    
