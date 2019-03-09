@@ -29,6 +29,21 @@ Popular popupwindow in the market and customized.
 # Effect  
 >总的效果 
   
+<table border="1">
+  <tr>
+    <th>自定义布局</th>
+    <th>分享弹窗</th>
+    <th>注册登录弹窗</th>
+    <th>普通更新弹窗</th>
+  </tr>
+  <tr>
+    <img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif" width="228" height="374" alt="自定义布局"/>
+    <img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.16_add_shareboard.gif" width="228" height="374" alt="自定义布局"/>
+    <img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.19_add_loginregister.gif" width="228" height="374" alt="自定义布局"/>
+    <img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.20_add_normalupdate.gif" width="228" height="374" alt="自定义布局"/>
+  </tr>
+</table> 
+ 
 <img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif" width="228" height="374" alt="自定义布局"/>
 <img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.16_add_shareboard.gif" width="228" height="374" alt="自定义布局"/>
 <img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.19_add_loginregister.gif" width="228" height="374" alt="自定义布局"/>
