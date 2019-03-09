@@ -1,7 +1,7 @@
 # CommonPopupWindow
 Popular popupwindow in the market and customized.
 
-（结合市面流行的弹窗样式+支持自定义布局）. 
+（结合市面流行的弹窗样式+支持自定义布局+需求/问题请Issue）. 
 # Description
 >poplibrary引入即可调用弹窗
 
@@ -9,15 +9,11 @@ Popular popupwindow in the market and customized.
 
 # Feature  
 
->支持自定义布局(所有点击事件统一回调)  
-
->底部分享弹窗-结合市面流行样式 TODO
-
->仿xxxx更新弹窗 TODO
+>自定义布局(所有点击事件统一回调)  
 
 # Effect  
 >总的效果  
-~V1.0.1 
+~V1.1.0 
 - 2019.02.14 -  - 自定义布局  
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif) 
 
@@ -26,14 +22,14 @@ Popular popupwindow in the market and customized.
 # Import Library  
 >For gradle:  
 ```Java
-implementation 'com.hl:poplibrary:1.0.1'
+implementation 'com.hl:poplibrary:1.1.0'
 ```
 >Or in maven:
 ```Java
 <dependency>
     <groupId>com.hl</groupId>
     <artifactId>poplibrary</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.0</version>
     <type>pom</type>
 </dependency>
 ```
@@ -66,6 +62,16 @@ b. 另外一种是简单的上下左右居中的位置显示
      public enum SIMPLE_GRAVITY {
          CENTER_IN_PARENT, FROM_BOTTOM, FROM_TOP,
          FROM_LEFT, FROM_RIGHT
+     }
+     
+     /**
+      * 显示动画
+      * SCALE - 缩放
+      * TRANSLATE - 平移
+      * FOLD - 折叠 - 从下往上/从上往下(暂不支持简单方位显示方式)
+      */
+     public enum ANIMATION {
+         NONE, SCALE, TRANSLATE, FOLD
      }
 ```
 
@@ -231,10 +237,57 @@ i. 从右往左平移显示
 1.基于控件方位(GRAVITY)显示的方式-平移动画无效  
 2.基于简单上下左右平移(SIMPLE_GRAVITY)显示的方式-缩放无效  
 3.居中显示方式-只有居中缩放动画  
-4.不需要动画传null即可
+4.不需要动画传null即可  
+5.注意下宽高设置的参数(有问题再完善)  
+```Java
+        /**
+         * 设置宽高 0 - 表示内容包裹 -1 - 表示全屏  其他表示具体宽高
+         *         (width == -1)height -10000 - 表示高度为控件之下到屏幕底部的高度
+         *         (width == -1)height -20000 - 表示高度为控件之上到屏幕顶部的高度
+         * @param width
+         * @param height
+         * @return
+         */
+        public Builder setWidthAndHeight(int width, int height) {
+            if (width == 0 && height == 0) {
+                ///< 如果没设置宽高，默认是WRAP_CONTENT
+                basePop.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+                basePop.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+            } else if (width == -1 && height == -1) {
+                basePop.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+                basePop.setHeight(ViewGroup.LayoutParams.MATCH_PARENT);
+            }else if (width > 0 && height == 0) {
+                basePop.setWidth(width);
+                basePop.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+            }else if (width == -1 && height == 0) {
+                basePop.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+                basePop.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+            }else if (width > 0 && height == -1) {
+                basePop.setWidth(width);
+                basePop.setHeight(ViewGroup.LayoutParams.MATCH_PARENT);
+            }else if (width == -1 && height == -10000) {    ///< 高度为控件之下到屏幕底部的高度
+                int achorH = viewWeakReference.get().getMeasuredHeight();
+                int screenH = ScreenUtil.getScreenH(contextWeakReference.get());
+                int[] achorLocation = new  int[2] ;
+                viewWeakReference.get().getLocationInWindow(achorLocation);
+                basePop.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+                basePop.setHeight(screenH - achorLocation[1] - achorH - 1);
+            }else if (width == -1 && height == -20000) {    ///< 高度为控件之上到屏幕顶部的高度
+                int[] achorLocation = new  int[2] ;
+                viewWeakReference.get().getLocationInWindow(achorLocation);
+                basePop.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+                basePop.setHeight(achorLocation[1]);
+            }
+            else {
+                basePop.setWidth(width);
+                basePop.setHeight(height);
+            }
+            return this;
+        }
+```
 
 # 其他逻辑    
->调用PopView.show后可以保存BasePop.Builder，方便处理消失等逻辑;
+>调用PopView.show后可以保存BasePop.Builder，方便处理消失等逻辑;  
 比如，demo工程里面的案例
 ```Java
     /**
