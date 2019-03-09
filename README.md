@@ -43,14 +43,17 @@ Popular popupwindow in the market and customized.
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.20_add_normalupdate.gif" width="228" height="374" alt="自定义布局"/></td>
   </tr>
 </table> 
- 
-<img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.14_define_base_direction.gif" width="228" height="374" alt="自定义布局"/>
-<img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.16_add_shareboard.gif" width="228" height="374" alt="自定义布局"/>
-<img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.19_add_loginregister.gif" width="228" height="374" alt="自定义布局"/>
-<img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.02.20_add_normalupdate.gif" width="228" height="374" alt="自定义布局"/>  
 
-<img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.05_vlistpop.gif" width="228" height="374" alt="自定义布局"/>
-<img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.07_alertpop.gif" width="228" height="374" alt="自定义布局"/>  
+<table border="1">
+  <tr>
+    <th>垂直列表弹窗</th>
+    <th>警告弹窗</th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.05_vlistpop.gif" width="228" height="374" alt="自定义布局"/></td>
+    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.07_alertpop.gif" width="228" height="374" alt="自定义布局"/></td>
+  </tr>
+</table>  
 
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
 
