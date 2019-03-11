@@ -21,7 +21,7 @@
         <android.support.constraint.ConstraintLayout
             android:id="@+id/pa_titleRoot"
             android:layout_width="match_parent"
-            android:layout_height="68dp"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
