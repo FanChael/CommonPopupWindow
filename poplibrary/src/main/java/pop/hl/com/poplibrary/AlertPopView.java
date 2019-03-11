@@ -208,7 +208,9 @@ public class AlertPopView {
             ///< 标题按钮
             title.setText(titleS);
             message.setText(messageS);
-            negativeTv.setText(nagativeS);
+            if (null != nagativeS){
+                negativeTv.setText(nagativeS);
+            }
             positiveTv.setText(positiveS);
 
             if (null == nagativeS || nagativeS.equals("")) {
@@ -216,9 +218,10 @@ public class AlertPopView {
             }
 
             ///< 设置主题
-            negativeTv.setTextColor(Color.parseColor(allColor));
-            positiveTv.setTextColor(Color.parseColor(allColor));
-
+            if (null != allColor && !allColor.equals("")) {
+                negativeTv.setTextColor(Color.parseColor(allColor));
+                positiveTv.setTextColor(Color.parseColor(allColor));
+            }
 
             ///< 取消
             negativeTv.setOnClickListener(new View.OnClickListener() {
