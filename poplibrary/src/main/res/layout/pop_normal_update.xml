@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/corner_bottom_white_bg_shape"
-            app:layout_constraintTop_toBottomOf="@id/pnu_titleRoot">
+            app:layout_constraintTop_toBottomOf="@+id/pnu_titleRoot">
 
             <TextView
                 android:id="@+id/pnu_message"
@@ -67,7 +67,7 @@
                 android:max="100"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pnu_message" />
+                app:layout_constraintTop_toBottomOf="@+id/pnu_message" />
 
             <!--app:layout_goneMarginBottom="20dp"-->
             <TextView
@@ -87,7 +87,7 @@
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pnu_progress" />
+                app:layout_constraintTop_toBottomOf="@+id/pnu_progress" />
 
             <TextView
                 android:id="@+id/pnu_negativeTv"
@@ -101,7 +101,7 @@
                 android:textSize="13sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/pnu_progress" />
+                app:layout_constraintTop_toBottomOf="@+id/pnu_progress" />
         </android.support.constraint.ConstraintLayout>
     </android.support.constraint.ConstraintLayout>
 </android.support.constraint.ConstraintLayout>

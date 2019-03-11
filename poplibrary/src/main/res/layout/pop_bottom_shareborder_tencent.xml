@@ -26,5 +26,5 @@
         android:text="@string/cancel"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pbs_shareToRev" />
+        app:layout_constraintTop_toBottomOf="@+id/pbs_shareToRev" />
 </android.support.constraint.ConstraintLayout>

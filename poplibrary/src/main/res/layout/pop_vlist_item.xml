@@ -5,21 +5,23 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <View
-        android:id="@+id/pvi_titleLine"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/line_gray_a"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/pvi_titleTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="6dp"
         android:text="标题"
-        android:textSize="14sp"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/pvi_titleLine" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/pvi_titleLine"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="6dp"
+        android:background="@color/line_gray_a"
+        app:layout_constraintTop_toBottomOf="@+id/pvi_titleTv" />
 </android.support.constraint.ConstraintLayout>
