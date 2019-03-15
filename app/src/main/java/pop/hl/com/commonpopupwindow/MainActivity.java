@@ -9,11 +9,13 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
 import pop.hl.com.poplibrary.AlertPopView;
 import pop.hl.com.poplibrary.LgRgPopView;
+import pop.hl.com.poplibrary.LocationPopView;
 import pop.hl.com.poplibrary.SharePopView;
 import pop.hl.com.poplibrary.OnEventListenner;
 import pop.hl.com.poplibrary.UpdatePopView;
@@ -282,7 +284,7 @@ public class MainActivity extends AppCompatActivity {
                 alertDialog = AlertPopView.showOriginAlert(this,
                         "升级啦！", "1.我是皮皮虾\n2.我是大皮皮虾\n2.xx银行就是这样的弹窗，蛮清爽的.",
                         "取消", "确定",
-                        "#f0008DCF",false,
+                        "#f0008DCF", false,
                         new OnEventListenner.OnAlertClickListenner() {
                             @Override
                             public void onClick(View view, AlertPopView.CALLBACK_TYPE callback_type) {
@@ -297,6 +299,127 @@ public class MainActivity extends AppCompatActivity {
                         new OnEventListenner.OnAlertClickListenner() {
                             @Override
                             public void onClick(View view, AlertPopView.CALLBACK_TYPE callback_type) {
+
+                            }
+                        });
+                break;
+            case R.id.am_location_btn:
+                List<String> _provinceList = new ArrayList<>();
+                _provinceList.add("");
+                _provinceList.add("");
+                _provinceList.add("月华乡");
+                _provinceList.add("成都");
+                _provinceList.add("北京");
+                _provinceList.add("深证");
+                _provinceList.add("上海");
+                _provinceList.add("香港");
+                _provinceList.add("");
+                _provinceList.add("");
+
+                HashMap<String, List<String>> _cityList = new HashMap<>();
+                List<String> yuehuaList = new ArrayList<>();
+                yuehuaList.add("");
+                yuehuaList.add("");
+                yuehuaList.add("富裕村");
+                yuehuaList.add("三家村");
+                yuehuaList.add("红旗村");
+                yuehuaList.add("");
+                yuehuaList.add("");
+                List<String> yuehuaList2 = new ArrayList<>();
+                yuehuaList2.add("");
+                yuehuaList2.add("");
+                yuehuaList2.add("富裕村2");
+                yuehuaList2.add("三家村2");
+                yuehuaList2.add("红旗村2");
+                yuehuaList2.add("");
+                yuehuaList2.add("");
+                List<String> yuehuaList3 = new ArrayList<>();
+                yuehuaList3.add("");
+                yuehuaList3.add("");
+                yuehuaList3.add("富裕村3");
+                yuehuaList3.add("三家村3");
+                yuehuaList3.add("红旗村3");
+                yuehuaList3.add("");
+                yuehuaList3.add("");
+                List<String> yuehuaList4 = new ArrayList<>();
+                yuehuaList4.add("");
+                yuehuaList4.add("");
+                yuehuaList4.add("富裕村4");
+                yuehuaList4.add("三家村4");
+                yuehuaList4.add("红旗村4");
+                yuehuaList4.add("");
+                yuehuaList4.add("");
+                List<String> yuehuaList5 = new ArrayList<>();
+                yuehuaList5.add("");
+                yuehuaList5.add("");
+                yuehuaList5.add("富裕村5");
+                yuehuaList5.add("三家村5");
+                yuehuaList5.add("红旗村5");
+                yuehuaList5.add("");
+                yuehuaList5.add("");
+                List<String> yuehuaList6 = new ArrayList<>();
+                yuehuaList6.add("");
+                yuehuaList6.add("");
+                yuehuaList6.add("富裕村6");
+                yuehuaList6.add("三家村6");
+                yuehuaList6.add("红旗村6");
+                yuehuaList6.add("");
+                yuehuaList6.add("");
+
+                _cityList.put("月华乡", yuehuaList);
+                _cityList.put("成都", yuehuaList2);
+                _cityList.put("北京", yuehuaList3);
+                _cityList.put("深证", yuehuaList4);
+                _cityList.put("上海", yuehuaList5);
+                _cityList.put("香港", yuehuaList6);
+
+                HashMap<String, List<String>> _districtList = new HashMap<>();
+                List<String> zuList = new ArrayList<>();
+                zuList.add("");
+                zuList.add("");
+                zuList.add("7队");
+                zuList.add("2队");
+                zuList.add("1队");
+                zuList.add("");
+                zuList.add("");
+                List<String> zuList2 = new ArrayList<>();
+                zuList2.add("");
+                zuList2.add("");
+                zuList2.add("7队2");
+                zuList2.add("2队2");
+                zuList2.add("1队2");
+                zuList2.add("");
+                zuList2.add("");
+
+                _districtList.put("富裕村", zuList);
+                _districtList.put("三家村", zuList2);
+                _districtList.put("红旗村", zuList);
+
+                _districtList.put("富裕村2", zuList);
+                _districtList.put("三家村2", zuList);
+                _districtList.put("红旗村2", zuList);
+
+                _districtList.put("富裕村3", zuList);
+                _districtList.put("三家村3", zuList);
+                _districtList.put("红旗村3", zuList);
+
+                _districtList.put("富裕村4", zuList);
+                _districtList.put("三家村4", zuList);
+                _districtList.put("红旗村4", zuList);
+
+                _districtList.put("富裕村5", zuList);
+                _districtList.put("三家村5", zuList);
+                _districtList.put("红旗村5", zuList);
+
+                _districtList.put("富裕村6", zuList);
+                _districtList.put("三家村6", zuList);
+                _districtList.put("红旗村6", zuList);
+
+                builder = LocationPopView.show(this, view,
+                        _provinceList, _cityList, _districtList,
+                        new OnEventListenner.OnVListClickListenner() {
+                            @Override
+                            public void onClick(View view, int pos) {
 
                             }
                         });

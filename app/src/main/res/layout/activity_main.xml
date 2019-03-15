@@ -175,4 +175,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/am_top_btn" />
+
+    <Button
+        android:id="@+id/am_location_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testPop"
+        android:text="地区选择"
+        app:layout_constraintBottom_toTopOf="@+id/am_left_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/am_share_btn" />
 </android.support.constraint.ConstraintLayout>
