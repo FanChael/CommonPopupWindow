@@ -678,6 +678,16 @@ List<String> _provinceList = new ArrayList<>();
                             }
                         });                
 ```
+# 混淆注意
+```java
+-keep class pop.hl.com.commonpopupwindow.LoactionBeanChild{ *;}
+// 内部类需要做混淆
+-keepattributes Exceptions,InnerClasses,...
+-keep class pop.hl.com.commonpopupwindow.LoactionBeanChild$* {
+    *;
+}
+```
+
 # 注意事项
 > 推荐使用Json城市数据转对象列表的方式
 > 如果要自定义对象的话，请继承抽象类LoactionBean并实现相关的get方法
