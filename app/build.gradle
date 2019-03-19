@@ -15,10 +15,42 @@ android {
             }
         }
     }
+    signingConfigs {
+        debug {
+            storeFile file('pop.jks')
+            storePassword "poppop"
+            keyAlias "pop"
+            keyPassword "poppop"
+        }
+        release {
+            storeFile file('pop.jks')
+            storePassword "poppop"
+            keyAlias "pop"
+            keyPassword "poppop"
+        }
+    }
     buildTypes {
         release {
-            minifyEnabled false
+            //开启混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // 签名
+            signingConfig signingConfigs.release
+        }
+        debug {
+            //开启混淆
+            minifyEnabled true
+            //Zipalign优化
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            // 签名
+            signingConfig signingConfigs.debug
         }
     }
     externalNativeBuild {
