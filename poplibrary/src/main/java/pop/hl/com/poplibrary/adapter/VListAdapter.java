@@ -13,6 +13,7 @@ import java.util.List;
 
 import pop.hl.com.poplibrary.OnEventListenner;
 import pop.hl.com.poplibrary.R;
+import pop.hl.com.poplibrary.utils.ScreenUtil;
 
 /*
 *@Description: 垂直列表弹窗适配器
@@ -24,6 +25,9 @@ public class VListAdapter extends RecyclerView.Adapter<VListAdapter.ViewHolder>{
     private List<String> vDataList = null;
     private OnEventListenner.OnVListClickListenner onVListClickListenner = null;
 
+    private boolean bHasBottomLine = true;
+    private int revH;
+
     public VListAdapter(Context _context, List<String> _vDataList,
                         OnEventListenner.OnVListClickListenner _onVListClickListenner){
         this.contextWeakReference = new WeakReference<>(_context);
@@ -31,12 +35,29 @@ public class VListAdapter extends RecyclerView.Adapter<VListAdapter.ViewHolder>{
         this.onVListClickListenner = _onVListClickListenner;
     }
 
+    public VListAdapter(Context _context, List<String> _vDataList,
+                        OnEventListenner.OnVListClickListenner _onVListClickListenner,
+                        int _revH,
+                        boolean _bNoBottomLine){
+        this.contextWeakReference = new WeakReference<>(_context);
+        this.vDataList = _vDataList;
+        this.onVListClickListenner = _onVListClickListenner;
+        this.bHasBottomLine = _bNoBottomLine;
+        this.revH = _revH;
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
-        View view = LayoutInflater.from(contextWeakReference.get()).
-                inflate(R.layout.pop_vlist_item, parent, false);
-        return new ViewHolder(view);
+        if (bHasBottomLine) {
+            View view = LayoutInflater.from(contextWeakReference.get()).
+                    inflate(R.layout.pop_vlist_item, parent, false);
+            return new ViewHolder(view);
+        }else{
+            View view = LayoutInflater.from(contextWeakReference.get()).
+                    inflate(R.layout.pop_vlist_nobottom_line_item, parent, false);
+            return new ViewHolder(view, revH);
+        }
     }
 
     @Override
@@ -65,6 +86,15 @@ public class VListAdapter extends RecyclerView.Adapter<VListAdapter.ViewHolder>{
             super(itemView);
             this.itemView = itemView;
             this.textView = itemView.findViewById(R.id.pvi_titleTv);
+        }
+        public ViewHolder(@NonNull View itemView, int revH) {
+            super(itemView);
+            this.itemView = itemView;
+            this.textView = itemView.findViewById(R.id.pvi_titleTv);
+            ///< 设置item的高度
+            ScreenUtil.setRecyclerViewWH(itemView, -1, revH);
+            ///< 设置item文本的大小 之前高度100对应了 15sp
+            textView.setTextSize(revH > 100 ? (revH / 100 + 16) : 16);
         }
         public void bindData(String _name, final int pos,
                              final OnEventListenner.OnVListClickListenner _onVListClickListenner) {

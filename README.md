@@ -2,7 +2,8 @@
 Popular popupwindow in the market and customized.  
 [ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.1.1) ](https://bintray.com/resetmyself/holdon/commonpop/1.1.1/link)
 [ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.14.0) ](https://bintray.com/resetmyself/holdon/commonpop/1.14.0/link) 
-[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.0) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.1/link)   
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.1) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.1/link)  
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.2) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.2/link)   
 
 （结合市面流行的弹窗样式+支持自定义布局）.  
 # Description
@@ -29,6 +30,8 @@ Popular popupwindow in the market and customized.
 >增加警告类弹窗(目前增加经典样式A)
 
 >增加原生警告弹窗
+
+>增加地区选择弹窗
 
 # Effect  
 >总的效果 
@@ -63,6 +66,15 @@ Popular popupwindow in the market and customized.
   </tr>
 </table>  
 
+<table border="1">
+  <tr>
+    <th>地区选择弹窗</th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/2019.03.18_locationpop.gif" width="228" height="374" alt="地区选择弹窗"/></td>
+  </tr>
+</table>  
+
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
 
 # Import Library  
@@ -74,6 +86,8 @@ implementation 'com.hl:poplibrary:1.1.1'
 implementation 'com.hl:poplibrary:1.14.0'
 //2.0.1 自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗
 implementation 'com.hl:poplibrary:2.0.1'
+//2.0.1 + 地区选择弹窗
+implementation 'com.hl:poplibrary:2.0.2'
                                             
 //依赖过可以忽略（分享弹窗用到了相关组件）/2.x.x都需要依赖
 implementation 'com.android.support:recyclerview-v7:28.0.0'//看你版本
@@ -116,6 +130,7 @@ implementation 'com.hl:poplibrary:2.0.0'
 * [APP更新使用](https://github.com/FanChael/CommonPopupWindow/tree/appupdate)
 * [垂直列表弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/vlist_guid.md)
 * [警告类弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/alert_guid.md)
+* [地区选择弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/location_guid.md)
 
 > Hold on！
 * [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)

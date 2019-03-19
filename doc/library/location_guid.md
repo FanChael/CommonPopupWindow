@@ -1,318 +1,181 @@
-package pop.hl.com.commonpopupwindow;
+# API说明-提供调用类LocationPopView.java
+>调用显示方法
+```Java
+/**
+     * 地区弹窗列表显示 - 默认高度是屏幕高度的1/7 - Achor控件之下弹出
+     *
+     * @param _context
+     * @param _anchor
+     * @param _provinceData - 省列表
+     * @param _cityList - 省对应的城市列表
+     * @param _districtList - 城市对应的地区列表
+     * @param _onLocationClickListenner
+     * @return
+     */
+    public static BasePop.Builder show(Context _context,
+                                       View _anchor,
+                                       List<String> _provinceData,
+                                       HashMap<String, List<String>> _cityList,
+                                       HashMap<String, List<String>> _districtList,
+                                       OnEventListenner.OnLocationClickListenner _onLocationClickListenner) {
 
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.ProgressBar;
-import android.widget.Toast;
+    }
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
+    /**
+     * 地区弹窗列表显示 - Achor控件之下弹出
+     *
+     * @param _provinceData  - 省列表
+     * @param _cityList - 省对应的城市列表
+     * @param _districtList - 城市对应的地区列表
+     * @param _builderH                 - 弹窗的高度【弹窗高度的1/3作为item的高度】
+     * @param _onLocationClickListenner
+     * @return
+     */
+    public static BasePop.Builder show(Context _context,
+                                       View _anchor,
+                                       List<String> _provinceData,
+                                       HashMap<String, List<String>> _cityList,
+                                       HashMap<String, List<String>> _districtList,
+                                       int _builderH,
+                                       OnEventListenner.OnLocationClickListenner _onLocationClickListenner) {
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+    }
 
+    /**
+     * 地区弹窗列表显示 - 默认高度是屏幕高度的1/7 - Achor控件之下弹出
+     *
+     * @param _context
+     * @param _anchor
+     * @param _loactionBeanList  - 城市地区列表对象
+     * @param _onLocationClickListenner
+     * @return
+     */
+    public static BasePop.Builder show(Context _context,
+                                       View _anchor,
+                                       List<LoactionBean> _loactionBeanList,
+                                       OnEventListenner.OnLocationClickListenner _onLocationClickListenner) {
+    
+    }
+
+    /**
+     * 弹窗的高度【弹窗高度的1/3作为item的高度】 - Achor控件之下弹出
+     *
+     * @param _context
+     * @param _anchor
+     * @param _loactionBeanList  - 城市地区列表对象
+     * @param _builderH - 弹窗高度自定义
+     * @param _onLocationClickListenner
+     * @return
+     */
+    public static BasePop.Builder show(Context _context,
+                                       View _anchor,
+                                       List<LoactionBean> _loactionBeanList,
+                                       int _builderH,
+                                       OnEventListenner.OnLocationClickListenner _onLocationClickListenner) {
+
+    }
+
+    /**
+     * 地区弹窗列表显示 - 默认高度是屏幕高度的1/7 - 从底部弹出
+     *
+     * @param _context
+     * @param _anchor
+     * @param _loactionBeanList - 城市地区列表对象
+     * @param _onLocationClickListenner
+     * @return
+     */
+    public static BasePop.Builder showFromBottom(Context _context,
+                                                 View _anchor,
+                                                 List<LoactionBean> _loactionBeanList,
+                                                 OnEventListenner.OnLocationClickListenner _onLocationClickListenner) {
+
+    }
+
+    /**
+     * 弹窗的高度【弹窗高度的1/3作为item的高度】 - 从底部弹出
+     *
+     * @param _context
+     * @param _anchor
+     * @param _loactionBeanList - 城市地区列表对象
+     * @param _builderH - 弹窗高度自定义
+     * @param _onLocationClickListenner
+     * @return
+     */
+    public static BasePop.Builder showFromBottom(Context _context,
+                                                 View _anchor,
+                                                 List<LoactionBean> _loactionBeanList,
+                                                 int _builderH,
+                                                 OnEventListenner.OnLocationClickListenner _onLocationClickListenner) {
+
+    }
+```
+# USE 
+> 为了兼容不同的地区实体类对象参数，需要继承实现抽象类LoactionBean，并实现对应的方法
+```Java
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Random;
 
-import pop.hl.com.poplibrary.AlertPopView;
-import pop.hl.com.poplibrary.LgRgPopView;
-import pop.hl.com.poplibrary.LocationPopView;
-import pop.hl.com.poplibrary.SharePopView;
-import pop.hl.com.poplibrary.OnEventListenner;
-import pop.hl.com.poplibrary.UpdatePopView;
-import pop.hl.com.poplibrary.VListPopView;
-import pop.hl.com.poplibrary.base.BasePop;
-import pop.hl.com.poplibrary.BasePopView;
 import pop.hl.com.poplibrary.bean.LoactionBean;
-import pop.hl.com.poplibrary.utils.ScreenUtil;
 
-public class MainActivity extends AppCompatActivity {
-    // Used to load the 'native-lib' library on application startup.
-    static {
-        System.loadLibrary("native-lib");
+/*
+*@Description: 实现LoactionBean对象
+*@Author: hl
+*@Time: 2019/3/18 19:09
+*/
+public class LoactionBeanChild extends LoactionBean {
+    private String name;
+    private List<CityBeanChild> city;
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        // Example of a call to a native method
-        //TextView tv = (TextView) findViewById(R.id.sample_text);
-        //tv.setText(stringFromJNI());
+    public String getName() {
+        return name;
     }
 
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    //public native String stringFromJNI();
+    public void setCity(List<CityBeanChild> city) {
+        this.city = city;
+    }
 
-    private BasePop.Builder builder;
-    private AlertDialog alertDialog;
+    @Override
+    public List<CityBean> getCity() {
+        List<CityBean> cityBeanList = new ArrayList<>();
+        for (int i = 0; i < city.size(); ++i){
+            cityBeanList.add(city.get(i));
+        }
+        return cityBeanList;
+    }
 
+    public static class CityBeanChild extends CityBean{
+        private String name;
+        private List<String> area;
 
-    /**
-     * 弹窗显示测试
-     *
-     * @param view
-     */
-    public void testPop(View view) {
-        ///< 已经显示则重新来过
-        if (null != builder && builder.bIsShowing()) {
-            builder.dissmiss();
+        public void setName(String name) {
+            this.name = name;
         }
 
-        ///< 点击事件走起
-        OnEventListenner.OnBaseClickListenner onClickListenner = new OnEventListenner.OnBaseClickListenner() {
-            @Override
-            public void onClick(View view) {
-                if (view.getId() == R.id.ap_leftBtn ||
-                        view.getId() == R.id.ap_rightBtn) {
-                    builder.dissmiss();
-                }
-            }
-        };
-        switch (view.getId()) {
-            case R.id.am_lefttop_btn:           ///< Achor右下角缩放显示
-                builder = BasePopView.show(this,
-                        view, R.layout.activity_pop,
-                        ScreenUtil.getScreenW(this) / 2, 500,
-                        BasePopView.ANIMATION.SCALE, onClickListenner,
-                        BasePopView.GRAVITY.LEFTTOP_TO_RIGHTBOTTOM);
-                break;
-            case R.id.am_righttop_btn:      ///< Achor左下角缩放显示
-                builder = BasePopView.show(this,
-                        view, R.layout.activity_pop,
-                        ScreenUtil.getScreenW(this) / 2, 500,
-                        BasePopView.ANIMATION.SCALE, onClickListenner,
-                        BasePopView.GRAVITY.RIGHTTOP_TO_LEFTBOTTOM);
-                break;
-            case R.id.am_leftbottom_btn:    ///< Achor右上角缩放显示
-                builder = BasePopView.show(this,
-                        view, R.layout.activity_pop,
-                        ScreenUtil.getScreenW(this) / 2, 500,
-                        BasePopView.ANIMATION.SCALE, onClickListenner,
-                        BasePopView.GRAVITY.LEFTBOTTOM_TO_RIGHTTOP);
-                break;
-            case R.id.am_rightbottom_btn:   ///< Achor左上角缩放显示
-                builder = BasePopView.show(this,
-                        view, R.layout.activity_pop,
-                        ScreenUtil.getScreenW(this) / 2, 500,
-                        BasePopView.ANIMATION.SCALE, onClickListenner,
-                        BasePopView.GRAVITY.RIGHTBOTTOM_TO_LEFTTOP);
-                break;
-            case R.id.am_center_btn:        ///< 居中缩放显示
-                builder = BasePopView.show(this,
-                        view, R.layout.activity_pop,
-                        ScreenUtil.getScreenW(this) / 2, 500,
-                        BasePopView.ANIMATION.SCALE, onClickListenner,
-                        BasePopView.SIMPLE_GRAVITY.CENTER_IN_PARENT);
-                break;
-            case R.id.am_top_btn:       ///< 从上往下平移显示
-                builder = BasePopView.show(this,
-                        view, R.layout.activity_pop,
-                        ScreenUtil.getScreenW(this), 500,
-                        BasePopView.ANIMATION.TRANSLATE, onClickListenner,
-                        BasePopView.SIMPLE_GRAVITY.FROM_TOP);
-                break;
-            case R.id.am_bottom_btn:    ///< 从下往上平移显示
-                builder = BasePopView.show(this,
-                        view, R.layout.activity_pop,
-                        ScreenUtil.getScreenW(this), 500,
-                        BasePopView.ANIMATION.TRANSLATE, onClickListenner,
-                        BasePopView.SIMPLE_GRAVITY.FROM_BOTTOM);
-                break;
-            case R.id.am_left_btn:  ///< 从左往右平移显示
-                builder = BasePopView.show(this,
-                        view, R.layout.activity_pop,
-                        ScreenUtil.getScreenW(this) / 4, ScreenUtil.getScreenH(this),
-                        BasePopView.ANIMATION.TRANSLATE, onClickListenner,
-                        BasePopView.SIMPLE_GRAVITY.FROM_LEFT);
-                break;
-            case R.id.am_right_btn: ///< 从右往左平移显示
-                builder = BasePopView.show(this,
-                        view, R.layout.activity_pop,
-                        ScreenUtil.getScreenW(this) / 4, ScreenUtil.getScreenH(this),
-                        BasePopView.ANIMATION.TRANSLATE, onClickListenner,
-                        BasePopView.SIMPLE_GRAVITY.FROM_RIGHT);
-                break;
-            case R.id.am_share_btn: ///< 分享弹窗显示
-            case R.id.am_share_ftecent_btn:
-                List<String> _share2Name = new ArrayList<>();
-                _share2Name.add("华为");
-                _share2Name.add("阿里");
-                _share2Name.add("小米");
-                _share2Name.add("毛豆");
-                _share2Name.add("无聊");
-                _share2Name.add("华为");
-                _share2Name.add("阿里");
-                _share2Name.add("小米");
-                _share2Name.add("毛豆");
-                _share2Name.add("无聊");
-                List<Integer> _share2Icon = new ArrayList<>();
-                _share2Icon.add(R.drawable.huawei);
-                _share2Icon.add(R.drawable.ali);
-                _share2Icon.add(R.drawable.xiaomi);
-                _share2Icon.add(R.drawable.moredo);
-                _share2Icon.add(R.drawable.share_link);
-                _share2Icon.add(R.drawable.huawei);
-                _share2Icon.add(R.drawable.ali);
-                _share2Icon.add(R.drawable.xiaomi);
-                _share2Icon.add(R.drawable.moredo);
-                _share2Icon.add(R.drawable.share_link);
+        public void setArea(List<String> area) {
+            this.area = area;
+        }
 
-                ///< 点击事件回调
-                OnEventListenner.OnShareClickListenner onShareClickListenner = new OnEventListenner.OnShareClickListenner() {
-                    @Override
-                    public void onClick(View view, int pos) {
-                        Toast.makeText(MainActivity.this, "pos=" + pos, Toast.LENGTH_SHORT).show();
-                    }
-                };
-                ///< 显示链表添加的分享图标
-                int randomValue = new Random().nextInt(2);
-                switch (view.getId()) {
-                    case R.id.am_share_btn:
-                        ///< 显示链表添加的分享图标
-                        builder = SharePopView.showShare(this, view,
-                                randomValue == 1 ? _share2Name : null,
-                                randomValue == 1 ? _share2Icon : null,
-                                (new Random().nextInt(2)) == 1 ?
-                                        BasePopView.SIMPLE_GRAVITY.FROM_TOP :
-                                        BasePopView.SIMPLE_GRAVITY.FROM_BOTTOM,
-                                (new Random().nextInt(2)) == 1 ?
-                                        SharePopView.SHOW_TYPE.HORIZON :
-                                        SharePopView.SHOW_TYPE.GRID,
-                                onShareClickListenner);
-                        break;
-                    case R.id.am_share_ftecent_btn:
-                        ///< 显示库默认的显示列表
-                        builder = SharePopView.showShareFTencent(this, view,
-                                randomValue == 1 ? _share2Name : null,
-                                randomValue == 1 ? _share2Icon : null,
-                                BasePopView.SIMPLE_GRAVITY.FROM_BOTTOM,
-                                (new Random().nextInt(2)) == 1 ?
-                                        SharePopView.SHOW_TYPE.HORIZON :
-                                        SharePopView.SHOW_TYPE.GRID,
-                                onShareClickListenner);
-                        break;
-                }
-                break;
-            case R.id.am_register_btn:   ///< Achor左上角缩放显示
-                builder = LgRgPopView.showRegister(this,
-                        view, "#f0008DCF",
-                        new OnEventListenner.OnLRClickListenner() {
-                            @Override
-                            public void onClick(View view, String[] parmas, LgRgPopView.CALLBACK_TYPE callback_type) {
-                                switch (callback_type) {
-                                    case CLICK_REGISTER:
-                                        Toast.makeText(MainActivity.this, "callback_type=" + callback_type + " parmas" + parmas[0], Toast.LENGTH_SHORT).show();
-                                        break;
-                                    case CLICK_GET_VERYCODE:
-                                        break;
-                                }
-                            }
-                        });
-                break;
-            case R.id.am_login_btn:        ///< 居中缩放显示
-                builder = LgRgPopView.showLogin(this,
-                        view, LgRgPopView.LOGIN_TYPE.THIRD_ACCOUNT
-                                | LgRgPopView.LOGIN_TYPE.PHONE_VERICODE,
-                        "#f0008DCF",
-                        new OnEventListenner.OnLRClickListenner() {
-                            @Override
-                            public void onClick(View view, String[] parmas, LgRgPopView.CALLBACK_TYPE callback_type) {
-                                switch (callback_type) {
-                                    case QQ_LOGIN:
-                                        Toast.makeText(MainActivity.this, "点击了QQ登录", Toast.LENGTH_SHORT).show();
-                                        break;
-                                    case WEIXIN_LOGIN:
-                                        break;
-                                    case CLICK_LOGIN:
-                                        break;
-                                    default:
-                                        break;
-                                }
-                            }
-                        });
-                break;
-            case R.id.am_normal_update_btn:        ///< 经典更新弹窗
-                builder = UpdatePopView.showNormalUpdate(this, view,
-                        R.drawable.update_bg_app_top, 204.0f / 450.0f,
-                        "#FF5C5C", (new Random().nextInt(2)) == 1 ? true : false,
-                        "1、新增皮皮虾板块\n" + "2、新增皮皮狗板块\n" + "3、新增皮皮你板块",
-                        new OnEventListenner.OnUpdateClickListenner() {
-                            @Override
-                            public void onClick(View view, View progress) {
-                                ProgressBar progressBar = (ProgressBar) progress;
-                                progressBar.setProgress(80);
-                                builder.dissmiss();
-                            }
-                        });
-                break;
-            case R.id.am_vlist_btn:
-                List<String> vDataList = new ArrayList<>();
-                vDataList.add("别急呀！");
-                vDataList.add("别急呀！");
-                vDataList.add("别急呀！");
-                vDataList.add("别急呀！");
-                vDataList.add("别急呀！");
-                vDataList.add("别急呀！");
-                vDataList.add("别急呀！");
-                vDataList.add("别急呀！");
-                vDataList.add("别急呀！");
-                vDataList.add("END！");
-                builder = new VListPopView.Builder(this)
-                        .create(view, ScreenUtil.getScreenH(this) / 8)
-                        .show(vDataList, new OnEventListenner.OnVListClickListenner() {
-                            @Override
-                            public void onClick(View view, int pos) {
+        @Override
+        public String getName() {
+            return name;
+        }
 
-                            }
-                        });
-                break;
-            case R.id.am_alertA_btn:
-                builder = AlertPopView.showALertTypeA(this, view,
-                        "提示", "是否确认删除!", "#f0008DCF",
-                        true, new OnEventListenner.OnAlertClickListenner() {
-                            @Override
-                            public void onClick(View view, AlertPopView.CALLBACK_TYPE callback_type) {
+        @Override
+        public List<String> getArea() {
+            return area;
+        }
+    }
+}
 
-                            }
-                        });
-                break;
-            case R.id.am_alert_btn:
-                ///< 颜色可以不设置，默认系统颜色
-                alertDialog = AlertPopView.showOriginAlert(this,
-                        "升级啦！", "1.我是皮皮虾\n2.我是大皮皮虾\n2.xx银行就是这样的弹窗，蛮清爽的.",
-                        "取消", "确定",
-                        "#f0008DCF", false,
-                        new OnEventListenner.OnAlertClickListenner() {
-                            @Override
-                            public void onClick(View view, AlertPopView.CALLBACK_TYPE callback_type) {
-
-                            }
-                        });
-                ///< 可以nagative、postive，那样则不显示确定取消按钮
-                alertDialog = AlertPopView.showOriginAlert(this,
-                        null, null,
-                        null, null,
-                        null, true,
-                        new OnEventListenner.OnAlertClickListenner() {
-                            @Override
-                            public void onClick(View view, AlertPopView.CALLBACK_TYPE callback_type) {
-
-                            }
-                        });
-                break;
-            case R.id.am_location_btn:
-                List<String> _provinceList = new ArrayList<>();
+```
+> go...
+```Java
+List<String> _provinceList = new ArrayList<>();
                 _provinceList.add("");
                 _provinceList.add("");
                 _provinceList.add("月华乡");
@@ -424,17 +287,17 @@ public class MainActivity extends AppCompatActivity {
                 _districtList.put("红旗村6", zuList);
 
                 ///< 采用自己组装数组列表的形式(前后记得增加空项目)
-                //                builder = LocationPopView.show(this, view,
-                //                        _provinceList, _cityList, _districtList,
-                //                        new OnEventListenner.OnLocationClickListenner() {
-                //
-                //                            @Override
-                //                            public void onClick(View view, String[] locations) {
-                //                                Toast.makeText(MainActivity.this,
-                //                                        locations[0] + "-" + locations[1] + "-" + locations[2],
-                //                                        Toast.LENGTH_SHORT).show();
-                //                            }
-                //                        });
+                BasePop.Builder builder1 = LocationPopView.show(this, view,
+                        _provinceList, _cityList, _districtList,
+                        new OnEventListenner.OnLocationClickListenner() {
+
+                            @Override
+                            public void onClick(View view, String[] locations) {
+                                Toast.makeText(MainActivity.this,
+                                        locations[0] + "-" + locations[1] + "-" + locations[2],
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        });
 
                 ///< json转对象列表的方式加载-以下是手动添加模拟数据，请用json转换；手动很麻烦.
                 List<LoactionBean> loactionBeanList = new ArrayList<>();
@@ -498,15 +361,15 @@ public class MainActivity extends AppCompatActivity {
                 loactionBeanList.add(loactionBean2);
 
                 ///< 采用手动构造地区列表的形式
-                //                builder = LocationPopView.show(this, view,
-                //                        /*loactionBeanList*/loactionBeanList, new OnEventListenner.OnLocationClickListenner() {
-                //                            @Override
-                //                            public void onClick(View view, String[] locations) {
-                //                                Toast.makeText(MainActivity.this,
-                //                                        locations[0] + "-" + locations[1] + "-" + locations[2],
-                //                                        Toast.LENGTH_SHORT).show();
-                //                            }
-                //                        });
+                BasePop.Builder builder2 = LocationPopView.show(this, view,
+                        /*loactionBeanList*/loactionBeanList, new OnEventListenner.OnLocationClickListenner() {
+                            @Override
+                            public void onClick(View view, String[] locations) {
+                                Toast.makeText(MainActivity.this,
+                                        locations[0] + "-" + locations[1] + "-" + locations[2],
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        });
 
                 ///< 转换json方式
                 String locationJson = "[\n" +
@@ -805,7 +668,7 @@ public class MainActivity extends AppCompatActivity {
                         new TypeToken<List<LoactionBeanChild>>() {}.getType());
 
                 ///< 从底部弹出 - 采用json转换的方式
-                builder = LocationPopView.showFromBottom(this, view,
+                BasePop.Builder builder3 = LocationPopView.showFromBottom(this, view,
                         /*loactionBeanList*/loactionBeanListJson, new OnEventListenner.OnLocationClickListenner() {
                             @Override
                             public void onClick(View view, String[] locations) {
@@ -813,16 +676,16 @@ public class MainActivity extends AppCompatActivity {
                                         locations[0] + "-" + locations[1] + "-" + locations[2],
                                         Toast.LENGTH_SHORT).show();
                             }
-                        });
-                break;
-        }
-    }
+                        });                
+```
+# 注意事项
+> 推荐使用Json城市数据转对象列表的方式
+> 如果要自定义对象的话，请继承抽象类LoactionBean并实现相关的get方法
 
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK) {
-            return true;
-        }
-        return false;
-    }
-}
+> 列表的高度是根据弹窗高度进行的均分，同时字体也是进行了相应的缩放；所以弹窗高度设置需要注意  
+
+> 目前提供两种显示方式，基于控件之下显示+从页面底部弹出  
+  
+> 没有特别的样式  
+
+> 后续可以做样式和显示以及其他效果的优化处理  

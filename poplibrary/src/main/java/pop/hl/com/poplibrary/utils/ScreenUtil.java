@@ -2,6 +2,7 @@ package pop.hl.com.poplibrary.utils;
 
 import android.content.Context;
 import android.support.constraint.ConstraintLayout;
+import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
@@ -122,6 +123,24 @@ public class ScreenUtil
 	 */
 	public static void setConstraintLayoutWH(View v, int w, int h) {
 		ConstraintLayout.LayoutParams layoutT = (ConstraintLayout.LayoutParams) v.getLayoutParams();
+		if (-1 != w){
+			layoutT.width = w;
+		}
+		if (-1 != h){
+			layoutT.height = h;
+		}
+		v.setLayoutParams(layoutT);
+	}
+
+	/**
+	 * 设置父组件是RecyclerView的控件的宽高
+	 * @param v
+	 * @param w -1表示无效设置
+	 * @param h -1表示无效设置
+	 */
+	public static void setRecyclerViewWH(View v, int w, int h) {
+		RecyclerView.LayoutParams layoutT = (RecyclerView.LayoutParams) v.getLayoutParams();
+		v.setLayoutParams(layoutT);
 		if (-1 != w){
 			layoutT.width = w;
 		}

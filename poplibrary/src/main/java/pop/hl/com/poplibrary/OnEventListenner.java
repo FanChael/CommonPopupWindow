@@ -58,4 +58,12 @@ public class OnEventListenner {
     public interface OnAlertClickListenner{
         void onClick(View view, AlertPopView.CALLBACK_TYPE callback_type);
     }
+
+
+    /**
+     * 地区弹窗点击事件
+     */
+    public interface OnLocationClickListenner{
+        void onClick(View view, String[] locations);
+    }
 }

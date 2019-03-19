@@ -18,4 +18,7 @@
     <!--更新-->
     <string name="update_ok">更新</string>
     <string name="update_cancel">暂不更新</string>
+
+    <!--选择地区-->
+    <string name="select_location">选择地区</string>
 </resources>

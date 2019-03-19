@@ -38,4 +38,6 @@ dependencies {
     ///< 远程导入
     //implementation 'com.hl:poplibrary:1.0.1'
     implementation project(':poplibrary')
+    ///< google-gson
+    implementation 'com.google.code.gson:gson:2.8.5'
 }
