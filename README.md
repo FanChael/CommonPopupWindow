@@ -1,8 +1,8 @@
 # CommonPopupWindow
 Popular popupwindow in the market and customized.  
 [ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.1.1) ](https://bintray.com/resetmyself/holdon/commonpop/1.1.1/link)
-[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.14.0) ](https://bintray.com/resetmyself/holdon/commonpop/1.14.0/link) 
-[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.1) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.1/link)  
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.14.0) ](https://bintray.com/resetmyself/holdon/commonpop/1.14.0/link)
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.1) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.1/link)
 [ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.2) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.2/link)   
 
 （结合市面流行的弹窗样式+支持自定义布局）.  
