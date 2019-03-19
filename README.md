@@ -71,7 +71,7 @@ Popular popupwindow in the market and customized.
     <th>地区选择弹窗</th>
   </tr>
   <tr>
-    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/2019.03.18_locationpop.gif" width="228" height="374" alt="地区选择弹窗"/></td>
+    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.18_locationpop.gif" width="228" height="374" alt="地区选择弹窗"/></td>
   </tr>
 </table>  
 
