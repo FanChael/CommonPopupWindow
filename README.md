@@ -69,9 +69,11 @@ Popular popupwindow in the market and customized.
 <table border="1">
   <tr>
     <th>地区选择弹窗</th>
+    <th>App原生样式更新</th>
   </tr>
   <tr>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.18_locationpop.gif" width="228" height="374" alt="地区选择弹窗"/></td>
+    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/2019.03.22_updateapp.gif" width="228" height="374" alt="App原生样式更新"/></td>
   </tr>
 </table>  
 
@@ -80,13 +82,11 @@ Popular popupwindow in the market and customized.
 # Import Library  
 >For gradle:  
 ```Java
-//1.1.1 自定义布局(下面有API、使用说明)
+//自定义布局(下面有API、使用说明)
 implementation 'com.hl:poplibrary:1.1.1'
-//1.14.0 App更新模块
-implementation 'com.hl:poplibrary:1.14.0'
-//2.0.1 自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗
-implementation 'com.hl:poplibrary:2.0.1'
-//2.0.1 + 地区选择弹窗
+//App更新模块 - 自定义弹窗样式 + 原始弹窗更新样式
+implementation 'com.hl:poplibrary:1.14.1'
+//自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗
 implementation 'com.hl:poplibrary:2.0.2'
                                             
 //依赖过可以忽略（分享弹窗用到了相关组件）/2.x.x都需要依赖
@@ -97,8 +97,13 @@ implementation 'com.android.support:design:28.+'//看你版本
 
 >Hisotry:
 ```Java 
+//2.0.1 自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗
+implementation 'com.hl:poplibrary:2.0.1'
 //2.0.0 自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A
 implementation 'com.hl:poplibrary:2.0.0'
+
+//App更新模块 - 自定义弹窗样式
+implementation 'com.hl:poplibrary:1.14.0'
 ```
 ```Java 
 //不再分多版本迭代更新
