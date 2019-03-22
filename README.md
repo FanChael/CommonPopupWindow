@@ -1,6 +1,7 @@
 # CommonPopupWindow - APP更新模块
 Popular popupwindow in the market and customized.  
 [ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.14.0) ](https://bintray.com/resetmyself/holdon/commonpop/1.14.0/link)
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.14.1) ](https://bintray.com/resetmyself/holdon/commonpop/1.14.1/link)  
 
 （结合市面流行的弹窗样式+支持自定义布局）. 
 
@@ -13,13 +14,16 @@ Popular popupwindow in the market and customized.
 ~V1.0.1.4  
 - 2019.02.22 -  - 添加App更新模块  
 ![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/2019.02.22_updateapp.gif) 
+- 2019.03.22 -  - 添加原始弹窗更新样式  
+![方位展示](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/2019.03.22_updateapp.gif) 
 
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/app_update.apk)
 
 # Import Library  
 >For gradle:  
 ```Java
-implementation 'com.hl:poplibrary:1.14.0'
+///< 自定义更新样式+增加原生更新弹窗样式
+implementation 'com.hl:poplibrary:1.14.1'
    
 ///< retrofit+rxjava - 下载处理
 implementation 'com.squareup.retrofit2:retrofit:2.3.0'
@@ -28,12 +32,18 @@ implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
 ///< eventbus3.0 - 进度通知
 implementation 'org.greenrobot:eventbus:3.0.0'
 ```
+>History:  
+```Java
+///< 自定义更新样式
+implementation 'com.hl:poplibrary:1.14.0'
+```
+
 >Or in maven:
 ```Java
 <dependency>
     <groupId>com.hl</groupId>
     <artifactId>poplibrary</artifactId>
-    <version>1.14.0</version>
+    <version>1.14.x</version>
     <type>pom</type>
 </dependency>
 ```

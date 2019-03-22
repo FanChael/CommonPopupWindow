@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.support.constraint.ConstraintLayout;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -26,13 +27,14 @@ import pop.hl.com.poplibrary.utils.ShapeUtil;
 public class UpdatePopView {
     /**
      * 经典更新弹窗
+     *
      * @param _context
      * @param _achor
-     * @param _titleBgId - 置顶背景图片
-     * @param _h_dived_w - 资源图片存在的情况下，图片的高度/宽度
-     * @param _allColor - 按钮、进度等主体颜色
-     * @param _bforce - 是否强制更新
-     * @param _updateMessage - 更新信息
+     * @param _titleBgId              - 置顶背景图片
+     * @param _h_dived_w              - 资源图片存在的情况下，图片的高度/宽度
+     * @param _allColor               - 按钮、进度等主体颜色
+     * @param _bforce                 - 是否强制更新
+     * @param _updateMessage          - 更新信息
      * @param _onUpdateClickListenner
      * @return
      */
@@ -46,11 +48,45 @@ public class UpdatePopView {
                 .showNormalUpdate(_onUpdateClickListenner);
     }
 
+    /**
+     * 原生警告类更新弹窗
+     *
+     * @param _context
+     * @param _achor
+     * @param _allColor               - 按钮、进度等主体颜色
+     * @param _bforce                 - 是否强制更新
+     * @param _title                  - 抬头
+     * @param _updateMessage          - 更新信息
+     * @param _onUpdateClickListenner
+     * @return
+     */
+    public static AlertDialog showOriginAlertUpdate(Context _context, View _achor,
+                                                    String _allColor, boolean _bforce,
+                                                    String _title, String _updateMessage,
+                                                    final OnEventListenner.OnUpdateClickListenner _onUpdateClickListenner) {
+        AlertDialog alertDialog = AlertPopView.showOriginAlert(_context,
+                _title, _updateMessage,
+                _bforce ? null : _context.getResources().getString(R.string.update_cancel),
+                _context.getResources().getString(R.string.update_ok),
+                _allColor, false,
+                new OnEventListenner.OnAlertClickListenner() {
+                    @Override
+                    public void onClick(View view, AlertPopView.CALLBACK_TYPE callback_type) {
+                        if (callback_type == AlertPopView.CALLBACK_TYPE.OK) {
+                            if (null != _onUpdateClickListenner) {
+                                _onUpdateClickListenner.onClick(view, null);
+                            }
+                        }
+                    }
+                });
+        return alertDialog;
+    }
+
     /*
-    *@Description: 更新弹窗建造器
-    *@Author: hl
-    *@Time: 2019/2/20 10:51
-    */
+     *@Description: 更新弹窗建造器
+     *@Author: hl
+     *@Time: 2019/2/20 10:51
+     */
     public static class Builder {
         private WeakReference<Context> contextWeakReference;
         private BasePop.Builder builder = null;
@@ -85,6 +121,7 @@ public class UpdatePopView {
 
         /**
          * 显示经典更新弹窗
+         *
          * @param _onUpdateClickListenner
          * @return
          */
@@ -104,12 +141,12 @@ public class UpdatePopView {
             TextView message = popView.findViewById(R.id.pnu_message);
 
             ///< 设置内容布局高度(屏幕宽度的7/10)
-            if (!bforce){
+            if (!bforce) {
                 progress.setVisibility(View.GONE);
-            }else{
+            } else {
                 negativeTv.setVisibility(View.GONE);
             }
-            int windowW = ScreenUtil.getScreenW(contextWeakReference.get())* 7/10;
+            int windowW = ScreenUtil.getScreenW(contextWeakReference.get()) * 7 / 10;
             ///< 弹窗宽度为屏幕的7/10
             ScreenUtil.setConstraintLayoutWH(updateContentRoot, windowW, -1);
 
@@ -120,19 +157,19 @@ public class UpdatePopView {
             ///< 设置主题 - 设置按钮和进度条颜色
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                 updateBtn.setBackground(gradientDrawable);
-            }else{
+            } else {
                 updateBtn.setBackgroundDrawable(gradientDrawable);
             }
             ProgressUtil.setColors(progress, BasePop.bgColor, Color.parseColor(allColor));
             ///< 设置主题 - 设置抬头主题图片
-            if (-1 != titleBgId){
+            if (-1 != titleBgId) {
                 ///< 大于0才进行宽高设置
-                if (Math.abs(h_dived_w) > 1e-6){
+                if (Math.abs(h_dived_w) > 1e-6) {
                     ScreenUtil.setConstraintLayoutWH(topBgIv, windowW, (int) (windowW * h_dived_w));
                 }
                 topBgIv.setImageDrawable(contextWeakReference.get().getResources().getDrawable(titleBgId));
-            }else{
-                ScreenUtil.setConstraintLayoutWH(topBgIv, windowW, (int) (windowW * (204.0f/450.0f)));
+            } else {
+                ScreenUtil.setConstraintLayoutWH(topBgIv, windowW, (int) (windowW * (204.0f / 450.0f)));
                 topBgIv.setImageDrawable(contextWeakReference.get().getResources().getDrawable(R.drawable.update_bg_app_top));
             }
             ///< 取消更新

@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">poplibrary</string>
-
+    <!--状态-->
+    <string name="cancel">取消</string>
+    <string name="ok">确定</string>
     <!--更新-->
     <string name="update_ok">更新</string>
     <string name="update_cancel">暂不更新</string>

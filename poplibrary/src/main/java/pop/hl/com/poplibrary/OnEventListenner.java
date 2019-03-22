@@ -29,4 +29,11 @@ public class OnEventListenner {
     public interface OnUpdateClickListenner{
         void onClick(View view, View progressBar);
     }
+
+    /**
+     * 警告弹窗点击事件
+     */
+    public interface OnAlertClickListenner{
+        void onClick(View view, AlertPopView.CALLBACK_TYPE callback_type);
+    }
 }

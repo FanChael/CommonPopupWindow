@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ProgressBar;
+
 import java.util.Random;
 
 import pop.hl.com.poplibrary.AppUpdate;
@@ -45,15 +46,24 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void testPop(View view) {
+        //        ///< 设置更新弹窗样式+升级信息
+        //        AppUpdate appUpdate = new AppUpdate(this, view, R.drawable.update_bg_app_top, 204.0f / 450.0f,
+        //                "#FF5C5C", (new Random().nextInt(2)) == 1 ? true : false,
+        //                "1、新增皮皮虾板块\n" + "2、新增皮皮狗板块\n" + "3、新增皮皮你板块");
+        //        ///< 开启更新，设置apk下载地址+通知栏图标+fileProvider直接启动安装+(md5、versionCode、apk大小)进行已经下载安装包的校验，防止重复下载
+        //        appUpdate.startAppUpdate("https://raw.githubusercontent.com/FanChael/CommonPopupWindow/master/doc/app-debug.apk",
+        //                R.drawable.share_circle,
+        //                "pop.hl.com.commonpopupwindow.fileProvider",
+        //                "6FA8D1B09B54580CA69FA7BF62D0C4A7", 1, 2978651);
         ///< 设置更新弹窗样式+升级信息
-        AppUpdate appUpdate = new AppUpdate(this, view, R.drawable.update_bg_app_top, 204.0f/450.0f,
-                "#FF5C5C", (new Random().nextInt(2)) == 1 ? true : false,
-                "1、新增皮皮虾板块\n" + "2、新增皮皮狗板块\n"+ "3、新增皮皮你板块");
-        ///< 开启更新，设置apk下载地址+通知栏图标+fileProvider直接启动安装+(md5、versionCode、apk大小)进行已经下载安装包的校验，防止重复下载
-        appUpdate.startAppUpdate("https://raw.githubusercontent.com/FanChael/CommonPopupWindow/master/doc/app-debug.apk",
-                        R.drawable.share_circle,
-                        "pop.hl.com.commonpopupwindow.fileProvider",
-                        "6FA8D1B09B54580CA69FA7BF62D0C4A7", 1,2978651);
+        AppUpdate appUpdate2 = new AppUpdate(this, view,
+                null, (new Random().nextInt(2)) == 1 ? true : false,
+                "版本更新",
+                "1、新增皮皮虾板块\n" + "2、新增皮皮狗板块\n" + "3、新增皮皮你板块");
+        appUpdate2.startOriginaAppUpdate("https://raw.githubusercontent.com/FanChael/CommonPopupWindow/master/doc/app-debug.apk",
+                R.drawable.share_circle,
+                "pop.hl.com.commonpopupwindow.fileProvider",
+                "6FA8D1B09B54580CA69FA7BF62D0C4A7", 1, 2978651);
     }
 
     @Override
