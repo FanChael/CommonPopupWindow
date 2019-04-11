@@ -27,6 +27,7 @@ import pop.hl.com.poplibrary.SharePopView;
 import pop.hl.com.poplibrary.OnEventListenner;
 import pop.hl.com.poplibrary.UpdatePopView;
 import pop.hl.com.poplibrary.VListPopView;
+import pop.hl.com.poplibrary.WebPopView;
 import pop.hl.com.poplibrary.base.BasePop;
 import pop.hl.com.poplibrary.BasePopView;
 import pop.hl.com.poplibrary.bean.LoactionBean;
@@ -802,7 +803,8 @@ public class MainActivity extends AppCompatActivity {
                 ///< 记得引入Gson...
                 Gson gson1 = new Gson();
                 List<LoactionBean> loactionBeanListJson = gson1.fromJson(locationJson,
-                        new TypeToken<List<LoactionBeanChild>>() {}.getType());
+                        new TypeToken<List<LoactionBeanChild>>() {
+                        }.getType());
 
                 ///< 从底部弹出 - 采用json转换的方式
                 builder = LocationPopView.showFromBottom(this, view,
@@ -814,6 +816,12 @@ public class MainActivity extends AppCompatActivity {
                                         Toast.LENGTH_SHORT).show();
                             }
                         });
+                break;
+            case R.id.am_webview_btn:
+                builder = WebPopView.showWebview(this, "<p style=\"white-space: normal;\"><span style=\"font-family: 宋体; font-size: 14px;\">1、独立根据客户需求完成媒体合作及投放方案；</span></p><p style=\"white-space: normal;\"><span style=\"font-family: 宋体; font-size: 14px;\">2、负责对区域客户的销售工作，拓展新的客户和项目，并有效地形成销售机会；</span></p><p style=\"white-space: normal;\"><span style=\"font-family: 宋体; font-size: 14px;\">3、通过深入了解客户的核心业务，挖掘和寻找潜在的项目机会；</span>");
+                builder = WebPopView.showWebview(this, "<div class=\"layui-m-layer-layui-layer-jd\">\r\n    <div class=\"layui-layer-jd-container content\">\r\n        <div class=\"layui-layer-jd-section\">\r\n            <div class=\"layui-layer-jd-title\">岗位职责：</div>\r\n            <div class=\"layui-layer-jd-content\">\r\n                 <p><p>岗位职责<br/></p></p>\r\n            </div>\r\n        </div>\r\n        <div class=\"layui-layer-jd-section\">\r\n            <div class=\"layui-layer-jd-title\">任职要求：</div>\r\n            <div class=\"layui-layer-jd-content\">\r\n                 <p><p>任职要求</p></p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n", R.drawable.huawei);
+                builder = WebPopView.showWebview(this, view, "<p style=\"white-space: normal;\"><span style=\"font-family: 宋体; font-size: 14px;\">1、独立根据客户需求完成媒体合作及投放方案；</span></p><p style=\"white-space: normal;\"><span style=\"font-family: 宋体; font-size: 14px;\">2、负责对区域客户的销售工作，拓展新的客户和项目，并有效地形成销售机会；</span></p><p style=\"white-space: normal;\"><span style=\"font-family: 宋体; font-size: 14px;\">3、通过深入了解客户的核心业务，挖掘和寻找潜在的项目机会；</span>",
+                        -1, true);
                 break;
         }
     }
