@@ -58,6 +58,18 @@ android {
             path "CMakeLists.txt"
         }
     }
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            def date = new Date().format("yyyyMMdd" , TimeZone.getTimeZone("GMT+08"))
+            if(variant.buildType.name.equals('debug')){
+                ///"commonui_${date}_${versionName}.apk"
+                outputFileName = "commonpop.apk"
+            }
+            if(variant.buildType.name.equals('release')){
+                outputFileName = "commonpop_${versionName}.apk"
+            }
+        }
+    }
 }
 
 dependencies {
