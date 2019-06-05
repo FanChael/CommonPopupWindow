@@ -2,7 +2,8 @@
 Popular popupwindow in the market and customized.  
 [ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.1.1) ](https://bintray.com/resetmyself/holdon/commonpop/1.1.1/link)
 [ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.14.0) ](https://bintray.com/resetmyself/holdon/commonpop/1.14.0/link)
-[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.3) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.3/link)   
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.3) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.3/link)  
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.4) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.4/link)   
 
 （Android通用弹窗-结合市面流行的弹窗样式+支持自定义布局-有问题/需求请Issue）.  
 # Description
@@ -33,6 +34,8 @@ Popular popupwindow in the market and customized.
 >增加地区选择弹窗
 
 >增加Webview内容弹窗
+
+>增加评论弹窗
 
 # Effect  
 >总的效果 
@@ -82,7 +85,7 @@ Popular popupwindow in the market and customized.
   </tr>
 </table>  
 
-##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/app-debug.apk)
+##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/commonpop.apk)
 
 # Import Library  
 >For gradle:  
