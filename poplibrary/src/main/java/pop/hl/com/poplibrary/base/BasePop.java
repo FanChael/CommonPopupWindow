@@ -110,6 +110,14 @@ public class BasePop extends PopupWindow {
         }
 
         /**
+         * 获取Pop弹窗对象
+         * @return
+         */
+        public BasePop getPop() {
+            return basePop;
+        }
+
+        /**
          * 设置弹窗视图
          * @param _view
          * @return

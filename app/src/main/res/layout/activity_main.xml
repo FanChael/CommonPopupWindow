@@ -177,6 +177,16 @@
         app:layout_constraintTop_toBottomOf="@+id/am_top_btn" />
 
     <Button
+        android:id="@+id/am_comment_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testPop"
+        android:text="评论弹窗"
+        app:layout_constraintBottom_toTopOf="@+id/am_share_ftecent_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/am_righttop_btn" />
+
+    <Button
         android:id="@+id/am_location_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

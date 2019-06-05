@@ -72,11 +72,13 @@ Popular popupwindow in the market and customized.
     <th>地区选择弹窗</th>
     <th>App原生样式更新</th>
     <th>Webview内容弹窗</th>
+    <th>评论弹窗</th>
   </tr>
   <tr>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.03.18_locationpop.gif" width="228" height="374" alt="地区选择弹窗"/></td>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/2019.03.22_updateapp.gif" width="228" height="374" alt="App原生样式更新"/></td>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.04.11_webviewpop.gif" width="228" height="374" alt="Webview内容弹窗"/></td>
+    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/comment_pop.jpg" width="228" height="374" alt="评论弹窗"/></td>
   </tr>
 </table>  
 
@@ -89,8 +91,8 @@ Popular popupwindow in the market and customized.
 implementation 'com.hl:poplibrary:1.1.1'
 //App更新模块 - 自定义弹窗样式 + 原始弹窗更新样式
 implementation 'com.hl:poplibrary:1.14.1'
-//自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗+Webview内容弹窗
-implementation 'com.hl:poplibrary:2.0.3'
+//自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗+Webview内容弹窗+评论弹窗
+implementation 'com.hl:poplibrary:2.0.4'
                                             
 //依赖过可以忽略（分享弹窗用到了相关组件，用到分享请依赖）/2.x.x需要依赖
 implementation 'com.android.support:recyclerview-v7:28.0.0'//看你版本
@@ -100,6 +102,8 @@ implementation 'com.android.support:design:28.+'//看你版本
 
 >Hisotry:
 ```Java 
+//自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗+Webview内容弹窗
+implementation 'com.hl:poplibrary:2.0.3'
 //自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗
 implementation 'com.hl:poplibrary:2.0.2'
 //2.0.1 自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗
@@ -142,6 +146,7 @@ implementation 'com.hl:poplibrary:1.14.0'
 * [警告类弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/alert_guid.md)
 * [地区选择弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/location_guid.md)
 * [Webview内容弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/webview_guid.md)
+* [评论弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/comment_guid.md)
 
 > Hold on！
 * [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)

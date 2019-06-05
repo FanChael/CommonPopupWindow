@@ -21,6 +21,7 @@ import java.util.List;
 import java.util.Random;
 
 import pop.hl.com.poplibrary.AlertPopView;
+import pop.hl.com.poplibrary.CommentView;
 import pop.hl.com.poplibrary.LgRgPopView;
 import pop.hl.com.poplibrary.LocationPopView;
 import pop.hl.com.poplibrary.SharePopView;
@@ -822,6 +823,18 @@ public class MainActivity extends AppCompatActivity {
                 builder = WebPopView.showWebview(this, "<div class=\"layui-m-layer-layui-layer-jd\">\r\n    <div class=\"layui-layer-jd-container content\">\r\n        <div class=\"layui-layer-jd-section\">\r\n            <div class=\"layui-layer-jd-title\">岗位职责：</div>\r\n            <div class=\"layui-layer-jd-content\">\r\n                 <p><p>岗位职责<br/></p></p>\r\n            </div>\r\n        </div>\r\n        <div class=\"layui-layer-jd-section\">\r\n            <div class=\"layui-layer-jd-title\">任职要求：</div>\r\n            <div class=\"layui-layer-jd-content\">\r\n                 <p><p>任职要求</p></p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>\r\n", R.drawable.huawei);
                 builder = WebPopView.showWebview(this, view, "<p style=\"white-space: normal;\"><span style=\"font-family: 宋体; font-size: 14px;\">1、独立根据客户需求完成媒体合作及投放方案；</span></p><p style=\"white-space: normal;\"><span style=\"font-family: 宋体; font-size: 14px;\">2、负责对区域客户的销售工作，拓展新的客户和项目，并有效地形成销售机会；</span></p><p style=\"white-space: normal;\"><span style=\"font-family: 宋体; font-size: 14px;\">3、通过深入了解客户的核心业务，挖掘和寻找潜在的项目机会；</span>",
                         -1, true);
+                break;
+            case R.id.am_comment_btn:
+                builder = CommentView.showComment(this,
+                        "输入评论呀", "啦啦啦，我是卖报的小行家！"/*上一次的记录*/,
+                        "#FFf5c5c0", true,
+                        new OnEventListenner.SendBackListener() {
+                    @Override
+                    public void sendBack(String inputText) {
+
+                    }
+                });
+                // builder.dissmiss();
                 break;
         }
     }

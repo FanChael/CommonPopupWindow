@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:padding="10dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/pcm_btnRoot"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/dialog_comment_cancel"
+            android:layout_width="56dp"
+            android:layout_height="24dp"
+            android:layout_gravity="left|center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="取消"
+            android:textColor="#777777"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/dialog_comment_send"
+            android:layout_width="56dp"
+            android:layout_height="24dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/corners_review_send"
+            android:gravity="center"
+            android:text="发布"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </android.support.constraint.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/dialog_comment_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/corners_review_layout"
+        android:hint="请输入你的评论..."
+        android:maxLines="4"
+        android:gravity="left|top"
+        android:minHeight="55dp"
+        android:padding="5dp"
+        android:textColorHint="#c7c7c7"
+        android:textSize="13sp"
+        app:layout_constraintTop_toBottomOf="@+id/pcm_btnRoot" />
+</android.support.constraint.ConstraintLayout>

@@ -66,4 +66,11 @@ public class OnEventListenner {
     public interface OnLocationClickListenner{
         void onClick(View view, String[] locations);
     }
+
+    /**
+     * 评论弹窗内容回调
+     */
+    public interface SendBackListener {
+        void sendBack(String inputText);
+    }
 }
