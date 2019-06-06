@@ -2,8 +2,7 @@
 Popular popupwindow in the market and customized.  
 [ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.1.1) ](https://bintray.com/resetmyself/holdon/commonpop/1.1.1/link)
 [ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.14.0) ](https://bintray.com/resetmyself/holdon/commonpop/1.14.0/link)
-[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.3) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.3/link)  
-[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.4) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.4/link)   
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.6) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.6/link)   
 
 （Android通用弹窗-结合市面流行的弹窗样式+支持自定义布局-有问题/需求请Issue）.  
 # Description
@@ -95,7 +94,7 @@ implementation 'com.hl:poplibrary:1.1.1'
 //App更新模块 - 自定义弹窗样式 + 原始弹窗更新样式
 implementation 'com.hl:poplibrary:1.14.1'
 //自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗+Webview内容弹窗+评论弹窗
-implementation 'com.hl:poplibrary:2.0.4'
+implementation 'com.hl:poplibrary:2.0.6'
                                             
 //依赖过可以忽略（分享弹窗用到了相关组件，用到分享请依赖）/2.x.x需要依赖
 implementation 'com.android.support:recyclerview-v7:28.0.0'//看你版本
