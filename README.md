@@ -36,6 +36,8 @@ Popular popupwindow in the market and customized.
 
 >增加评论弹窗
 
+>垂直列表/地区弹窗
+
 # Effect  
 >总的效果 
   
@@ -84,6 +86,15 @@ Popular popupwindow in the market and customized.
   </tr>
 </table>  
 
+<table border="1">
+  <tr>
+    <th>垂直列表/地区弹窗</th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.06.26_vlist_select.jpg" width="228" height="374" alt="垂直列表/地区弹窗"/></td>
+  </tr>
+</table> 
+
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/commonpop.apk)
 
 # Import Library  
@@ -93,8 +104,8 @@ Popular popupwindow in the market and customized.
 implementation 'com.hl:poplibrary:1.1.1'
 //App更新模块 - 自定义弹窗样式 + 原始弹窗更新样式
 implementation 'com.hl:poplibrary:1.14.1'
-//自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗+Webview内容弹窗+评论弹窗
-implementation 'com.hl:poplibrary:2.0.6'
+//自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗+Webview内容弹窗+评论弹窗+垂直列表/地区弹窗使用
+implementation 'com.hl:poplibrary:2.0.8'
                                             
 //依赖过可以忽略（分享弹窗用到了相关组件，用到分享请依赖）/2.x.x需要依赖
 implementation 'com.android.support:recyclerview-v7:28.0.0'//看你版本
@@ -104,6 +115,8 @@ implementation 'com.android.support:design:28.+'//看你版本
 
 >Hisotry:
 ```Java 
+//自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗+Webview内容弹窗+评论弹窗
+implementation 'com.hl:poplibrary:2.0.6'
 //自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗+Webview内容弹窗
 implementation 'com.hl:poplibrary:2.0.3'
 //自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗
@@ -149,6 +162,7 @@ implementation 'com.hl:poplibrary:1.14.0'
 * [地区选择弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/location_guid.md)
 * [Webview内容弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/webview_guid.md)
 * [评论弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/comment_guid.md)
+* [垂直列表/地区弹窗使用_每列都是独立列表_结果组合显示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/vlist_location_guid.md)
 
 > Hold on！
 * [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)

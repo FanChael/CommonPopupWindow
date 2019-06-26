@@ -206,4 +206,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/am_normal_update_btn" />
+
+    <Button
+        android:id="@+id/am_vlistslect_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testPop"
+        android:text="单列表底部垂直弹窗"
+        app:layout_constraintBottom_toTopOf="@+id/am_register_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/am_left_btn" />
 </android.support.constraint.ConstraintLayout>

@@ -28,6 +28,7 @@ import pop.hl.com.poplibrary.SharePopView;
 import pop.hl.com.poplibrary.OnEventListenner;
 import pop.hl.com.poplibrary.UpdatePopView;
 import pop.hl.com.poplibrary.VListPopView;
+import pop.hl.com.poplibrary.VListSelectPopView;
 import pop.hl.com.poplibrary.WebPopView;
 import pop.hl.com.poplibrary.base.BasePop;
 import pop.hl.com.poplibrary.BasePopView;
@@ -835,6 +836,23 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
                 // builder.dissmiss();
+                break;
+            case R.id.am_vlistslect_btn:
+                List<String> areanList = new ArrayList<>();
+                areanList.add("密云区");
+                areanList.add("双流区");
+                areanList.add("锦江区");
+                areanList.add("月华乡");
+                ///< 列表可以给null，此时该列表返回数据就是""空字符串
+                builder = VListSelectPopView.showFromBottom(this, view,
+                        areanList, areanList, areanList, "#FFf5c5c0", "#000000", new OnEventListenner.OnLocationClickListenner() {
+                            @Override
+                            public void onClick(View view, String[] locations) {
+                                Toast.makeText(MainActivity.this,
+                                        locations[0] + locations[1] + locations[2],
+                                        Toast.LENGTH_SHORT).show();
+                            }
+                        });
                 break;
         }
     }
