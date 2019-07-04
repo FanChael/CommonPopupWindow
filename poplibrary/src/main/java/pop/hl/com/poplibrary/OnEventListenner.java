@@ -68,6 +68,13 @@ public class OnEventListenner {
     }
 
     /**
+     * 单选选中弹窗点击事件
+     */
+    public interface OnItemSelectClickListenner{
+        void onClick(View view, String item, int pos);
+    }
+
+    /**
      * 评论弹窗内容回调
      */
     public interface SendBackListener {

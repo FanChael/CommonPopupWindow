@@ -22,6 +22,7 @@ import java.util.Random;
 
 import pop.hl.com.poplibrary.AlertPopView;
 import pop.hl.com.poplibrary.CommentView;
+import pop.hl.com.poplibrary.ItemSelectPopView;
 import pop.hl.com.poplibrary.LgRgPopView;
 import pop.hl.com.poplibrary.LocationPopView;
 import pop.hl.com.poplibrary.SharePopView;
@@ -851,6 +852,38 @@ public class MainActivity extends AppCompatActivity {
                                 Toast.makeText(MainActivity.this,
                                         locations[0] + locations[1] + locations[2],
                                         Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                break;
+            case R.id.am_itemslect_btn:
+                List<String> cityList = new ArrayList<>();
+                cityList.add("北京");
+                cityList.add("成都");
+                cityList.add("北京");
+                cityList.add("成都");
+                cityList.add("北京");
+                ///< 列表可以给null，此时该列表返回数据就是""空字符串
+                ///< 不带抬头图片
+                //                builder = ItemSelectPopView.showSelectPopView(this, view,
+                //                        "请您选择所在的城市", "更多城市持续开通中", cityList,
+                //                        -1, "#FFf5c5c0", "#000000",
+                //                         R.drawable.profile_icon_close_n, true,  new OnEventListenner.OnItemSelectClickListenner() {
+                //                            @Override
+                //                            public void onClick(View view, String item, int pos) {
+                //                                builder.dissmiss();
+                //                                Toast.makeText(MainActivity.this,
+                //                                        item, Toast.LENGTH_SHORT).show();
+                //                            }
+                //                        });
+                builder = ItemSelectPopView.showSelectPopView(this, view,
+                        "请您选择所在的城市", "更多城市持续开通中", cityList,
+                        R.drawable.update_img, "#FFf5c5c0", "#000000",
+                        R.drawable.profile_icon_close_n, true,  new OnEventListenner.OnItemSelectClickListenner() {
+                            @Override
+                            public void onClick(View view, String item, int pos) {
+                                builder.dissmiss();
+                                Toast.makeText(MainActivity.this,
+                                        item, Toast.LENGTH_SHORT).show();
                             }
                         });
                 break;
