@@ -877,7 +877,7 @@ public class MainActivity extends AppCompatActivity {
                 //                        });
                 builder = ItemSelectPopView.showSelectPopView(this, view,
                         "请您选择所在的城市", "更多城市持续开通中", cityList,
-                        R.drawable.city_titlebar, "#FFf5c5c0", "#ffffff",
+                        R.drawable.city_titlebar, "#ffffff", "#000000", "#FFf5c5c0", "#ffffff",
                         R.drawable.profile_icon_close_n, true,  new OnEventListenner.OnItemSelectClickListenner() {
                             @Override
                             public void onClick(View view, String item, int pos) {

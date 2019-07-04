@@ -1,6 +1,7 @@
 package pop.hl.com.poplibrary;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.support.constraint.ConstraintLayout;
@@ -39,7 +40,7 @@ public class ItemSelectPopView {
     public static BasePop.Builder showSelectPopView(Context _context, String _title, String _bottomTip, List<String> _itemList, OnEventListenner.OnItemSelectClickListenner _onItemSelectClickListenner) {
         return new Builder(_context)
                 .create(null, -1, false)
-                .showSelectPopView(_title, _bottomTip, _itemList, -1, "", "", _onItemSelectClickListenner);
+                .showSelectPopView(_title, _bottomTip, _itemList, -1, "", "", "", "", _onItemSelectClickListenner);
     }
 
     /**
@@ -50,6 +51,8 @@ public class ItemSelectPopView {
      * @param _bottomTip - 底部提示
      * @param _itemList - 单项列表选项
      * @param _titleBgId - 抬头背景图片 - 左上角，右上角，需要圆角处理
+     * @param _titleColor - 抬头字体颜色
+     * @param _bottomColor - 底部字体颜色
      * @param _fillColor - 选项背景颜色
      * @param _fontColor - 选项字体颜色
      * @param _closeResourceId - 关闭按钮资源背景图片
@@ -59,11 +62,11 @@ public class ItemSelectPopView {
      */
     public static BasePop.Builder showSelectPopView(Context _context, View _achor,
                                                     String _title, String _bottomTip, List<String> _itemList,
-                                                    int _titleBgId, String _fillColor, String _fontColor,
+                                                    int _titleBgId, String _titleColor, String _bottomColor, String _fillColor, String _fontColor,
                                                     int _closeResourceId, boolean _bScale, OnEventListenner.OnItemSelectClickListenner _onItemSelectClickListenner) {
         return new Builder(_context)
                 .create(_achor, _closeResourceId, _bScale)
-                .showSelectPopView(_title, _bottomTip, _itemList, _titleBgId, _fillColor, _fontColor, _onItemSelectClickListenner);
+                .showSelectPopView(_title, _bottomTip, _itemList, _titleBgId, _titleColor, _bottomColor, _fillColor, _fontColor, _onItemSelectClickListenner);
     }
 
     /*
@@ -105,7 +108,7 @@ public class ItemSelectPopView {
          * @param _itemList
          * @return
          */
-        public BasePop.Builder showSelectPopView(String _title, String _bottomTip, List<String> _itemList, int _titleBgId, String _fillColor, String _fontColor, OnEventListenner.OnItemSelectClickListenner _onItemSelectClickListenner) {
+        public BasePop.Builder showSelectPopView(String _title, String _bottomTip, List<String> _itemList, int _titleBgId, String _titleColor, String _bottomColor, String _fillColor, String _fontColor, OnEventListenner.OnItemSelectClickListenner _onItemSelectClickListenner) {
             ///< 获取弹窗视图
             View popView = builder.getView();
 
@@ -153,6 +156,14 @@ public class ItemSelectPopView {
             TextView bottomTv = popView.findViewById(R.id.pis_bottomTv);
             if (_titleBgId < 0) {
                 ScreenUtil.setMargin(tipTv, -10000, DensityUtil.dip2px(contextWeakReference.get(), 10), -10000, -10000);
+            }
+
+            if (null != _titleColor && !_titleColor.equals("")){
+                tipTv.setTextColor(Color.parseColor(_titleColor));
+            }
+
+            if (null != _bottomColor && !_bottomColor.equals("")){
+                bottomTv.setTextColor(Color.parseColor(_bottomColor));
             }
 
             if (null != _title && !_title.equals("")) {

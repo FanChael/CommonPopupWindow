@@ -14,25 +14,27 @@
     }
 
     /**
-     * 显示单项选择的弹窗
-     * @param _context
-     * @param _achor
-     * @param _title - 抬头标题
-     * @param _bottomTip - 底部提示
-     * @param _itemList - 单项列表选项
-     * @param _titleBgId - 抬头背景图片 - 左上角，右上角，需要圆角处理
-     * @param _fillColor - 选项背景颜色
-     * @param _fontColor - 选项字体颜色
-     * @param _closeResourceId - 关闭按钮资源背景图片
-     * @param _bScale - 是否显示缩放动画
-     * @param _onItemSelectClickListenner
-     * @return
-     */
-    public static BasePop.Builder showSelectPopView(Context _context, View _achor,
-                                                    String _title, String _bottomTip, List<String> _itemList,
-                                                    int _titleBgId, String _fillColor, String _fontColor,
-                                                    int _closeResourceId, boolean _bScale, OnEventListenner.OnItemSelectClickListenner _onItemSelectClickListenner) {
-    }
+         * 显示单项选择的弹窗
+         * @param _context
+         * @param _achor
+         * @param _title - 抬头标题
+         * @param _bottomTip - 底部提示
+         * @param _itemList - 单项列表选项
+         * @param _titleBgId - 抬头背景图片 - 左上角，右上角，需要圆角处理
+         * @param _titleColor - 抬头字体颜色
+         * @param _bottomColor - 底部字体颜色
+         * @param _fillColor - 选项背景颜色
+         * @param _fontColor - 选项字体颜色
+         * @param _closeResourceId - 关闭按钮资源背景图片
+         * @param _bScale - 是否显示缩放动画
+         * @param _onItemSelectClickListenner
+         * @return
+         */
+        public static BasePop.Builder showSelectPopView(Context _context, View _achor,
+                                                        String _title, String _bottomTip, List<String> _itemList,
+                                                        int _titleBgId, String _titleColor, String _bottomColor, String _fillColor, String _fontColor,
+                                                        int _closeResourceId, boolean _bScale, OnEventListenner.OnItemSelectClickListenner _onItemSelectClickListenner) {
+        }
 ```
 # USE 
 ```Java
@@ -57,7 +59,7 @@
                                 //                        });
                                 BasePop.Builder builder = ItemSelectPopView.showSelectPopView(this, view,
                                         "请您选择所在的城市", "更多城市持续开通中", cityList,
-                                        R.drawable.update_img, "#FFf5c5c0", "#000000",
+                                        R.drawable.update_img, "#000000", "#000000", "#FFf5c5c0", "#000000",
                                         R.drawable.profile_icon_close_n, true,  new OnEventListenner.OnItemSelectClickListenner() {
                                             @Override
                                             public void onClick(View view, String item, int pos) {
