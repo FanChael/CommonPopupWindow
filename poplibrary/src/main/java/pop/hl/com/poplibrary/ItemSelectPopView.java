@@ -112,7 +112,7 @@ public class ItemSelectPopView {
             ConstraintLayout contentRoot = popView.findViewById(R.id.pis_contentRoot);
             if (_titleBgId > -1) {
                 ScreenUtil.setConstraintLayoutWH(contentRoot, ScreenUtil.getScreenW(contextWeakReference.get()) * 3 / 4,
-                        (int) (ScreenUtil.getScreenH(contextWeakReference.get()) * (3.6f / 12f)) + (int) ((ScreenUtil.getScreenH(contextWeakReference.get()) * (3.6f / 12f)) / 4));
+                        (int) (ScreenUtil.getScreenH(contextWeakReference.get()) * (3.6f / 12f)) + ((ScreenUtil.getScreenW(contextWeakReference.get()) * 3 / 4) / 6));
             }
             else {
                 ScreenUtil.setConstraintLayoutWH(contentRoot, ScreenUtil.getScreenW(contextWeakReference.get()) * 3 / 4,
@@ -121,8 +121,8 @@ public class ItemSelectPopView {
 
             if (_titleBgId > -1) {
                 ConstraintLayout tipRoot = popView.findViewById(R.id.pis_tipRoot);
-                ScreenUtil.setConstraintLayoutWH(tipRoot, -1,
-                        (int) ((ScreenUtil.getScreenH(contextWeakReference.get()) * (3.6f / 12f)) / 4));
+                ScreenUtil.setConstraintLayoutWH(tipRoot, ScreenUtil.getScreenW(contextWeakReference.get()) * 3 / 4,
+                        (ScreenUtil.getScreenW(contextWeakReference.get()) * 3 / 4) / 6);
 
                 Drawable drawable;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
