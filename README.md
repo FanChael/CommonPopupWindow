@@ -109,7 +109,7 @@ implementation 'com.hl:poplibrary:1.1.1'
 //App更新模块 - 自定义弹窗样式 + 原始弹窗更新样式
 implementation 'com.hl:poplibrary:1.14.1'
 //自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗+Webview内容弹窗+评论弹窗+垂直列表/地区弹窗使用 + 单项选择弹窗
-implementation 'com.hl:poplibrary:2.1.0'
+implementation 'com.hl:poplibrary:2.1.4'
                                             
 //依赖过可以忽略（分享弹窗用到了相关组件，用到分享请依赖）/2.x.x需要依赖
 implementation 'com.android.support:recyclerview-v7:28.0.0'//看你版本
