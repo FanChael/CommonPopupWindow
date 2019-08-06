@@ -169,7 +169,7 @@ implementation 'com.hl:poplibrary:1.14.0'
 * [分享弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/share_guid.md)
 * [注册登录弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/login_register_guid.md)
 * [更新弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/updagrade_guid.md)
-* [APP更新使用](https://github.com/FanChael/CommonPopupWindow/tree/appupdate)
+* [APP更新使用](https://github.com/FanChael/CommonPopupWindow/blob/appupdate/doc/library/appupdate_guid.md)
 * [垂直列表弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/vlist_guid.md)
 * [警告类弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/alert_guid.md)
 * [地区选择弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/location_guid.md)
