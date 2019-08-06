@@ -20,8 +20,30 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
+# 内部类混淆
+#-keepattributes Exceptions,InnerClasses,...
+
+# 保留Serializable序列化的类不被混淆
+#-keepclassmembers class * implements java.io.Serializable {
+#    static final long serialVersionUID;
+#    private static final java.io.ObjectStreamField[] serialPersistentFields;
+#    !static !transient <fields>;
+#    !private <fields>;
+#    !private <methods>;
+#    private void writeObject(java.io.ObjectOutputStream);
+#    private void readObject(java.io.ObjectInputStream);
+#    java.lang.Object writeReplace();
+#    java.lang.Object readResolve();
+#}
+
+#############################################
+#
+# 以上是Android基本混淆规则 end
+#
+#############################################
+
+# 地址弹窗继承locationbean的类需要混淆
 -keep class pop.hl.com.commonpopupwindow.LoactionBeanChild{ *;}
--keepattributes Exceptions,InnerClasses,...
 -keep class pop.hl.com.commonpopupwindow.LoactionBeanChild$* {
     *;
 }

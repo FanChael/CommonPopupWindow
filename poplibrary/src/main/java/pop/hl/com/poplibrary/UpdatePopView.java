@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
 import android.os.Build;
 import android.support.constraint.ConstraintLayout;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -44,6 +45,41 @@ public class UpdatePopView {
         return new Builder(_context)
                 .create(_titleBgId, _allColor, _h_dived_w, _bforce, _updateMessage, _achor)
                 .showNormalUpdate(_onUpdateClickListenner);
+    }
+
+
+    /**
+     * 原生警告类更新弹窗
+     *
+     * @param _context
+     * @param _achor
+     * @param _allColor               - 按钮、进度等主体颜色
+     * @param _bforce                 - 是否强制更新
+     * @param _title                  - 抬头
+     * @param _updateMessage          - 更新信息
+     * @param _onUpdateClickListenner
+     * @return
+     */
+    public static AlertDialog showOriginAlertUpdate(Context _context, View _achor,
+                                                    String _allColor, boolean _bforce,
+                                                    String _title, String _updateMessage,
+                                                    final OnEventListenner.OnUpdateClickListenner _onUpdateClickListenner) {
+        AlertDialog alertDialog = AlertPopView.showOriginAlert(_context,
+                _title, _updateMessage,
+                _bforce ? null : _context.getResources().getString(R.string.update_cancel),
+                _context.getResources().getString(R.string.update_ok),
+                _allColor, false,
+                new OnEventListenner.OnAlertClickListenner() {
+                    @Override
+                    public void onClick(View view, AlertPopView.CALLBACK_TYPE callback_type) {
+                        if (callback_type == AlertPopView.CALLBACK_TYPE.OK) {
+                            if (null != _onUpdateClickListenner) {
+                                _onUpdateClickListenner.onClick(view, null);
+                            }
+                        }
+                    }
+                });
+        return alertDialog;
     }
 
     /*

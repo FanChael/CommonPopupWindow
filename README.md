@@ -2,7 +2,8 @@
 Popular popupwindow in the market and customized.  
 [ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.1.1) ](https://bintray.com/resetmyself/holdon/commonpop/1.1.1/link)
 [ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.14.0) ](https://bintray.com/resetmyself/holdon/commonpop/1.14.0/link)
-[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.6) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.6/link)   
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.6) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.6/link) 
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=3.0.0) ](https://bintray.com/resetmyself/holdon/commonpop/3.0.0/link)    
 
 （Android通用弹窗-结合市面流行的弹窗样式+支持自定义布局-有问题/需求请Issue）.  
 # Description
@@ -39,6 +40,10 @@ Popular popupwindow in the market and customized.
 >垂直列表/地区弹窗
 
 >单项选择弹窗
+
+>整合App更新过来
+
+>相机相册弹窗
 
 # Effect  
 >总的效果 
@@ -92,33 +97,35 @@ Popular popupwindow in the market and customized.
   <tr>
     <th>垂直列表/地区弹窗</th>
     <th>单项选择弹窗</th>
+    <th>APP更新模块</th>
+    <th>相机相册底部弹窗</th>
   </tr>
   <tr>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.06.26_vlist_select.jpg" width="228" height="374" alt="垂直列表/地区弹窗"/></td>
     <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.06.28_item_select.jpg" width="228" height="374" alt="单项选择弹窗"/></td>
+    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.08.06_item_appupdate.png" width="228" height="374" alt="APP更新模块"/></td>
+    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.08.06_item_camera.png" width="228" height="374" alt="相机相册底部弹窗"/></td>
   </tr>
 </table> 
 
-##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/commonpop.apk)
+##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/commonpop_2.0.apk)
 
 # Import Library  
 >For gradle:  
 ```Java
-//自定义布局(下面有API、使用说明)
+//自定义布局(下面有API、使用说明) - 需要基于basepop自定义就是用这个吧！
 implementation 'com.hl:poplibrary:1.1.1'
-//App更新模块 - 自定义弹窗样式 + 原始弹窗更新样式
-implementation 'com.hl:poplibrary:1.14.1'
-//自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗+Webview内容弹窗+评论弹窗+垂直列表/地区弹窗使用 + 单项选择弹窗
-implementation 'com.hl:poplibrary:2.1.4'
-                                            
-//依赖过可以忽略（分享弹窗用到了相关组件，用到分享请依赖）/2.x.x需要依赖
-implementation 'com.android.support:recyclerview-v7:28.0.0'//看你版本
-//依赖过可以忽略（注册登录弹窗用到了相关组件，用到注册登录请依赖）/2.x.x需要依赖
-implementation 'com.android.support:design:28.+'//看你版本
+
+//整合所有弹窗+App更新模块，不再单独分开维护
+implementation 'com.hl:poplibrary:3.0.0'
 ```
 
 >Hisotry:
 ```Java 
+//App更新模块 - 自定义弹窗样式 + 原始弹窗更新样式
+implementation 'com.hl:poplibrary:1.14.1'
+//自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗+Webview内容弹窗+评论弹窗+垂直列表/地区弹窗使用 + 单项选择弹窗
+implementation 'com.hl:poplibrary:2.1.4'
 //自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗+Webview内容弹窗+评论弹窗+垂直列表/地区弹窗使用
 implementation 'com.hl:poplibrary:2.0.8'
 //自定义布局+分享弹窗+注册登录弹窗+更新弹窗+垂直列表弹窗+警告类弹窗A+原生弹窗 + 地区选择弹窗+Webview内容弹窗+评论弹窗
@@ -170,6 +177,7 @@ implementation 'com.hl:poplibrary:1.14.0'
 * [评论弹窗使用](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/comment_guid.md)
 * [垂直列表/地区弹窗使用_每列都是独立列表_结果组合显示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/vlist_location_guid.md)
 * [单项选择弹窗](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/item_select_guid.md)
+* [相机相册弹窗](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/camera_guid.md)
 
 > Hold on！
 * [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)

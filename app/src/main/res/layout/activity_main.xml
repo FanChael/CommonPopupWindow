@@ -208,6 +208,16 @@
         app:layout_constraintTop_toBottomOf="@+id/am_normal_update_btn" />
 
     <Button
+        android:id="@+id/am_appUpdate_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testPop"
+        android:text="App更新走起"
+        app:layout_constraintBottom_toTopOf="@+id/am_right_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/am_share_ftecent_btn" />
+
+    <Button
         android:id="@+id/am_vlistslect_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -226,4 +236,14 @@
         app:layout_constraintBottom_toTopOf="@+id/am_login_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/am_right_btn" />
+
+    <Button
+        android:id="@+id/am_Camera_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="testPop"
+        android:text="相机相册弹窗"
+        app:layout_constraintBottom_toTopOf="@+id/am_leftbottom_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/am_register_btn" />
 </android.support.constraint.ConstraintLayout>

@@ -21,6 +21,8 @@ import java.util.List;
 import java.util.Random;
 
 import pop.hl.com.poplibrary.AlertPopView;
+import pop.hl.com.poplibrary.AppUpdate;
+import pop.hl.com.poplibrary.CameraPicPopView;
 import pop.hl.com.poplibrary.CommentView;
 import pop.hl.com.poplibrary.ItemSelectPopView;
 import pop.hl.com.poplibrary.LgRgPopView;
@@ -60,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
 
     private BasePop.Builder builder;
     private AlertDialog alertDialog;
+    /**
+     * App更新
+     */
+    private AppUpdate appUpdate = null;
 
 
     /**
@@ -884,6 +890,30 @@ public class MainActivity extends AppCompatActivity {
                                 builder.dissmiss();
                                 Toast.makeText(MainActivity.this,
                                         item, Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                break;
+            case R.id.am_appUpdate_btn:
+                ///< 设置更新弹窗样式+升级信息
+                appUpdate = new AppUpdate(this, new View(this),
+                        R.drawable.update_img, 188 / 428,
+                        "#2594eb", true, "1.你的屁屁好臭呀\n2.你的也是好臭呀");
+                ///< 开启更新，设置apk下载地址+通知栏图标+fileProvider直接启动安装+(md5、versionCode、apk大小)进行已经下载安装包的校验，防止重复下载
+                appUpdate.startAppUpdate(
+                        "https://raw.githubusercontent.com/FanChael/CommonPopupWindow/appupdate/doc/app_update.apk",
+                        R.drawable.profile_icon_verify,
+                        "pop.hl.com.commonpopupwindow.fileProvider",
+                        null, -1, -1);
+                break;
+            case R.id.am_Camera_btn:
+                ///< 相机，相册弹窗 - 分别包含了相机相册按钮区域背景，字体颜色；取消按钮背景和字体颜色；相机相册按钮哪个被按下的回调
+                builder = CameraPicPopView.showCamera(this, view,
+                        "#ffffff", "#000000",
+                        "#f2f5f7", "#000000",
+                        new OnEventListenner.OnCameraClickListenner() {
+                            @Override
+                            public void onClick(View view, CameraPicPopView.CALLBACK_TYPE callback_type) {
+
                             }
                         });
                 break;

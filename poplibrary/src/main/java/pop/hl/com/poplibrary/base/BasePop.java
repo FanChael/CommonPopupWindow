@@ -4,7 +4,6 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -388,12 +387,12 @@ public class BasePop extends PopupWindow {
             int screenH = ScreenUtil.getScreenH(contextWeakReference.get());
             int[] achorLocation = new  int[2] ;
             viewWeakReference.get().getLocationInWindow(achorLocation); //获取在当前窗口内的绝对坐标，含toolBar
-            Log.e("test", "popW=" + popW);
-            Log.e("test", "popH=" + popH);
-            Log.e("test", "screenW=" + screenW);
-            Log.e("test", "screenH=" + screenH);
-            Log.e("test", "location[0]=" + achorLocation[0]);
-            Log.e("test", "location[1]=" + achorLocation[1]);
+            //            Log.e("test", "popW=" + popW);
+            //            Log.e("test", "popH=" + popH);
+            //            Log.e("test", "screenW=" + screenW);
+            //            Log.e("test", "screenH=" + screenH);
+            //            Log.e("test", "location[0]=" + achorLocation[0]);
+            //            Log.e("test", "location[1]=" + achorLocation[1]);
 
             /**
              * 分两部分处理

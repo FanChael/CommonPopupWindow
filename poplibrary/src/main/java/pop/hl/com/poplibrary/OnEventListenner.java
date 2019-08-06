@@ -80,4 +80,11 @@ public class OnEventListenner {
     public interface SendBackListener {
         void sendBack(String inputText);
     }
+
+    /**
+     * 相册/相机弹窗点击事件
+     */
+    public interface OnCameraClickListenner{
+        void onClick(View view, CameraPicPopView.CALLBACK_TYPE callback_type);
+    }
 }
