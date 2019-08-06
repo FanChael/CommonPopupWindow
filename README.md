@@ -182,7 +182,7 @@ implementation 'com.hl:poplibrary:1.14.0'
 > Hold on！
 * [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)
 * [学习博客](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/study_guid.md)
-* [指教交流QQ群: 752871516](https://github.com/FanChael/CommonPopupWindow#传送门)
+* [指教交流QQ群: 574181465](https://github.com/FanChael/CommonPopupWindow#传送门)
 
 
 # API
