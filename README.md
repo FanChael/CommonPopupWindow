@@ -11,8 +11,6 @@ Popular popupwindow in the market and customized.
 
 >(其他配置待续)
 
->目前集成库后debug_apk大小约增加了356KB(默认分享图片资源总大小约100KB)
-
 # Feature  
 
 >支持自定义布局(所有点击事件统一回调)  
