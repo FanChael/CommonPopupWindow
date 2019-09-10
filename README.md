@@ -1,9 +1,7 @@
 # CommonPopupWindow
 Popular popupwindow in the market and customized.  
 [ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.1.1) ](https://bintray.com/resetmyself/holdon/commonpop/1.1.1/link)
-[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=1.14.0) ](https://bintray.com/resetmyself/holdon/commonpop/1.14.0/link)
-[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=2.0.6) ](https://bintray.com/resetmyself/holdon/commonpop/2.0.6/link) 
-[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=3.0.0) ](https://bintray.com/resetmyself/holdon/commonpop/3.0.0/link)    
+[ ![Download](https://api.bintray.com/packages/resetmyself/holdon/commonpop/images/download.svg?version=3.0.1) ](https://bintray.com/resetmyself/holdon/commonpop/3.0.1/link)    
 
 （Android通用弹窗-结合市面流行的弹窗样式+支持自定义布局-有问题/需求请Issue）.  
 # Description
@@ -42,6 +40,8 @@ Popular popupwindow in the market and customized.
 >整合App更新过来
 
 >相机相册弹窗
+
+>垂直单列表弹窗
 
 # Effect  
 >总的效果 
@@ -106,6 +106,15 @@ Popular popupwindow in the market and customized.
   </tr>
 </table> 
 
+<table border="1">
+  <tr>
+    <th>垂直单列表弹窗</th>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/FanChael/CommonPopupWindow/blob/master/doc/2019.09.10_pop_single_vlist.jpg" width="228" height="374" alt="垂直单列表弹窗"/></td>
+  </tr>
+</table>
+
 ##### [Demo apk下载](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/commonpop_2.0.apk)
 
 # Import Library  
@@ -115,7 +124,7 @@ Popular popupwindow in the market and customized.
 implementation 'com.hl:poplibrary:1.1.1'
 
 //整合所有弹窗+App更新模块，不再单独分开维护
-implementation 'com.hl:poplibrary:3.0.0'
+implementation 'com.hl:poplibrary:3.0.1'
 ```
 
 >Hisotry:
@@ -176,6 +185,7 @@ implementation 'com.hl:poplibrary:1.14.0'
 * [垂直列表/地区弹窗使用_每列都是独立列表_结果组合显示](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/vlist_location_guid.md)
 * [单项选择弹窗](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/item_select_guid.md)
 * [相机相册弹窗](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/camera_guid.md)
+* [垂直单列表弹窗](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/vlist_single_guid.md)
 
 > Hold on！
 * [更新日志](https://github.com/FanChael/CommonPopupWindow/blob/master/doc/library/update_guid.md)

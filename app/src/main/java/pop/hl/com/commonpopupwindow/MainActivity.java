@@ -32,6 +32,7 @@ import pop.hl.com.poplibrary.OnEventListenner;
 import pop.hl.com.poplibrary.UpdatePopView;
 import pop.hl.com.poplibrary.VListPopView;
 import pop.hl.com.poplibrary.VListSelectPopView;
+import pop.hl.com.poplibrary.VSingleListPopView;
 import pop.hl.com.poplibrary.WebPopView;
 import pop.hl.com.poplibrary.base.BasePop;
 import pop.hl.com.poplibrary.BasePopView;
@@ -837,11 +838,11 @@ public class MainActivity extends AppCompatActivity {
                         "输入评论呀", "啦啦啦，我是卖报的小行家！"/*上一次的记录*/,
                         "#FFf5c5c0", true,
                         new OnEventListenner.SendBackListener() {
-                    @Override
-                    public void sendBack(String inputText) {
+                            @Override
+                            public void sendBack(String inputText) {
 
-                    }
-                });
+                            }
+                        });
                 // builder.dissmiss();
                 break;
             case R.id.am_vlistslect_btn:
@@ -884,7 +885,7 @@ public class MainActivity extends AppCompatActivity {
                 builder = ItemSelectPopView.showSelectPopView(this, view,
                         "请您选择所在的城市", "更多城市持续开通中", cityList,
                         R.drawable.city_titlebar, "#ffffff", "#000000", "#FFf5c5c0", "#ffffff",
-                        R.drawable.profile_icon_close_n, true,  new OnEventListenner.OnItemSelectClickListenner() {
+                        R.drawable.profile_icon_close_n, true, new OnEventListenner.OnItemSelectClickListenner() {
                             @Override
                             public void onClick(View view, String item, int pos) {
                                 builder.dissmiss();
@@ -914,6 +915,20 @@ public class MainActivity extends AppCompatActivity {
                             @Override
                             public void onClick(View view, CameraPicPopView.CALLBACK_TYPE callback_type) {
 
+                            }
+                        });
+                break;
+            case R.id.am_singleList_btn:
+                List<String> vlistData = new ArrayList<>();
+                vlistData.add("高德");
+                vlistData.add("百度");
+                builder = VSingleListPopView.showVSingleListPop(this, view,
+                        vlistData, 0xf0008DCF, new OnEventListenner.OnVListClickListenner() {
+                            @Override
+                            public void onClick(View view, int pos) {
+                                if (null != builder){
+                                    builder.dissmiss();
+                                }
                             }
                         });
                 break;
